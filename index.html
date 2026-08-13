@@ -2,783 +2,981 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Happy Birthday Fatima Islam Riya ❤️</title>
 
 <style>
+
+/* =========================
+   BASIC RESET
+========================= */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-html,body{
-    width:100%;
-    min-height:100%;
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    overflow:hidden;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#080014;
+    min-height:100vh;
+    overflow-x:hidden;
+    font-family:Arial, sans-serif;
     color:white;
+    background:
+    radial-gradient(circle at top,#ff9acb 0%,#7b2cbf 45%,#16002e 100%);
 }
 
+
 /* =========================
-   MAIN SCREEN
+   MAIN CONTAINER
 ========================= */
 
-.screen{
-    position:fixed;
-    inset:0;
+.page{
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:25px;
-    opacity:0;
-    visibility:hidden;
-    transition:opacity 1s ease;
+    position:relative;
     overflow:hidden;
+    padding:25px;
 }
 
-.screen.active{
-    opacity:1;
-    visibility:visible;
+.screen{
+    width:100%;
+    max-width:850px;
+    position:relative;
     z-index:10;
 }
 
-/* Background glow */
-
-.screen::before{
-    content:"";
-    position:absolute;
-    width:500px;
-    height:500px;
-    border-radius:50%;
-    background:#ff2f92;
-    filter:blur(140px);
-    opacity:.25;
-    top:-180px;
-    left:-150px;
-}
-
-.screen::after{
-    content:"";
-    position:absolute;
-    width:450px;
-    height:450px;
-    border-radius:50%;
-    background:#7b2cff;
-    filter:blur(140px);
-    opacity:.25;
-    bottom:-180px;
-    right:-150px;
-}
 
 /* =========================
-   CONTENT
+   HEART
 ========================= */
 
-.content{
+.heart{
+    color:#ff1744;
     position:relative;
-    z-index:5;
-    width:100%;
-    max-width:700px;
+    top:5px;
+    width:50px;
+    margin:0 auto 20px;
+    font-size:75px;
+    animation:pulse 1s ease infinite;
+    filter:drop-shadow(0 0 15px #ff1744);
 }
 
-.small{
-    font-size:15px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    opacity:.75;
-    margin-bottom:20px;
+#heart{
+    position:relative;
+    width:100px;
+    height:90px;
+    margin:auto;
+    text-align:center;
+    font-size:16px;
 }
 
-h1{
-    font-size:clamp(38px,10vw,82px);
-    line-height:1.05;
-    margin-bottom:20px;
-    text-shadow:
-        0 0 10px #fff,
-        0 0 25px #ff4d9d,
-        0 0 50px #ff4d9d;
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.3);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
 }
 
-h2{
-    font-size:clamp(30px,7vw,55px);
-    margin-bottom:20px;
-}
-
-p{
-    font-size:clamp(17px,4vw,22px);
-    line-height:1.8;
-    opacity:.9;
-}
 
 /* =========================
-   TYPEWRITER
+   HAPPY BIRTHDAY TITLE
 ========================= */
 
-.typewriter{
-    min-height:80px;
-    font-size:clamp(22px,5vw,35px);
-    font-weight:bold;
-    line-height:1.5;
+.Happy__Birthday{
+
+    font-family:cursive;
+
+    color:#fff;
+
+    font-size:clamp(2.5em,9vw,5em);
+
+    font-weight:700;
+
+    text-shadow:
+    2px 2px 5px rgba(255,255,255,.7),
+    0 0 20px #ff69b4,
+    0 0 40px #ff1493;
+
+    animation:titleGlow 2s ease-in-out infinite alternate;
+
+    margin-bottom:20px;
 }
+
+@keyframes titleGlow{
+
+    from{
+        transform:scale(1);
+        text-shadow:
+        0 0 10px #fff,
+        0 0 20px #ff69b4;
+    }
+
+    to{
+        transform:scale(1.04);
+        text-shadow:
+        0 0 20px #fff,
+        0 0 40px #ff1493,
+        0 0 60px #ff69b4;
+    }
+
+}
+
+
+/* =========================
+   TYPING TEXT
+========================= */
+
+.typing{
+    font-size:clamp(18px,5vw,28px);
+    min-height:45px;
+    margin:20px auto;
+    color:#fff;
+    text-shadow:0 0 10px rgba(255,255,255,.8);
+}
+
+.cursor{
+    display:inline-block;
+    width:3px;
+    height:25px;
+    background:white;
+    margin-left:4px;
+    animation:blink .7s infinite;
+}
+
+@keyframes blink{
+
+    50%{
+        opacity:0;
+    }
+
+}
+
 
 /* =========================
    BUTTON
 ========================= */
 
 .btn{
-    position:relative;
-    margin-top:30px;
-    padding:15px 30px;
+
     border:none;
+
+    padding:14px 28px;
+
+    margin:10px;
+
     border-radius:50px;
-    font-size:17px;
-    font-weight:bold;
+
     color:white;
-    background:linear-gradient(135deg,#ff2f92,#8b35ff);
-    box-shadow:
-        0 0 15px rgba(255,47,146,.5),
-        0 10px 30px rgba(0,0,0,.35);
+
+    font-size:17px;
+
+    font-weight:bold;
+
     cursor:pointer;
+
+    background:
+    linear-gradient(45deg,#ff1493,#ff4f81,#9c27b0);
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.35),
+    0 0 15px rgba(255,20,147,.5);
+
     transition:.3s;
+
 }
 
 .btn:hover{
-    transform:scale(1.08);
+
+    transform:translateY(-4px) scale(1.05);
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.4),
+    0 0 30px rgba(255,105,180,.8);
+
 }
 
 .btn:active{
     transform:scale(.95);
 }
 
+
 /* =========================
-   FLOATING HEARTS
+   HIDDEN SECTIONS
 ========================= */
 
-.floating{
-    position:absolute;
-    bottom:-60px;
-    animation:floatUp linear infinite;
-    opacity:0;
-    pointer-events:none;
+.hidden{
+    display:none;
 }
 
-@keyframes floatUp{
-    0%{
-        transform:translateY(0) scale(.5) rotate(0deg);
+.fadeIn{
+    animation:fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn{
+
+    from{
         opacity:0;
+        transform:translateY(30px) scale(.95);
     }
 
-    15%{
-        opacity:.8;
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================
+   BALLOONS
+========================= */
+
+.balloon{
+
+    position:fixed;
+
+    bottom:-150px;
+
+    width:55px;
+    height:70px;
+
+    border-radius:50% 50% 45% 45%;
+
+    z-index:1;
+
+    opacity:.85;
+
+    animation:floatBalloon linear infinite;
+
+}
+
+.balloon:after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-55px;
+
+    left:50%;
+
+    width:2px;
+
+    height:60px;
+
+    background:rgba(255,255,255,.6);
+
+}
+
+@keyframes floatBalloon{
+
+    0%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-55vh) rotate(8deg);
     }
 
     100%{
-        transform:translateY(-115vh) scale(1.4) rotate(360deg);
-        opacity:0;
+        transform:translateY(-120vh) rotate(-8deg);
     }
+
 }
 
-/* =========================
-   NAME
-========================= */
-
-.name{
-    background:linear-gradient(
-        90deg,
-        #fff,
-        #ff7eb3,
-        #fff,
-        #c58aff,
-        #fff
-    );
-
-    background-size:300% auto;
-
-    -webkit-background-clip:text;
-    background-clip:text;
-
-    color:transparent;
-
-    animation:nameGlow 4s linear infinite;
-}
-
-@keyframes nameGlow{
-    to{
-        background-position:300% center;
-    }
-}
 
 /* =========================
    CAKE
 ========================= */
 
 .cake-area{
-    margin:20px auto;
-    position:relative;
-    width:250px;
-    height:250px;
+    margin:30px auto;
 }
 
 .cake{
-    position:absolute;
-    width:190px;
-    height:90px;
-    background:linear-gradient(#ff8ab5,#ff3f82);
-    border-radius:15px 15px 25px 25px;
-    bottom:35px;
-    left:30px;
-    box-shadow:0 15px 30px rgba(0,0,0,.4);
+
+    width:220px;
+    height:130px;
+
+    position:relative;
+
+    margin:70px auto 30px;
+
 }
 
-.cake::before{
-    content:"";
+.cake-bottom{
+
     position:absolute;
-    width:190px;
+
+    bottom:0;
+    left:0;
+
+    width:220px;
+    height:80px;
+
+    background:linear-gradient(#ff91bd,#e84393);
+
+    border-radius:12px 12px 25px 25px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.35),
+    inset 0 -10px rgba(0,0,0,.08);
+
+}
+
+.cake-top{
+
+    position:absolute;
+
+    bottom:55px;
+    left:10px;
+
+    width:200px;
     height:35px;
-    background:#fff;
-    border-radius:50%;
-    top:-15px;
-    left:0;
-}
 
-.cake::after{
-    content:"";
-    position:absolute;
-    width:190px;
-    height:25px;
-    background:#ffb6d1;
+    background:#fff0f7;
+
     border-radius:50%;
-    bottom:-10px;
-    left:0;
+
 }
 
 .candle{
+
     position:absolute;
-    width:15px;
-    height:55px;
-    background:linear-gradient(#fff,#ffd1e3);
-    bottom:125px;
+
+    bottom:90px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:18px;
+    height:65px;
+
+    background:
+    repeating-linear-gradient(
+        45deg,
+        #fff,
+        #fff 8px,
+        #ff4f81 8px,
+        #ff4f81 16px
+    );
+
     border-radius:5px;
-}
 
-.candle:nth-child(1){
-    left:65px;
-}
-
-.candle:nth-child(2){
-    left:118px;
-}
-
-.candle:nth-child(3){
-    left:170px;
 }
 
 .flame{
+
     position:absolute;
-    width:20px;
-    height:30px;
-    background:#ffd43b;
+
+    bottom:150px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:25px;
+    height:35px;
+
+    background:#ffd54f;
+
     border-radius:50% 50% 50% 50%;
+
     box-shadow:
-        0 0 15px #ffd43b,
-        0 0 35px #ff7b00;
-    animation:flicker .6s infinite alternate;
-    bottom:172px;
+    0 0 15px #ff9800,
+    0 0 35px #ff5722;
+
+    animation:flame 0.5s infinite alternate;
+
 }
 
-.flame:nth-of-type(1){
-    left:62px;
-}
+@keyframes flame{
 
-.flame:nth-of-type(2){
-    left:115px;
-}
-
-.flame:nth-of-type(3){
-    left:167px;
-}
-
-@keyframes flicker{
     from{
-        transform:scale(.85) rotate(-4deg);
+        transform:translateX(-50%) scale(1);
     }
 
     to{
-        transform:scale(1.15) rotate(5deg);
+        transform:translateX(-50%) scale(1.2);
     }
+
 }
+
 
 /* =========================
    PHOTO
 ========================= */
 
-.photo{
-    width:min(85vw,380px);
-    margin:20px auto;
-    padding:8px;
+.photo-box{
+
+    margin:30px auto;
+
+}
+
+.photo-box img{
+
+    width:min(90vw,400px);
+
+    max-height:500px;
+
+    object-fit:cover;
+
     border-radius:25px;
-    background:linear-gradient(135deg,#ff4f9a,#8d43ff,#ffd1e8);
-    box-shadow:0 0 40px rgba(255,72,155,.4);
-    animation:photoIn 1.5s ease;
+
+    border:5px solid rgba(255,255,255,.8);
+
+    box-shadow:
+    0 0 25px rgba(255,255,255,.5),
+    0 20px 50px rgba(0,0,0,.5);
+
+    animation:photoReveal 1.5s ease;
+
 }
 
-.photo img{
-    width:100%;
-    display:block;
-    border-radius:18px;
-}
+@keyframes photoReveal{
 
-@keyframes photoIn{
     from{
         opacity:0;
-        transform:scale(.7) rotate(-5deg);
+        transform:scale(.5) rotate(-5deg);
     }
 
     to{
         opacity:1;
         transform:scale(1) rotate(0);
     }
+
 }
+
 
 /* =========================
-   FINAL MESSAGE
+   MESSAGE CARD
 ========================= */
 
-.final-message{
-    padding:25px;
+.message-card{
+
+    margin:30px auto;
+
+    padding:30px 22px;
+
+    width:min(95%,700px);
+
     border-radius:25px;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.18);
+
+    background:rgba(255,255,255,.12);
+
     backdrop-filter:blur(12px);
-    box-shadow:0 20px 50px rgba(0,0,0,.3);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.35);
+
 }
 
-.final-message strong{
-    color:#ff9bc4;
+.message-card h2{
+
+    font-family:cursive;
+
+    font-size:clamp(28px,7vw,45px);
+
+    color:#ffd1e8;
+
+    margin-bottom:20px;
+
 }
+
+.message-card p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin:10px 0;
+
+}
+
 
 /* =========================
    CONFETTI
 ========================= */
 
 .confetti{
+
     position:fixed;
+
     width:10px;
-    height:16px;
+    height:18px;
+
     top:-30px;
+
     z-index:100;
-    animation:confettiFall 3.5s linear forwards;
+
+    animation:confettiFall linear forwards;
+
 }
 
 @keyframes confettiFall{
+
     to{
+
         transform:
-            translateY(110vh)
-            rotate(720deg);
+        translateY(110vh)
+        rotate(720deg);
+
     }
+
 }
+
 
 /* =========================
-   PULSE
+   SPARKLES
 ========================= */
 
-.pulse{
-    animation:pulse 1.5s infinite;
+.sparkle{
+
+    position:fixed;
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:0 0 10px white;
+
+    animation:sparkle 2s infinite;
+
+    z-index:2;
+
 }
 
-@keyframes pulse{
+@keyframes sparkle{
+
     0%,100%{
-        transform:scale(1);
+        opacity:.1;
+        transform:scale(.5);
     }
 
     50%{
-        transform:scale(1.04);
+        opacity:1;
+        transform:scale(1.5);
     }
+
 }
+
+
+/* =========================
+   FINAL TEXT
+========================= */
+
+.final-name{
+
+    font-family:cursive;
+
+    font-size:clamp(30px,8vw,60px);
+
+    color:#fff;
+
+    text-shadow:
+    0 0 10px #ff69b4,
+    0 0 30px #ff1493,
+    0 0 50px #ff69b4;
+
+    animation:finalGlow 1.5s infinite alternate;
+
+}
+
+@keyframes finalGlow{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.06);
+    }
+
+}
+
 
 /* =========================
    MOBILE
 ========================= */
 
-@media(max-width:500px){
+@media(max-width:600px){
 
-    .content{
-        max-width:100%;
-    }
-
-    .cake-area{
-        transform:scale(.85);
-        margin-top:0;
-        margin-bottom:0;
+    .page{
+        padding:18px;
     }
 
     .btn{
+        width:90%;
+        max-width:320px;
         font-size:16px;
-        padding:14px 25px;
     }
 
-    p{
-        font-size:17px;
+    .cake{
+        transform:scale(.85);
     }
+
+    .message-card{
+        padding:25px 17px;
+    }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- =========================
-     SCREEN 1
-========================= -->
 
-<section class="screen active" id="screen1">
+<!-- BALLOONS -->
 
-    <div class="content">
+<div class="balloon" style="left:5%;background:#ff4f81;animation-duration:13s;"></div>
 
-        <div class="small">A little surprise for you ✨</div>
+<div class="balloon" style="left:18%;background:#ffd54f;animation-duration:16s;animation-delay:2s;"></div>
 
-        <h1>Hey Riya... ❤️</h1>
+<div class="balloon" style="left:35%;background:#42a5f5;animation-duration:14s;animation-delay:4s;"></div>
 
-        <div class="typewriter" id="text1"></div>
+<div class="balloon" style="left:55%;background:#ab47bc;animation-duration:17s;animation-delay:1s;"></div>
 
-        <button class="btn" onclick="nextScreen(2)">
-            ✨ Open Surprise
-        </button>
+<div class="balloon" style="left:72%;background:#26c6da;animation-duration:15s;animation-delay:3s;"></div>
 
-    </div>
-
-</section>
+<div class="balloon" style="left:88%;background:#ff7043;animation-duration:18s;animation-delay:5s;"></div>
 
 
-<!-- =========================
-     SCREEN 2
-========================= -->
+<!-- SPARKLES -->
 
-<section class="screen" id="screen2">
-
-    <div class="content">
-
-        <div class="small">Before we begin...</div>
-
-        <h2>Are you ready? 👀</h2>
-
-        <p>
-            Because something special<br>
-            has been waiting for you... 💖
-        </p>
-
-        <button class="btn pulse" onclick="nextScreen(3)">
-            💝 I'm Ready
-        </button>
-
-    </div>
-
-</section>
+<div class="sparkle" style="left:10%;top:20%;"></div>
+<div class="sparkle" style="left:30%;top:15%;animation-delay:.5s;"></div>
+<div class="sparkle" style="left:70%;top:25%;animation-delay:1s;"></div>
+<div class="sparkle" style="left:90%;top:15%;animation-delay:1.5s;"></div>
+<div class="sparkle" style="left:50%;top:10%;animation-delay:.8s;"></div>
 
 
-<!-- =========================
-     SCREEN 3
-========================= -->
+<div class="page">
 
-<section class="screen" id="screen3">
+<div class="screen">
 
-    <div class="content">
 
-        <div class="small">A very special name...</div>
+<!-- STEP 1 -->
 
-        <h1 class="name">
-            Fatima Islam Riya
-        </h1>
+<section id="step1">
 
-        <p>
-            আজকের দিনটা অন্য সব দিনের থেকে একটু বেশি সুন্দর। 🌸
-        </p>
+<div class="heart" id="heart">❤️</div>
 
-        <button class="btn" onclick="nextScreen(4)">
-            ❤️ Continue
-        </button>
+<h1 class="Happy__Birthday">
+A Little Surprise...
+</h1>
 
-    </div>
+<div class="typing" id="typing1"></div>
+
+<button class="btn" onclick="nextStep(2)">
+💝 Open My Surprise
+</button>
 
 </section>
 
 
-<!-- =========================
-     SCREEN 4 - CAKE
-========================= -->
+<!-- STEP 2 -->
 
-<section class="screen" id="screen4">
+<section id="step2" class="hidden">
 
-    <div class="content">
+<h1 class="Happy__Birthday">
+Hey Fatima ❤️
+</h1>
 
-        <div class="small">Something sweet is waiting 🎂</div>
+<div class="typing" id="typing2"></div>
 
-        <h2>Make a Wish ✨</h2>
-
-        <div class="cake-area">
-
-            <div class="candle"></div>
-            <div class="candle"></div>
-            <div class="candle"></div>
-
-            <div class="flame"></div>
-            <div class="flame"></div>
-            <div class="flame"></div>
-
-            <div class="cake"></div>
-
-        </div>
-
-        <p>
-            চোখ বন্ধ করো...<br>
-            একটা Wish করো... ❤️
-        </p>
-
-        <button class="btn" onclick="blowCandles()">
-            🕯️ Blow the Candles
-        </button>
-
-    </div>
+<button class="btn" onclick="nextStep(3)">
+✨ Continue
+</button>
 
 </section>
 
 
-<!-- =========================
-     SCREEN 5
-========================= -->
+<!-- STEP 3 -->
 
-<section class="screen" id="screen5">
+<section id="step3" class="hidden">
 
-    <div class="content">
+<h1 class="Happy__Birthday">
+Something Special Is Coming...
+</h1>
 
-        <div class="small">And now...</div>
+<div class="typing" id="typing3"></div>
 
-        <h1>
-            🎉 HAPPY<br>
-            <span class="name">BIRTHDAY!</span>
-        </h1>
-
-        <h2 class="name">
-            Fatima Islam Riya ❤️
-        </h2>
-
-        <p>
-            May your life always be filled with<br>
-            happiness, love & beautiful moments. ✨
-        </p>
-
-        <button class="btn" onclick="nextScreen(6)">
-            🎁 One More Surprise
-        </button>
-
-    </div>
+<button class="btn" onclick="nextStep(4)">
+🎁 Reveal It
+</button>
 
 </section>
 
 
-<!-- =========================
-     SCREEN 6 - PHOTO
-========================= -->
+<!-- STEP 4 -->
 
-<section class="screen" id="screen6">
+<section id="step4" class="hidden">
 
-    <div class="content">
+<h1 class="Happy__Birthday">
+🎂 Birthday Time!
+</h1>
 
-        <div class="small">A beautiful memory ❤️</div>
+<div class="cake-area">
 
-        <div class="photo">
-            <img src="birthday-photo.jpg" alt="Fatima Islam Riya">
-        </div>
+<div class="cake">
 
-        <p>
-            কিছু মানুষ ছবির থেকেও বেশি সুন্দর...<br>
-            কারণ তাদের হাসিটা মনে থেকে যায়। 💖
-        </p>
+<div class="flame"></div>
 
-        <button class="btn" onclick="nextScreen(7)">
-            💌 Read Your Message
-        </button>
+<div class="candle"></div>
 
-    </div>
+<div class="cake-top"></div>
+
+<div class="cake-bottom"></div>
+
+</div>
+
+</div>
+
+<p style="font-size:20px;">
+Make a wish... ✨
+</p>
+
+<button class="btn" onclick="nextStep(5); createConfetti();">
+🕯️ Blow The Candle
+</button>
+
+</section>
+
+
+<!-- STEP 5 -->
+
+<section id="step5" class="hidden">
+
+<h1 class="Happy__Birthday">
+🎉 Surprise! 🎉
+</h1>
+
+<div class="typing" id="typing5"></div>
+
+<button class="btn" onclick="nextStep(6); createConfetti();">
+💖 One More Surprise
+</button>
 
 </section>
 
 
-<!-- =========================
-     SCREEN 7 - FINAL
-========================= -->
+<!-- STEP 6 -->
 
-<section class="screen" id="screen7">
+<section id="step6" class="hidden">
 
-    <div class="content">
+<div class="photo-box">
 
-        <div class="small">Just for you ❤️</div>
+<img src="birthday-photo.jpg"
+alt="Fatima Islam Riya">
 
-        <div class="final-message">
+</div>
 
-            <h2 class="name">
-                Happy Birthday Riya! 🎂
-            </h2>
+<h1 class="final-name">
+Happy Birthday<br>
+Fatima Islam Riya ❤️
+</h1>
 
-            <p>
+<p style="font-size:21px;margin-top:25px;">
+May your life always be filled with
+love, happiness, success and beautiful memories. 🌸
+</p>
 
-                তোমার জীবনের প্রতিটি সকাল<br>
-                নতুন আনন্দ নিয়ে আসুক। 🌸
-
-                <br><br>
-
-                তোমার প্রতিটি স্বপ্ন<br>
-                একদিন সত্যি হয়ে উঠুক। ✨
-
-                <br><br>
-
-                তোমার মুখের হাসি<br>
-                কখনো হারিয়ে না যাক। ❤️
-
-                <br><br>
-
-                <strong>
-                    Stay happy.<br>
-                    Stay beautiful.<br>
-                    Keep smiling. 💖
-                </strong>
-
-                <br><br>
-
-                🎂 Happy Birthday<br>
-                <strong>Fatima Islam Riya</strong> ❤️
-
-            </p>
-
-        </div>
-
-        <button class="btn" onclick="restart()">
-            🔄 Watch Again
-        </button>
-
-    </div>
+<button class="btn" onclick="nextStep(7); createConfetti();">
+💌 Read My Message
+</button>
 
 </section>
+
+
+<!-- STEP 7 -->
+
+<section id="step7" class="hidden">
+
+<div class="message-card">
+
+<h2>For Fatima Islam Riya ❤️</h2>
+
+<p>
+আজকের দিনটা তোমার জন্য একটু অন্যরকম হোক। ✨
+</p>
+
+<p>
+তোমার জীবনের প্রতিটি মুহূর্ত
+হোক আনন্দ, ভালোবাসা আর সুন্দর স্মৃতিতে ভরা।
+</p>
+
+<p>
+তোমার সব স্বপ্ন পূরণ হোক,
+সব ইচ্ছে সত্যি হোক,
+আর তোমার মুখের হাসিটা সবসময় এমনই থাকুক। 🌸
+</p>
+
+<p>
+তোমার সামনে আসুক
+অনেক সুন্দর দিন,
+অনেক সাফল্য,
+আর অনেক অনেক happiness. 💖
+</p>
+
+<h2 style="margin-top:25px;">
+Happy Birthday Riya! 🎂🎉❤️
+</h2>
+
+<button class="btn" onclick="createConfetti();">
+🎉 Celebrate Again
+</button>
+
+</div>
+
+</section>
+
+
+</div>
+
+</div>
 
 
 <script>
 
 /* =========================
-   TYPEWRITER
+   TYPING FUNCTION
 ========================= */
 
-const message =
-"আজ তোমার জন্য একটা ছোট্ট surprise আছে... 💖";
+function typeText(elementId,text,speed=55){
 
-let typeIndex = 0;
+    const element=document.getElementById(elementId);
 
-function typeText(){
+    if(!element) return;
 
-    const element =
-        document.getElementById("text1");
+    element.innerHTML="";
 
-    if(typeIndex < message.length){
+    let i=0;
 
-        element.innerHTML += message.charAt(typeIndex);
+    const cursor=document.createElement("span");
 
-        typeIndex++;
+    cursor.className="cursor";
 
-        setTimeout(typeText,55);
+    element.appendChild(cursor);
+
+    function type(){
+
+        if(i<text.length){
+
+            cursor.before(text.charAt(i));
+
+            i++;
+
+            setTimeout(type,speed);
+
+        }
 
     }
-}
 
-setTimeout(typeText,800);
-
-
-/* =========================
-   SCREEN CHANGE
-========================= */
-
-function nextScreen(number){
-
-    document
-        .querySelectorAll(".screen")
-        .forEach(screen=>{
-            screen.classList.remove("active");
-        });
-
-    const next =
-        document.getElementById("screen"+number);
-
-    next.classList.add("active");
-
-    createHearts();
-
-    if(number === 5){
-        createConfetti();
-    }
+    type();
 }
 
 
 /* =========================
-   BLOW CANDLES
+   STEP CONTROL
 ========================= */
 
-function blowCandles(){
+function nextStep(number){
 
-    document
-        .querySelectorAll(".flame")
-        .forEach(flame=>{
-            flame.style.display="none";
-        });
+    const sections=[
+        "step1",
+        "step2",
+        "step3",
+        "step4",
+        "step5",
+        "step6",
+        "step7"
+    ];
 
-    setTimeout(()=>{
-        nextScreen(5);
-    },1200);
+    sections.forEach(id=>{
 
-    createConfetti();
+        document.getElementById(id)
+        .classList.add("hidden");
+
+    });
+
+    const current=document.getElementById("step"+number);
+
+    current.classList.remove("hidden");
+
+    current.classList.add("fadeIn");
+
+
+    /* typing messages */
+
+    if(number===2){
+
+        typeText(
+            "typing2",
+            "আজকের দিনটা তোমার জন্য অনেক বেশি special... 💖"
+        );
+
+    }
+
+    if(number===3){
+
+        typeText(
+            "typing3",
+            "কারণ তোমার জন্য আমি একটা ছোট্ট surprise তৈরি করেছি... 🎁"
+        );
+
+    }
+
+    if(number===5){
+
+        typeText(
+            "typing5",
+            "আজ শুধু একটা কথাই বলতে চাই... তুমি অনেক special! ❤️"
+        );
+
+    }
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
 }
 
 
 /* =========================
-   FLOATING HEARTS
+   FIRST TYPING
 ========================= */
 
-function createHearts(){
-
-    for(let i=0;i<12;i++){
-
-        const heart =
-            document.createElement("div");
-
-        heart.className="floating";
-
-        const hearts=["❤️","💖","💕","💗","💓","✨"];
-
-        heart.innerHTML =
-            hearts[Math.floor(Math.random()*hearts.length)];
-
-        heart.style.left =
-            Math.random()*100+"%";
-
-        heart.style.fontSize =
-            (18+Math.random()*25)+"px";
-
-        heart.style.animationDuration =
-            (5+Math.random()*6)+"s";
-
-        heart.style.animationDelay =
-            Math.random()*2+"s";
-
-        document.body.appendChild(heart);
-
-        setTimeout(()=>{
-            heart.remove();
-        },12000);
-    }
-}
+typeText(
+    "typing1",
+    "Someone made something special just for you... ✨"
+);
 
 
 /* =========================
@@ -787,60 +985,68 @@ function createHearts(){
 
 function createConfetti(){
 
-    const symbols=[
-        "🎉","✨","💖","❤️","🎊","⭐","💕"
+    const colors=[
+        "#ff1744",
+        "#ffeb3b",
+        "#00e5ff",
+        "#76ff03",
+        "#ff4081",
+        "#ffffff",
+        "#7c4dff"
     ];
 
     for(let i=0;i<100;i++){
 
-        const piece =
-            document.createElement("div");
+        const piece=document.createElement("div");
 
         piece.className="confetti";
 
-        piece.innerHTML =
-            symbols[Math.floor(Math.random()*symbols.length)];
+        piece.style.left=Math.random()*100+"vw";
 
-        piece.style.left =
-            Math.random()*100+"%";
+        piece.style.background=
+        colors[Math.floor(Math.random()*colors.length)];
 
-        piece.style.fontSize =
-            (12+Math.random()*20)+"px";
+        piece.style.animationDuration=
+        (2+Math.random()*4)+"s";
 
-        piece.style.animationDuration =
-            (2+Math.random()*3)+"s";
+        piece.style.animationDelay=
+        Math.random()*1.5+"s";
 
-        piece.style.animationDelay =
-            Math.random()*1.5+"s";
+        piece.style.transform=
+        "rotate("+Math.random()*360+"deg)";
 
         document.body.appendChild(piece);
 
         setTimeout(()=>{
             piece.remove();
-        },6000);
+        },7000);
+
     }
+
 }
 
 
 /* =========================
-   RESTART
+   EXTRA RANDOM SPARKLES
 ========================= */
 
-function restart(){
+setInterval(()=>{
 
-    document
-        .querySelectorAll(".screen")
-        .forEach(screen=>{
-            screen.classList.remove("active");
-        });
+    const s=document.createElement("div");
 
-    document
-        .getElementById("screen1")
-        .classList.add("active");
+    s.className="sparkle";
 
-    window.scrollTo(0,0);
+    s.style.left=Math.random()*100+"%";
 
-}
+    s.style.top=Math.random()*100+"%";
+
+    document.body.appendChild(s);
+
+    setTimeout(()=>{
+        s.remove();
+    },2500);
+
+},500);
 
 </script>
 
