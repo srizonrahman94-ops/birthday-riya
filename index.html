@@ -1,222 +1,848 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Happy Birthday Riya ❤️</title>
+<title>Happy Birthday Fatima Islam Riya ❤️</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    overflow:hidden;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#080014;
+    color:white;
+}
+
+/* =========================
+   MAIN SCREEN
+========================= */
+
+.screen{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:25px;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 1s ease;
+    overflow:hidden;
+}
+
+.screen.active{
+    opacity:1;
+    visibility:visible;
+    z-index:10;
+}
+
+/* Background glow */
+
+.screen::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:#ff2f92;
+    filter:blur(140px);
+    opacity:.25;
+    top:-180px;
+    left:-150px;
+}
+
+.screen::after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    background:#7b2cff;
+    filter:blur(140px);
+    opacity:.25;
+    bottom:-180px;
+    right:-150px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content{
+    position:relative;
+    z-index:5;
+    width:100%;
+    max-width:700px;
+}
+
+.small{
+    font-size:15px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    opacity:.75;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:clamp(38px,10vw,82px);
+    line-height:1.05;
+    margin-bottom:20px;
+    text-shadow:
+        0 0 10px #fff,
+        0 0 25px #ff4d9d,
+        0 0 50px #ff4d9d;
+}
+
+h2{
+    font-size:clamp(30px,7vw,55px);
+    margin-bottom:20px;
+}
+
+p{
+    font-size:clamp(17px,4vw,22px);
+    line-height:1.8;
+    opacity:.9;
+}
+
+/* =========================
+   TYPEWRITER
+========================= */
+
+.typewriter{
+    min-height:80px;
+    font-size:clamp(22px,5vw,35px);
+    font-weight:bold;
+    line-height:1.5;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn{
+    position:relative;
+    margin-top:30px;
+    padding:15px 30px;
+    border:none;
+    border-radius:50px;
+    font-size:17px;
+    font-weight:bold;
+    color:white;
+    background:linear-gradient(135deg,#ff2f92,#8b35ff);
+    box-shadow:
+        0 0 15px rgba(255,47,146,.5),
+        0 10px 30px rgba(0,0,0,.35);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+}
+
+.btn:active{
+    transform:scale(.95);
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating{
+    position:absolute;
+    bottom:-60px;
+    animation:floatUp linear infinite;
+    opacity:0;
+    pointer-events:none;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) scale(.5) rotate(0deg);
+        opacity:0;
     }
 
-    body {
-      min-height: 100vh;
-      font-family: Arial, sans-serif;
-      background:
-        radial-gradient(circle at top, #ff9a9e 0%, #fad0c4 35%, #a18cd1 100%);
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 25px;
-      overflow-x: hidden;
+    15%{
+        opacity:.8;
     }
 
-    .card {
-      width: 100%;
-      max-width: 520px;
-      text-align: center;
-      padding: 28px 22px 35px;
-      border-radius: 28px;
-      background: rgba(255, 255, 255, 0.16);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255,255,255,0.35);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    100%{
+        transform:translateY(-115vh) scale(1.4) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* =========================
+   NAME
+========================= */
+
+.name{
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #ff7eb3,
+        #fff,
+        #c58aff,
+        #fff
+    );
+
+    background-size:300% auto;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    animation:nameGlow 4s linear infinite;
+}
+
+@keyframes nameGlow{
+    to{
+        background-position:300% center;
+    }
+}
+
+/* =========================
+   CAKE
+========================= */
+
+.cake-area{
+    margin:20px auto;
+    position:relative;
+    width:250px;
+    height:250px;
+}
+
+.cake{
+    position:absolute;
+    width:190px;
+    height:90px;
+    background:linear-gradient(#ff8ab5,#ff3f82);
+    border-radius:15px 15px 25px 25px;
+    bottom:35px;
+    left:30px;
+    box-shadow:0 15px 30px rgba(0,0,0,.4);
+}
+
+.cake::before{
+    content:"";
+    position:absolute;
+    width:190px;
+    height:35px;
+    background:#fff;
+    border-radius:50%;
+    top:-15px;
+    left:0;
+}
+
+.cake::after{
+    content:"";
+    position:absolute;
+    width:190px;
+    height:25px;
+    background:#ffb6d1;
+    border-radius:50%;
+    bottom:-10px;
+    left:0;
+}
+
+.candle{
+    position:absolute;
+    width:15px;
+    height:55px;
+    background:linear-gradient(#fff,#ffd1e3);
+    bottom:125px;
+    border-radius:5px;
+}
+
+.candle:nth-child(1){
+    left:65px;
+}
+
+.candle:nth-child(2){
+    left:118px;
+}
+
+.candle:nth-child(3){
+    left:170px;
+}
+
+.flame{
+    position:absolute;
+    width:20px;
+    height:30px;
+    background:#ffd43b;
+    border-radius:50% 50% 50% 50%;
+    box-shadow:
+        0 0 15px #ffd43b,
+        0 0 35px #ff7b00;
+    animation:flicker .6s infinite alternate;
+    bottom:172px;
+}
+
+.flame:nth-of-type(1){
+    left:62px;
+}
+
+.flame:nth-of-type(2){
+    left:115px;
+}
+
+.flame:nth-of-type(3){
+    left:167px;
+}
+
+@keyframes flicker{
+    from{
+        transform:scale(.85) rotate(-4deg);
     }
 
-    .heart {
-      font-size: 55px;
-      animation: beat 1.2s infinite;
-      margin-bottom: 8px;
+    to{
+        transform:scale(1.15) rotate(5deg);
+    }
+}
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo{
+    width:min(85vw,380px);
+    margin:20px auto;
+    padding:8px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#ff4f9a,#8d43ff,#ffd1e8);
+    box-shadow:0 0 40px rgba(255,72,155,.4);
+    animation:photoIn 1.5s ease;
+}
+
+.photo img{
+    width:100%;
+    display:block;
+    border-radius:18px;
+}
+
+@keyframes photoIn{
+    from{
+        opacity:0;
+        transform:scale(.7) rotate(-5deg);
     }
 
-    @keyframes beat {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.18);
-      }
+    to{
+        opacity:1;
+        transform:scale(1) rotate(0);
+    }
+}
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-message{
+    padding:25px;
+    border-radius:25px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(12px);
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+}
+
+.final-message strong{
+    color:#ff9bc4;
+}
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti{
+    position:fixed;
+    width:10px;
+    height:16px;
+    top:-30px;
+    z-index:100;
+    animation:confettiFall 3.5s linear forwards;
+}
+
+@keyframes confettiFall{
+    to{
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+}
+
+/* =========================
+   PULSE
+========================= */
+
+.pulse{
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
     }
 
-    h1 {
-      font-size: clamp(34px, 9vw, 58px);
-      margin-bottom: 8px;
-      text-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    50%{
+        transform:scale(1.04);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:500px){
+
+    .content{
+        max-width:100%;
     }
 
-    .subtitle {
-      font-size: 19px;
-      margin-bottom: 22px;
-      opacity: 0.95;
+    .cake-area{
+        transform:scale(.85);
+        margin-top:0;
+        margin-bottom:0;
     }
 
-    .photo {
-      width: 100%;
-      max-width: 390px;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 22px;
-      border: 5px solid rgba(255,255,255,0.8);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-      margin-bottom: 22px;
+    .btn{
+        font-size:16px;
+        padding:14px 25px;
     }
 
-    .message {
-      font-size: 18px;
-      line-height: 1.7;
-      margin: 5px auto 25px;
-      max-width: 430px;
+    p{
+        font-size:17px;
     }
-
-    .btn {
-      border: none;
-      padding: 14px 27px;
-      border-radius: 50px;
-      font-size: 17px;
-      font-weight: bold;
-      color: #fff;
-      background: linear-gradient(135deg, #ff416c, #ff4b2b);
-      box-shadow: 0 8px 22px rgba(0,0,0,0.25);
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    .btn:active {
-      transform: scale(0.94);
-    }
-
-    #surprise {
-      display: none;
-      margin-top: 22px;
-      font-size: 20px;
-      line-height: 1.6;
-      animation: fadeIn 0.8s ease;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .footer {
-      margin-top: 25px;
-      font-size: 14px;
-      opacity: 0.8;
-    }
-
-    .confetti {
-      position: fixed;
-      top: -20px;
-      font-size: 22px;
-      animation: fall linear forwards;
-      pointer-events: none;
-    }
-
-    @keyframes fall {
-      to {
-        transform: translateY(110vh) rotate(720deg);
-      }
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <div class="card">
+<!-- =========================
+     SCREEN 1
+========================= -->
 
-    <div class="heart">❤️</div>
+<section class="screen active" id="screen1">
 
-    <h1>Happy Birthday Riya!</h1>
+    <div class="content">
 
-    <p class="subtitle">
-      🎂 Wishing you a beautiful and wonderful birthday 🎉
-    </p>
+        <div class="small">A little surprise for you ✨</div>
 
-    <img
-      src="birthday-photo.jpg"
-      alt="Birthday Photo"
-      class="photo"
-    >
+        <h1>Hey Riya... ❤️</h1>
 
-    <p class="message">
-      May your special day be filled with happiness, beautiful memories,
-      endless smiles and lots of love. ❤️
-      <br><br>
-      May every dream of yours come true.
-      Keep smiling and stay happy always! ✨
-    </p>
+        <div class="typewriter" id="text1"></div>
 
-    <button class="btn" onclick="showSurprise()">
-      💝 Open Your Surprise
-    </button>
+        <button class="btn" onclick="nextScreen(2)">
+            ✨ Open Surprise
+        </button>
 
-    <div id="surprise">
-      🎉 Surprise! 🎉
-      <br>
-      You deserve all the happiness in the world! ❤️
-      <br>
-      Happy Birthday once again, Riya! 🥳🎂
     </div>
 
-    <div class="footer">
-      Made with ❤️ specially for you
+</section>
+
+
+<!-- =========================
+     SCREEN 2
+========================= -->
+
+<section class="screen" id="screen2">
+
+    <div class="content">
+
+        <div class="small">Before we begin...</div>
+
+        <h2>Are you ready? 👀</h2>
+
+        <p>
+            Because something special<br>
+            has been waiting for you... 💖
+        </p>
+
+        <button class="btn pulse" onclick="nextScreen(3)">
+            💝 I'm Ready
+        </button>
+
     </div>
 
-  </div>
+</section>
 
-  <script>
-    function showSurprise() {
-      document.getElementById("surprise").style.display = "block";
-      createConfetti();
+
+<!-- =========================
+     SCREEN 3
+========================= -->
+
+<section class="screen" id="screen3">
+
+    <div class="content">
+
+        <div class="small">A very special name...</div>
+
+        <h1 class="name">
+            Fatima Islam Riya
+        </h1>
+
+        <p>
+            আজকের দিনটা অন্য সব দিনের থেকে একটু বেশি সুন্দর। 🌸
+        </p>
+
+        <button class="btn" onclick="nextScreen(4)">
+            ❤️ Continue
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 4 - CAKE
+========================= -->
+
+<section class="screen" id="screen4">
+
+    <div class="content">
+
+        <div class="small">Something sweet is waiting 🎂</div>
+
+        <h2>Make a Wish ✨</h2>
+
+        <div class="cake-area">
+
+            <div class="candle"></div>
+            <div class="candle"></div>
+            <div class="candle"></div>
+
+            <div class="flame"></div>
+            <div class="flame"></div>
+            <div class="flame"></div>
+
+            <div class="cake"></div>
+
+        </div>
+
+        <p>
+            চোখ বন্ধ করো...<br>
+            একটা Wish করো... ❤️
+        </p>
+
+        <button class="btn" onclick="blowCandles()">
+            🕯️ Blow the Candles
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 5
+========================= -->
+
+<section class="screen" id="screen5">
+
+    <div class="content">
+
+        <div class="small">And now...</div>
+
+        <h1>
+            🎉 HAPPY<br>
+            <span class="name">BIRTHDAY!</span>
+        </h1>
+
+        <h2 class="name">
+            Fatima Islam Riya ❤️
+        </h2>
+
+        <p>
+            May your life always be filled with<br>
+            happiness, love & beautiful moments. ✨
+        </p>
+
+        <button class="btn" onclick="nextScreen(6)">
+            🎁 One More Surprise
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 6 - PHOTO
+========================= -->
+
+<section class="screen" id="screen6">
+
+    <div class="content">
+
+        <div class="small">A beautiful memory ❤️</div>
+
+        <div class="photo">
+            <img src="birthday-photo.jpg" alt="Fatima Islam Riya">
+        </div>
+
+        <p>
+            কিছু মানুষ ছবির থেকেও বেশি সুন্দর...<br>
+            কারণ তাদের হাসিটা মনে থেকে যায়। 💖
+        </p>
+
+        <button class="btn" onclick="nextScreen(7)">
+            💌 Read Your Message
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SCREEN 7 - FINAL
+========================= -->
+
+<section class="screen" id="screen7">
+
+    <div class="content">
+
+        <div class="small">Just for you ❤️</div>
+
+        <div class="final-message">
+
+            <h2 class="name">
+                Happy Birthday Riya! 🎂
+            </h2>
+
+            <p>
+
+                তোমার জীবনের প্রতিটি সকাল<br>
+                নতুন আনন্দ নিয়ে আসুক। 🌸
+
+                <br><br>
+
+                তোমার প্রতিটি স্বপ্ন<br>
+                একদিন সত্যি হয়ে উঠুক। ✨
+
+                <br><br>
+
+                তোমার মুখের হাসি<br>
+                কখনো হারিয়ে না যাক। ❤️
+
+                <br><br>
+
+                <strong>
+                    Stay happy.<br>
+                    Stay beautiful.<br>
+                    Keep smiling. 💖
+                </strong>
+
+                <br><br>
+
+                🎂 Happy Birthday<br>
+                <strong>Fatima Islam Riya</strong> ❤️
+
+            </p>
+
+        </div>
+
+        <button class="btn" onclick="restart()">
+            🔄 Watch Again
+        </button>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =========================
+   TYPEWRITER
+========================= */
+
+const message =
+"আজ তোমার জন্য একটা ছোট্ট surprise আছে... 💖";
+
+let typeIndex = 0;
+
+function typeText(){
+
+    const element =
+        document.getElementById("text1");
+
+    if(typeIndex < message.length){
+
+        element.innerHTML += message.charAt(typeIndex);
+
+        typeIndex++;
+
+        setTimeout(typeText,55);
+
     }
+}
 
-    function createConfetti() {
-      const emojis = ["🎉", "🎊", "❤️", "💖", "✨", "🎂", "🥳"];
+setTimeout(typeText,800);
 
-      for (let i = 0; i < 35; i++) {
-        const item = document.createElement("div");
 
-        item.className = "confetti";
-        item.textContent =
-          emojis[Math.floor(Math.random() * emojis.length)];
+/* =========================
+   SCREEN CHANGE
+========================= */
 
-        item.style.left = Math.random() * 100 + "vw";
-        item.style.animationDuration =
-          (3 + Math.random() * 4) + "s";
+function nextScreen(number){
 
-        item.style.fontSize =
-          (18 + Math.random() * 18) + "px";
+    document
+        .querySelectorAll(".screen")
+        .forEach(screen=>{
+            screen.classList.remove("active");
+        });
 
-        document.body.appendChild(item);
+    const next =
+        document.getElementById("screen"+number);
 
-        setTimeout(() => {
-          item.remove();
-        }, 7500);
-      }
+    next.classList.add("active");
+
+    createHearts();
+
+    if(number === 5){
+        createConfetti();
     }
-  </script>
+}
+
+
+/* =========================
+   BLOW CANDLES
+========================= */
+
+function blowCandles(){
+
+    document
+        .querySelectorAll(".flame")
+        .forEach(flame=>{
+            flame.style.display="none";
+        });
+
+    setTimeout(()=>{
+        nextScreen(5);
+    },1200);
+
+    createConfetti();
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+function createHearts(){
+
+    for(let i=0;i<12;i++){
+
+        const heart =
+            document.createElement("div");
+
+        heart.className="floating";
+
+        const hearts=["❤️","💖","💕","💗","💓","✨"];
+
+        heart.innerHTML =
+            hearts[Math.floor(Math.random()*hearts.length)];
+
+        heart.style.left =
+            Math.random()*100+"%";
+
+        heart.style.fontSize =
+            (18+Math.random()*25)+"px";
+
+        heart.style.animationDuration =
+            (5+Math.random()*6)+"s";
+
+        heart.style.animationDelay =
+            Math.random()*2+"s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },12000);
+    }
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+function createConfetti(){
+
+    const symbols=[
+        "🎉","✨","💖","❤️","🎊","⭐","💕"
+    ];
+
+    for(let i=0;i<100;i++){
+
+        const piece =
+            document.createElement("div");
+
+        piece.className="confetti";
+
+        piece.innerHTML =
+            symbols[Math.floor(Math.random()*symbols.length)];
+
+        piece.style.left =
+            Math.random()*100+"%";
+
+        piece.style.fontSize =
+            (12+Math.random()*20)+"px";
+
+        piece.style.animationDuration =
+            (2+Math.random()*3)+"s";
+
+        piece.style.animationDelay =
+            Math.random()*1.5+"s";
+
+        document.body.appendChild(piece);
+
+        setTimeout(()=>{
+            piece.remove();
+        },6000);
+    }
+}
+
+
+/* =========================
+   RESTART
+========================= */
+
+function restart(){
+
+    document
+        .querySelectorAll(".screen")
+        .forEach(screen=>{
+            screen.classList.remove("active");
+        });
+
+    document
+        .getElementById("screen1")
+        .classList.add("active");
+
+    window.scrollTo(0,0);
+
+}
+
+</script>
 
 </body>
 </html>
