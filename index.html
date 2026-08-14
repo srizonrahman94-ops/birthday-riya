@@ -68,9 +68,68 @@ input{width:min(330px,88vw);padding:15px 20px;border-radius:99px;border:1px soli
 .langbox p{padding:8px 4px;border-bottom:1px solid #ffffff12;font-family:"Cormorant Garamond",serif;font-size:19px}
 .final-line{font-family:"Great Vibes",cursive;font-size:clamp(45px,10vw,90px);color:#ffafd2}
 @media(max-width:600px){.btn{width:min(90%,320px)}.card{padding:23px 16px}.pop-balloon{width:58px;height:74px}}
+
+/* ===== CUTE CAT CARTOON SCENE ===== */
+.cat-scene{
+  width:min(680px,94vw); min-height:330px; margin:0 auto 18px;
+  position:relative; overflow:hidden; border-radius:32px;
+  background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,92,160,.08));
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 25px 80px rgba(0,0,0,.3);
+}
+.cat{
+  position:absolute; bottom:45px; width:125px; height:115px;
+  transition:transform .7s cubic-bezier(.2,.8,.2,1);
+}
+.cat .body{position:absolute; left:18px; bottom:0; width:88px; height:70px; border-radius:48% 48% 42% 42%; background:#fff2f7; box-shadow:inset -8px -8px 0 rgba(255,105,170,.12);}
+.cat .head{position:absolute; left:25px; top:0; width:78px; height:72px; border-radius:50%; background:#fff2f7; z-index:2;}
+.cat .ear{position:absolute; top:-12px; width:27px; height:30px; background:#fff2f7; transform:rotate(35deg); clip-path:polygon(50% 0,100% 100%,0 100%);}
+.cat .ear.r{right:3px; transform:rotate(-35deg);}
+.cat .eye{position:absolute; top:28px; width:8px; height:10px; border-radius:50%; background:#35152b;}
+.cat .eye.l{left:22px}.cat .eye.r{right:22px}
+.cat .nose{position:absolute; top:43px; left:35px; color:#ff5797; font-size:13px}
+.cat .mouth{position:absolute; top:48px; left:31px; font-size:14px}
+.cat .tail{position:absolute; right:-8px; bottom:25px; width:55px; height:45px; border:9px solid #fff2f7; border-left:0; border-bottom:0; border-radius:0 45px 0 0; transform:rotate(15deg);}
+.cat.one{left:12%;}.cat.two{right:12%; transform:scaleX(-1);}
+.cat.two .head,.cat.two .body,.cat.two .ear,.cat.two .tail{filter:hue-rotate(35deg);}
+.cat-face{font-size:22px}
+.cat-action-hug .one{transform:translateX(170px) rotate(-5deg);}
+.cat-action-hug .two{transform:translateX(-170px) scaleX(-1) rotate(5deg);}
+.cat-action-kiss .one{transform:translateX(135px) rotate(-4deg);}
+.cat-action-kiss .two{transform:translateX(-135px) scaleX(-1) rotate(4deg);}
+.cat-action-kiss .one:after{content:"💋";position:absolute;right:-10px;top:8px;font-size:30px;animation:kissPop 1s ease infinite;}
+.cat-action-fight .one{animation:catShake .22s infinite alternate;}
+.cat-action-fight .two{animation:catShake .22s infinite alternate-reverse;}
+.cat-action-fight:after{content:"💢  😾  💢";position:absolute;left:50%;top:80px;transform:translateX(-50%);font-size:30px;white-space:nowrap;animation:argue 1s infinite;}
+.cat-action-carry .one{transform:translateX(130px) translateY(-12px) rotate(-3deg);}
+.cat-action-carry .two{transform:translateX(-130px) scaleX(-1) rotate(3deg);}
+.cat-action-carry .one:after{content:"🫶";position:absolute;right:-15px;top:45px;font-size:30px;animation:floatSoft 1.2s ease-in-out infinite;}
+@keyframes catShake{from{transform:translateX(-4px) rotate(-4deg)}to{transform:translateX(4px) rotate(4deg)}}
+@keyframes argue{50%{transform:translateX(-50%) scale(1.15) rotate(-3deg)}}
+@keyframes kissPop{50%{transform:scale(1.3) translateY(-8px)}}
+@keyframes floatSoft{50%{transform:translateY(-8px) scale(1.08)}}
+.cat-caption{font-family:'Cormorant Garamond',serif;font-size:24px;min-height:45px;margin:8px 15px;color:#ffeaf4}
+
+
+/* ===== BACKGROUND YOUTUBE MUSIC ===== */
+#ytPlayer{
+  position:fixed;
+  width:1px;
+  height:1px;
+  left:-10px;
+  bottom:-10px;
+  opacity:0;
+  pointer-events:none;
+  z-index:-1;
+}
+
 </style>
 </head>
 <body>
+
+<!-- BACKGROUND MUSIC — YouTube video -->
+<div id="ytPlayer" aria-hidden="true"></div>
+
 
 <canvas id="stars"></canvas>
 
