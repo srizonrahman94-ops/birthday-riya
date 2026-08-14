@@ -3,88 +3,852 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08020f">
+
 <title>A Little Birthday Surprise — Fatima Islam Riya</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{width:100%;height:100%;overflow:hidden}
-body{background:#08020f;color:#fff;font-family:Arial,sans-serif;
-background:radial-gradient(circle at 20% 20%,#40132f,transparent 35%),
-radial-gradient(circle at 80% 70%,#241044,transparent 35%),#07020d}
-.bg{position:fixed;inset:-30%;z-index:0;background:radial-gradient(circle,#ff4f9a22,transparent 25%),radial-gradient(circle at 80% 30%,#a35cff22,transparent 25%);animation:bg 15s infinite alternate}
-@keyframes bg{to{transform:translate(5%,4%) scale(1.12)}}
-#stars{position:fixed;inset:0;z-index:1;pointer-events:none}
-.wrap{position:relative;z-index:5;width:100%;height:100vh;display:flex;align-items:center;justify-content:center;padding:16px}
-.screen{position:absolute;width:min(920px,95vw);max-height:94vh;overflow:auto;text-align:center;opacity:0;visibility:hidden;transform:translateY(35px) scale(.94);filter:blur(7px);transition:1s cubic-bezier(.2,.8,.2,1);pointer-events:none}
-.screen.active{opacity:1;visibility:visible;transform:none;filter:none;pointer-events:auto}
-.screen::-webkit-scrollbar{display:none}
-.card{width:min(800px,95vw);margin:auto;padding:32px 22px;border-radius:30px;background:#ffffff0b;border:1px solid #ffffff20;backdrop-filter:blur(18px);box-shadow:0 30px 90px #0008}
-.eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#ffffffa8;margin-bottom:18px}
-.title{font-family:Georgia,serif;font-size:clamp(38px,8vw,76px);line-height:1.05;margin-bottom:20px;text-shadow:0 0 30px #ff75b533}
-.script{font-family:cursive}
-.type,.message{font-family:Georgia,serif;font-size:clamp(19px,4vw,27px);line-height:1.65;color:#ffffffdf}
-.password-card{width:min(520px,95vw);padding:38px 22px}
-.lock{font-size:60px;margin-bottom:15px}
-.password-title{font-family:Georgia,serif;font-size:clamp(30px,7vw,52px);margin-bottom:12px}
-.password-sub{color:#ffffffaa;line-height:1.7}
-input,textarea{width:100%;padding:15px 18px;border-radius:100px;border:1px solid #ffffff35;outline:0;background:#0006;color:#fff;text-align:center;font-size:17px}
-textarea{border-radius:20px;text-align:left;min-height:140px}
-.btn{margin-top:24px;padding:15px 28px;border:1px solid #ffffff35;border-radius:100px;color:#fff;background:linear-gradient(135deg,#ff4f9a,#7d4dff);font-weight:bold;cursor:pointer;box-shadow:0 15px 40px #0006;transition:.3s}
-.btn:hover{transform:translateY(-3px) scale(1.03)}
-.btn:disabled{opacity:.55;cursor:not-allowed}
-.heart{font-size:70px;animation:heart 1.3s infinite}
-@keyframes heart{15%{transform:scale(1.2)}30%,100%{transform:scale(1)}45%{transform:scale(1.1)}}
-.cake{font-size:150px;margin:20px;animation:float 3s ease-in-out infinite}
-@keyframes float{50%{transform:translateY(-10px)}}
-.big{font-family:Georgia,serif;font-weight:bold;font-size:clamp(38px,8vw,80px);line-height:1.05}
-.big span,.name{display:block;font-family:cursive;font-size:clamp(55px,12vw,115px);background:linear-gradient(90deg,#fff,#ff9fca,#fff,#d6a1ff,#fff);background-size:300%;-webkit-background-clip:text;color:transparent;animation:shine 3s linear infinite}
-@keyframes shine{to{background-position:300%}}
-.love{position:relative;height:280px}
-.love span{position:absolute;font-size:120px;bottom:10px;animation:love 3s ease-in-out infinite alternate}
-.love .a{left:18%}.love .b{right:18%}
-@keyframes love{to{transform:translateX(35px) rotate(5deg)}}
-.lang{text-align:left;max-height:45vh;overflow:auto;padding:15px;border-radius:20px;background:#0003;line-height:1.8;font-family:Georgia,serif}
-.options{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:25px}
-.option{padding:23px 15px;border-radius:22px;border:1px solid #ffffff18;background:#ffffff08;cursor:pointer;transition:.3s}
-.option:hover{transform:translateY(-6px)}
-.num{margin:auto auto 10px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#ff4f9a,#7d4dff);font-weight:bold}
-.modal{position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:20px;background:#000c;backdrop-filter:blur(15px)}
-.modal.show{display:grid}
-.modalbox{width:min(520px,95vw);padding:28px;border-radius:28px;background:#201027;border:1px solid #ffffff20}
-.error,.status{min-height:24px;color:#ff9fc5;margin-top:10px;font-size:14px}
-#catCanvas{width:min(760px,95vw);height:min(62vh,720px);display:block;margin:auto;border-radius:30px;border:1px solid #ffffff20;background:#06040b;box-shadow:0 30px 90px #0009}
-.cat-stage{position:relative}
-.cat-caption{position:absolute;left:10px;right:10px;bottom:10px;padding:15px;border-radius:18px;background:#0008;font-family:Georgia,serif}
-@media(max-width:650px){.options{grid-template-columns:1fr}.love span{font-size:90px}.love .a{left:5%}.love .b{right:5%}}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    background:#07020d;
+    color:#fff;
+    font-family:Arial,sans-serif;
+}
+
+/* ================= BACKGROUND ================= */
+
+.bg{
+    position:fixed;
+    inset:-30%;
+    z-index:0;
+    background:
+        radial-gradient(circle at 20% 20%,#ff3f8f38,transparent 25%),
+        radial-gradient(circle at 80% 70%,#7d4dff35,transparent 28%),
+        radial-gradient(circle at 50% 50%,#30113d22,transparent 45%);
+    animation:bgMove 18s ease-in-out infinite alternate;
+}
+
+@keyframes bgMove{
+    to{
+        transform:translate(5%,4%) scale(1.12);
+    }
+}
+
+#stars{
+    position:fixed;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+}
+
+/* ================= MAIN ================= */
+
+.wrap{
+    position:relative;
+    z-index:5;
+    width:100%;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:16px;
+}
+
+.screen{
+    position:absolute;
+    width:min(920px,96vw);
+    max-height:94vh;
+    overflow:auto;
+    text-align:center;
+
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+
+    transform:translateY(35px) scale(.94);
+    filter:blur(7px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.2,.8,.2,1),
+        filter .8s ease,
+        visibility .8s;
+}
+
+.screen.active{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:none;
+    filter:none;
+}
+
+.screen::-webkit-scrollbar{
+    display:none;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    width:min(800px,96vw);
+    margin:auto;
+    padding:34px 24px;
+    border-radius:30px;
+
+    background:#ffffff0b;
+    border:1px solid #ffffff1e;
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 30px 100px #0009,
+        inset 0 1px #ffffff10;
+}
+
+.password-card{
+    width:min(530px,96vw);
+    padding:40px 25px;
+}
+
+.eyebrow{
+    font-size:11px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:#ffffffa8;
+    margin-bottom:18px;
+}
+
+.title{
+    font-family:Georgia,serif;
+    font-size:clamp(36px,7vw,72px);
+    line-height:1.08;
+    margin-bottom:20px;
+    text-shadow:0 0 35px #ff75b533;
+}
+
+.script{
+    font-family:cursive;
+}
+
+.type,
+.message{
+    font-family:Georgia,serif;
+    font-size:clamp(18px,4vw,26px);
+    line-height:1.7;
+    color:#ffffffdf;
+}
+
+.lock{
+    font-size:64px;
+    margin-bottom:15px;
+    animation:lockFloat 3s ease-in-out infinite;
+}
+
+@keyframes lockFloat{
+    50%{
+        transform:translateY(-8px) rotate(2deg);
+    }
+}
+
+.password-title{
+    font-family:Georgia,serif;
+    font-size:clamp(30px,7vw,52px);
+    margin-bottom:12px;
+}
+
+.password-sub{
+    color:#ffffffaa;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* ================= INPUT ================= */
+
+input,
+textarea{
+    width:100%;
+    padding:15px 18px;
+
+    border-radius:100px;
+    border:1px solid #ffffff35;
+
+    outline:none;
+
+    background:#0006;
+    color:#fff;
+
+    text-align:center;
+    font-size:17px;
+
+    transition:.3s;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#ff75b3;
+    box-shadow:0 0 0 4px #ff4f9a12;
+}
+
+textarea{
+    min-height:140px;
+    border-radius:20px;
+    text-align:left;
+    resize:vertical;
+}
+
+/* ================= BUTTON ================= */
+
+.btn{
+    margin-top:24px;
+
+    padding:15px 28px;
+
+    border:1px solid #ffffff35;
+    border-radius:100px;
+
+    color:#fff;
+    background:
+        linear-gradient(135deg,#ff4f9a,#7d4dff);
+
+    font-weight:bold;
+    font-size:15px;
+
+    cursor:pointer;
+
+    box-shadow:0 15px 40px #0006;
+
+    transition:
+        transform .3s,
+        box-shadow .3s,
+        opacity .3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px) scale(1.03);
+    box-shadow:0 20px 50px #0008;
+}
+
+.btn:active{
+    transform:scale(.97);
+}
+
+.btn:disabled{
+    opacity:.5;
+    cursor:not-allowed;
+}
+
+/* ================= HEART ================= */
+
+.heart{
+    font-size:70px;
+    animation:heartBeat 1.3s infinite;
+}
+
+@keyframes heartBeat{
+    15%{transform:scale(1.2)}
+    30%{transform:scale(1)}
+    45%{transform:scale(1.1)}
+    100%{transform:scale(1)}
+}
+
+/* ================= CAKE ================= */
+
+.cake{
+    font-size:150px;
+    margin:20px;
+    animation:cakeFloat 3s ease-in-out infinite;
+}
+
+@keyframes cakeFloat{
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+/* ================= BIRTHDAY ================= */
+
+.big{
+    font-family:Georgia,serif;
+    font-weight:bold;
+    font-size:clamp(36px,8vw,80px);
+    line-height:1.05;
+}
+
+.big span,
+.name{
+    display:block;
+
+    font-family:cursive;
+    font-size:clamp(48px,11vw,110px);
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ff9fca,
+            #fff,
+            #d6a1ff,
+            #fff
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    animation:shine 3s linear infinite;
+}
+
+@keyframes shine{
+    to{
+        background-position:300%;
+    }
+}
+
+/* ================= LOVE ================= */
+
+.love{
+    position:relative;
+    height:280px;
+}
+
+.love span{
+    position:absolute;
+    bottom:10px;
+    font-size:120px;
+
+    animation:
+        lovers 3s ease-in-out infinite alternate;
+}
+
+.love .a{left:18%}
+.love .b{right:18%;animation-delay:.4s}
+
+@keyframes lovers{
+    to{
+        transform:translateX(35px) rotate(5deg);
+    }
+}
+
+/* ================= LANGUAGE ================= */
+
+.lang{
+    text-align:left;
+    max-height:45vh;
+    overflow:auto;
+
+    padding:18px;
+
+    border-radius:20px;
+    background:#0003;
+
+    line-height:1.9;
+    font-family:Georgia,serif;
+}
+
+.lang::-webkit-scrollbar{
+    width:4px;
+}
+
+.lang::-webkit-scrollbar-thumb{
+    background:#ff75b355;
+    border-radius:10px;
+}
+
+/* ================= OPTIONS ================= */
+
+.options{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+    margin-top:25px;
+}
+
+.option{
+    padding:23px 15px;
+
+    border-radius:22px;
+    border:1px solid #ffffff18;
+
+    background:#ffffff08;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.option:hover{
+    transform:translateY(-6px);
+    background:#ffffff12;
+}
+
+.num{
+    margin:0 auto 10px;
+
+    width:44px;
+    height:44px;
+
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    background:
+        linear-gradient(135deg,#ff4f9a,#7d4dff);
+
+    font-weight:bold;
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:100;
+
+    display:none;
+    place-items:center;
+
+    padding:20px;
+
+    background:#000c;
+    backdrop-filter:blur(15px);
+}
+
+.modal.show{
+    display:grid;
+}
+
+.modalbox{
+    width:min(520px,95vw);
+
+    padding:28px;
+
+    border-radius:28px;
+
+    background:#201027;
+    border:1px solid #ffffff20;
+
+    box-shadow:0 30px 100px #000;
+}
+
+.modalbox h2{
+    font-family:Georgia,serif;
+}
+
+.status,
+.error{
+    min-height:24px;
+    margin-top:10px;
+    color:#ff9fc5;
+    font-size:14px;
+}
+
+/* =========================================================
+   3D CAT STAGE
+   ========================================================= */
+
+.cat-3d-stage{
+    position:relative;
+
+    width:min(800px,96vw);
+    height:min(600px,64vh);
+
+    margin:0 auto 12px;
+
+    border-radius:32px;
+    overflow:hidden;
+
+    border:1px solid #ffffff20;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #40152f,
+            #08040d 70%
+        );
+
+    box-shadow:
+        0 30px 90px #0009,
+        inset 0 0 80px #ff4f9a12;
+}
+
+#cat3DCanvas{
+    display:block;
+
+    width:100%;
+    height:100%;
+}
+
+.cat-3d-overlay{
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:0;
+
+    padding:22px;
+
+    background:
+        linear-gradient(
+            transparent,
+            #000d
+        );
+
+    font-family:Georgia,serif;
+    font-size:19px;
+
+    pointer-events:none;
+}
+
+.cat-status{
+    min-height:26px;
+
+    color:#ffafd2;
+    margin-top:10px;
+
+    font-size:13px;
+}
+
+/* ================= BALLOON ================= */
+
+#balloon{
+    font-size:110px;
+    margin:25px;
+    cursor:pointer;
+
+    display:inline-block;
+
+    animation:balloonFloat 2s ease-in-out infinite;
+}
+
+@keyframes balloonFloat{
+    50%{
+        transform:translateY(-14px);
+    }
+}
+
+/* ================= CONFETTI ================= */
+
+.confetti{
+    position:fixed;
+    z-index:200;
+
+    pointer-events:none;
+
+    top:-40px;
+
+    animation:
+        confettiFall linear forwards;
+}
+
+@keyframes confettiFall{
+    to{
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity:0;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:650px){
+
+    .card{
+        padding:28px 18px;
+    }
+
+    .options{
+        grid-template-columns:1fr;
+    }
+
+    .love span{
+        font-size:88px;
+    }
+
+    .love .a{
+        left:3%;
+    }
+
+    .love .b{
+        right:3%;
+    }
+
+    .cat-3d-stage{
+        height:52vh;
+        min-height:360px;
+    }
+
+    .cat-3d-overlay{
+        font-size:16px;
+        padding:15px;
+    }
+
+    .cake{
+        font-size:110px;
+    }
+}
 </style>
 </head>
+
 <body>
-<div class="bg"></div><canvas id="stars"></canvas>
+
+<div class="bg"></div>
+<canvas id="stars"></canvas>
+
 <div class="wrap">
 
-<section class="screen active" id="s1"><div class="card password-card">
-<div class="lock">🔐</div><div class="eyebrow">A private little surprise</div>
-<h1 class="password-title">ভেবে দেখো...</h1>
-<p class="password-sub">এই দরজা টি খোলার চাবি কিন্তু তোমার কাছেই আছে। ❤️<br><br><b>তোমার জন্মদিনই এই জায়গায় প্রবেশের পাসওয়ার্ড।</b></p>
-<input id="pw" type="password" placeholder="জন্মদিন লিখো" autocomplete="off">
-<div class="error" id="err"></div><button class="btn" onclick="check()">✨ দরজাটি খুলে দেখো</button>
-</div></section>
+<!-- ======================================================
+     SCREEN 1
+====================================================== -->
 
-<section class="screen" id="s2"><div class="heart">♡</div><div class="eyebrow">Password accepted</div><h1 class="title">তাহলে তুমি সঠিকভাবে দরজাটি খুলে এসে গেছো...</h1><div class="type" id="t2"></div><button class="btn" onclick="go(3)">🌙 একটু এগিয়ে যাই</button></section>
+<section class="screen active" id="screen1">
 
-<section class="screen" id="s3"><div class="eyebrow">But wait...</div><h1 class="title">আজকের দিনটা<br>কেন যেন একটু বেশি special...</h1><div class="type" id="t3"></div><button class="btn" onclick="go(4)">🎁 কারণটা জানতে চাই</button></section>
+<div class="card password-card">
 
-<section class="screen" id="s4"><div class="eyebrow">Something is about to happen</div><div class="heart">💗</div><h1 class="title">Ready?</h1><div class="type">এবার একটু মন দিয়ে দেখো...<br>সামনে যা আসছে, সেটা শুধু তোমার জন্য। ✨</div><button class="btn" onclick="go(5)">✨ Surprise শুরু হোক</button></section>
+<div class="lock">🔐</div>
 
-<section class="screen" id="s5"><div class="eyebrow">One little game</div><h1 class="title">🎈 Balloon Pop!</h1><div class="type">নিচের balloon-টা click করো...<br>এরপর দেখো কি হয় । 👀</div><div id="balloon" style="font-size:110px;margin:25px;cursor:pointer" onclick="pop()">🎈</div></section>
+<div class="eyebrow">
+A Private Little Surprise
+</div>
 
-<section class="screen" id="s6"><div class="eyebrow">Make a wish</div><h1 class="title">তোমার জন্য একটা Cake 🎂</h1><div class="cake">🎂</div><div class="type">নিজেকে নিয়ে সুন্দর একটা wish করো...<br>তারপর candle-টা নিভিয়ে দাও। ✨</div><button class="btn" onclick="go(7)">🕯️ Candle নিভাও</button></section>
-<!-- =========================================================
-     SCREEN 7 — REAL-TIME 3D TWO CAT ANIMATION
-     No MP4 / No external Blender render required
-     ========================================================= -->
+<h1 class="password-title">
+ভেবে দেখো...
+</h1>
+
+<p class="password-sub">
+
+এই দরজাটি খোলার চাবি কিন্তু তোমার কাছেই আছে। ❤️
+
+<br><br>
+
+<b>
+তোমার জন্মদিনই এই জায়গায় প্রবেশের পাসওয়ার্ড।
+</b>
+
+</p>
+
+<input
+id="password"
+type="password"
+placeholder="জন্মদিন লিখো"
+autocomplete="off"
+>
+
+<div
+class="error"
+id="passwordError">
+</div>
+
+<button
+class="btn"
+onclick="checkPassword()">
+
+✨ দরজাটি খুলে দেখো
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     SCREEN 2
+====================================================== -->
+
+<section class="screen" id="screen2">
+
+<div class="heart">♡</div>
+
+<div class="eyebrow">
+Password Accepted
+</div>
+
+<h1 class="title">
+তাহলে তুমি সঠিকভাবে<br>
+দরজাটি খুলে এসে গেছো...
+</h1>
+
+<div
+class="type"
+id="text2">
+</div>
+
+<button
+class="btn"
+onclick="go(3)">
+
+🌙 একটু এগিয়ে যাই
+
+</button>
+
+</section>
+
+
+<!-- ======================================================
+     SCREEN 3
+====================================================== -->
+
+<section class="screen" id="screen3">
+
+<div class="eyebrow">
+But Wait...
+</div>
+
+<h1 class="title">
+
+আজকের দিনটা<br>
+কেন যেন একটু বেশি special...
+
+</h1>
+
+<div
+class="type"
+id="text3">
+</div>
+
+<button
+class="btn"
+onclick="go(4)">
+
+🎁 কারণটা জানতে চাই
+
+</button>
+
+</section>
+
+
+<!-- ======================================================
+     SCREEN 4
+====================================================== -->
+
+<section class="screen" id="screen4">
+
+<div class="eyebrow">
+Something Is About To Happen
+</div>
+
+<div class="heart">
+💗
+</div>
+
+<h1 class="title">
+Ready?
+</h1>
+
+<div class="type">
+
+এবার একটু মন দিয়ে দেখো...<br>
+সামনে যা আসছে,<br>
+সেটা শুধু তোমার জন্য। ✨
+
+</div>
+
+<button
+class="btn"
+onclick="go(5)">
+
+✨ Surprise শুরু হোক
+
+</button>
+
+</section>
+
+
+<!-- ======================================================
+     SCREEN 5
+====================================================== -->
+
+<section class="screen" id="screen5">
+
+<div class="eyebrow">
+One Little Game
+</div>
+
+<h1 class="title">
+🎈 Balloon Pop!
+</h1>
+
+<div class="type">
+
+নিচের balloon-টা click করো...<br>
+এরপর দেখো কী হয়। 👀
+
+</div>
+
+<div
+id="balloon"
+onclick="popBalloon()">
+
+🎈
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     SCREEN 6
+====================================================== -->
+
+<section class="screen" id="screen6">
+
+<div class="eyebrow">
+Make A Wish
+</div>
+
+<h1 class="title">
+তোমার জন্য একটা Cake 🎂
+</h1>
+
+<div class="cake">
+🎂
+</div>
+
+<div class="type">
+
+নিজেকে নিয়ে সুন্দর একটা wish করো...<br>
+তারপর candle-টা নিভিয়ে দাও। ✨
+
+</div>
+
+<button
+class="btn"
+onclick="go(7)">
+
+🕯️ Candle নিভাও
+
+</button>
+
+</section>
+
+
+<!-- ======================================================
+     SCREEN 7 — 3D CATS
+====================================================== -->
+
 <section class="screen" id="screen7">
 
-<div class="eyebrow">Meanwhile...</div>
+<div class="eyebrow">
+Meanwhile...
+</div>
 
 <h1 class="title">
 দুইজন ছোট্ট অতিথি এসেছে 🐱
@@ -95,49 +859,230 @@ textarea{border-radius:20px;text-align:left;min-height:140px}
 <canvas id="cat3DCanvas"></canvas>
 
 <div class="cat-3d-overlay">
+
 🐱 White Cat × 🐱 Orange Cat —
 খুনসুটি থেকে ভালোবাসা ❤️
-</div>
 
 </div>
 
-<div class="cat-status" id="catStatus">
+</div>
+
+<div
+class="cat-status"
+id="catStatus">
+
 3D animation প্রস্তুত হচ্ছে...
+
 </div>
 
 <div class="type">
+
 প্রথমে একে অপরকে দেখা...<br>
 তারপর খুনসুটি ও ছোট্ট ঝগড়া...<br>
-তারপর হাত/পা ধরা, কাছে আসা, nose kiss,
-কোলে তুলে নেওয়া, hug আর শেষে happy bounce। 🥹❤️
+তারপর হাত/পা ধরা...<br>
+কাছে আসা...<br>
+nose kiss...<br>
+তারপর sweet hug...<br>
+আর শেষে happy bounce। 🥹❤️
+
 </div>
 
 <button
 class="btn"
 id="catContinue"
-onclick="goTo(8)"
+onclick="go(8)"
 disabled>
+
 🥰 তাদের শেষ কাণ্ডটা দেখো
+
 </button>
 
 </section>
 
-<section class="screen" id="s8"><div class="eyebrow">A little more love...</div><div class="love"><span class="a">🤍🐱</span><span class="b">🐱🤍</span><div style="position:absolute;left:50%;top:25px;transform:translateX(-50%);font-size:45px">❤️</div></div><h1 class="title">ঠিক আছে... আর ঝগড়া নয়! 😂❤️</h1><div class="type">এখন শুধু ভালোবাসা, হাসি আর আদর। 🫶</div><button class="btn" onclick="birthday()">🎉 এবার আসল surprise</button></section>
 
-<section class="screen" id="s9"><div class="eyebrow">This moment is yours</div><div class="big">HAPPY BIRTHDAY TO YOU DEAR MINE<span>FATIMA ISLAM RIYA</span></div><div class="type">🥳🎂✨</div><button class="btn" onclick="go(10)">💌 তোমার জন্য একটা কথা আছে</button></section>
+<!-- ======================================================
+     SCREEN 8
+====================================================== -->
 
-<section class="screen" id="s10"><div class="card"><div class="eyebrow">From the heart ❤️</div><h1 class="name">𝗙𝗔𝗧𝗜𝗠𝗔 𝗜𝗦𝗟𝗔𝗠 𝗥𝗜𝗬𝗔</h1><div class="message">
-<strong>শুভ জন্মদিন! প্রিয় ঢেঁড়স 🎂🌸</strong><br><br>
-অনেকদিন আমাদের কথা হয় না। মাঝখানে অনেক কিছু বদলে গেছে, কিছু মনোমালিন্য হয়েছে, আর আমাদের সম্পর্কের মধ্যেও হয়তো একটা দূরত্ব তৈরি হয়েছে।<br><br>
-তবুও সত্যি বলতে, কিছু মানুষ জীবনে এমন একটা জায়গা নিয়ে থাকে, যেখানে অভিমান বা দূরত্ব তৈরি হলেও তাদের জন্য ভালো চাওয়াটা কখনো কমে যায় না।<br><br>
-আজ তোমার জন্মদিন, তাই পুরোনো কোনো কথা বা অভিমান টেনে তোমার দিনটা ভারী করতে চাই না।<br><br>
-শুধু মন থেকে চাই, তুমি সবসময় ভালো থাকো, হাসিখুশি থাকো এবং তোমার জীবনের প্রতিটা ভালো জিনিস তুমি পাও। 💐<br><br>
-আমাদের মধ্যে এখন যতই দূরত্ব থাকুক, একসময়কার সুন্দর স্মৃতিগুলোর জন্য তোমার প্রতি আমার সম্মান আর শুভকামনা সবসময় থাকবে।<br><br>
-<strong>(🫰✨)</strong><br><br>
-আবারও জন্মদিনের শুভেচ্ছা রইল। সবসময় হাসি খুশি থেকো। ❤️🎂
-</div><button class="btn" onclick="go(11)">🌍 আরও একটি surprise</button></div></section>
+<section class="screen" id="screen8">
 
-<section class="screen" id="s11"><div class="card"><div class="eyebrow">A birthday wish around the world</div><h1 class="title">🎉 Happy Birthday in Many Languages 🌍✨</h1><div class="lang">
+<div class="eyebrow">
+A Little More Love...
+</div>
+
+<div class="love">
+
+<span class="a">
+🤍🐱
+</span>
+
+<span class="b">
+🐱🤍
+</span>
+
+<div
+style="
+position:absolute;
+left:50%;
+top:25px;
+transform:translateX(-50%);
+font-size:45px;
+">
+
+❤️
+
+</div>
+
+</div>
+
+<h1 class="title">
+ঠিক আছে... আর ঝগড়া নয়! 😂❤️
+</h1>
+
+<div class="type">
+
+এখন শুধু ভালোবাসা,<br>
+হাসি আর আদর। 🫶
+
+</div>
+
+<button
+class="btn"
+onclick="birthday()">
+
+🎉 এবার আসল surprise
+
+</button>
+
+</section>
+
+
+<!-- ======================================================
+     SCREEN 9
+====================================================== -->
+
+<section class="screen" id="screen9">
+
+<div class="eyebrow">
+This Moment Is Yours
+</div>
+
+<div class="big">
+
+HAPPY BIRTHDAY<br>
+TO YOU DEAR MINE
+
+<span>
+FATIMA ISLAM RIYA
+</span>
+
+</div>
+
+<div class="type">
+🥳🎂✨
+</div>
+
+<button
+class="btn"
+onclick="go(10)">
+
+💌 তোমার জন্য একটা কথা আছে
+
+</button>
+
+</section>
+
+
+<!-- ======================================================
+     SCREEN 10
+====================================================== -->
+
+<section class="screen" id="screen10">
+
+<div class="card">
+
+<div class="eyebrow">
+From The Heart ❤️
+</div>
+
+<h1 class="name">
+𝗙𝗔𝗧𝗜𝗠𝗔 𝗜𝗦𝗟𝗔𝗠 𝗥𝗜𝗬𝗔
+</h1>
+
+<div class="message">
+
+<strong>
+শুভ জন্মদিন! প্রিয় ঢেঁড়স 🎂🌸
+</strong>
+
+<br><br>
+
+অনেকদিন আমাদের কথা হয় না। মাঝখানে অনেক কিছু বদলে গেছে, কিছু মনোমালিন্য হয়েছে, আর আমাদের সম্পর্কের মধ্যেও হয়তো একটা দূরত্ব তৈরি হয়েছে।
+
+<br><br>
+
+তবুও সত্যি বলতে, কিছু মানুষ জীবনে এমন একটা জায়গা নিয়ে থাকে, যেখানে অভিমান বা দূরত্ব তৈরি হলেও তাদের জন্য ভালো চাওয়াটা কখনো কমে যায় না।
+
+<br><br>
+
+আজ তোমার জন্মদিন, তাই পুরোনো কোনো কথা বা অভিমান টেনে তোমার দিনটা ভারী করতে চাই না।
+
+<br><br>
+
+শুধু মন থেকে চাই, তুমি সবসময় ভালো থাকো, হাসিখুশি থাকো এবং তোমার জীবনের প্রতিটা ভালো জিনিস তুমি পাও। 💐
+
+<br><br>
+
+আমাদের মধ্যে এখন যতই দূরত্ব থাকুক, একসময়কার সুন্দর স্মৃতিগুলোর জন্য তোমার প্রতি আমার সম্মান আর শুভকামনা সবসময় থাকবে।
+
+<br><br>
+
+<strong>
+(🫰✨)
+</strong>
+
+<br><br>
+
+আবারও জন্মদিনের শুভেচ্ছা রইল।
+
+<br>
+
+সবসময় হাসি খুশি থেকো। ❤️🎂
+
+</div>
+
+<button
+class="btn"
+onclick="go(11)">
+
+🌍 আরও একটি surprise
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     SCREEN 11
+====================================================== -->
+
+<section class="screen" id="screen11">
+
+<div class="card">
+
+<div class="eyebrow">
+A Birthday Wish Around The World
+</div>
+
+<h1 class="title">
+🎉 Happy Birthday<br>
+in Many Languages 🌍✨
+</h1>
+
+<div class="lang">
+
 🇬🇧 English — 🎉 Happy Birthday Fatima Islam Riya! ✨🫰<br>
 🇧🇩 Bengali — 🎉 ফাতিমা ইসলাম রিয়া, শুভ জন্মদিন! ✨🫰<br>
 🇵🇰 Urdu — 🎉 سالگرہ مبارک فاطمہ اسلام ریا! ✨🫰<br>
@@ -173,189 +1118,867 @@ disabled>
 🇫🇮 Finnish — 🎉 Hyvää syntymäpäivää, Fatima Islam Riya! ✨🫰<br>
 🇮🇪 Irish — 🎉 Lá breithe sona duit, Fatima Islam Riya! ✨🫰<br>
 🇮🇱 Hebrew — 🎉 פאטימה אסלאם ריה, יום הולדת שמח! ✨🫰<br>
-🇱🇦 Latin — 🎉 Felix natalis, Fatima Islam Riya! ✨🫰<br><br>
-🎂🌍 <b>HAPPY BIRTHDAY FATIMA ISLAM RIYA! ✨🫰🎉</b>
-</div><button class="btn" onclick="go(12)">❤️ শেষ কথাটা শুনবে?</button></div></section>
+🇱🇦 Latin — 🎉 Felix natalis, Fatima Islam Riya! ✨🫰
 
-<section class="screen" id="s12"><div class="card"><div class="heart">❤️</div><h1 class="name">𝗠𝗜𝗡𝗘</h1><div class="message">পৃথিবীর সব ভাষায় তোমাকে জন্মদিনের শুভেচ্ছা জানালাম...<br><br>কিন্তু শেষ পর্যন্ত আমার নিজের ভাষায় শুধু একটাই কথা—<br><br><strong>ভালো থেকো।<br>হাসিখুশি থেকো।<br>আর তোমার সব সুন্দর স্বপ্ন পূরণ হোক। 🌸</strong><br><br>🎂 Happy Birthday<br>❤️ Dear Mine<br>𝗙𝗔𝗧𝗜𝗠𝗔 𝗜𝗦𝗟𝗔𝗠 𝗥𝗜𝗬𝗔</div>
-<div class="options">
-<div class="option" onclick="restart()"><div class="num">1</div>পুনরায় শুরু থেকে শুরু করুন</div>
-<div class="option" onclick="openM('comment')"><div class="num">2</div>WhatsApp-এ reply দিতে ফিরে যাও</div>
-<div class="option" onclick="openM('gift')"><div class="num">3</div>জন্মদিনের উপহার হিসেবে কী চাও?</div>
-<div class="option" onclick="whatsapp()"><div class="num">4</div>WhatsApp-এ ফিরে যাই</div>
-</div></div></section>
+<br><br>
+
+🎂🌍
+
+<b>
+HAPPY BIRTHDAY FATIMA ISLAM RIYA!
+✨🫰🎉
+</b>
+
 </div>
 
-<div class="modal" id="comment"><div class="modalbox"><h2>💌 তোমার reply</h2><p style="color:#ffffffaa;margin:12px 0">যা বলতে ইচ্ছে করছে লিখে দাও। ❤️</p><form id="cf"><textarea name="message" required placeholder="এখানে তোমার কথা লিখো..."></textarea><button class="btn">💌 Reply পাঠিয়ে দাও</button><button type="button" class="btn" onclick="closeM('comment')">← ফিরে যাই</button><div class="status" id="cs"></div></form></div></div>
-<div class="modal" id="gift"><div class="modalbox"><h2>🎁 Birthday Gift</h2><p style="color:#ffffffaa;margin:12px 0">কোনটা চাইবে? 🥰</p><form id="gf"><label>🍫 <input type="radio" name="gift" value="চকলেট" required> চকলেট</label><br><br><label>🥰 <input type="radio" name="gift" value="দেখা করা"> দেখা করা</label><br><br><label>🌸 <input type="radio" name="gift" value="ঘুরতে নিয়ে যাওয়া"> ঘুরতে নিয়ে যাওয়া</label><br><button class="btn">🎁 পছন্দ পাঠাও</button><button type="button" class="btn" onclick="closeM('gift')">← ফিরে যাই</button><div class="status" id="gs"></div></form></div></div>
+<button
+class="btn"
+onclick="go(12)">
+
+❤️ শেষ কথাটা শুনবে?
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ======================================================
+     SCREEN 12
+====================================================== -->
+
+<section class="screen" id="screen12">
+
+<div class="card">
+
+<div class="heart">
+❤️
+</div>
+
+<h1 class="name">
+𝗠𝗜𝗡𝗘
+</h1>
+
+<div class="message">
+
+পৃথিবীর সব ভাষায় তোমাকে জন্মদিনের শুভেচ্ছা জানালাম...
+
+<br><br>
+
+কিন্তু শেষ পর্যন্ত আমার নিজের ভাষায় শুধু একটাই কথা—
+
+<br><br>
+
+<strong>
+
+ভালো থেকো।<br>
+হাসিখুশি থেকো।<br>
+আর তোমার সব সুন্দর স্বপ্ন পূরণ হোক। 🌸
+
+</strong>
+
+<br><br>
+
+🎂 Happy Birthday
+
+<br>
+
+❤️ Dear Mine
+
+<br>
+
+𝗙𝗔𝗧𝗜𝗠𝗔 𝗜𝗦𝗟𝗔𝗠 𝗥𝗜𝗬𝗔
+
+</div>
+
+<div class="options">
+
+<div
+class="option"
+onclick="restart()">
+
+<div class="num">1</div>
+
+পুনরায় শুরু থেকে শুরু করুন
+
+</div>
+
+<div
+class="option"
+onclick="openModal('commentModal')">
+
+<div class="num">2</div>
+
+WhatsApp-এ reply দিতে ফিরে যাও
+
+</div>
+
+<div
+class="option"
+onclick="openModal('giftModal')">
+
+<div class="num">3</div>
+
+জন্মদিনের উপহার হিসেবে কী চাও?
+
+</div>
+
+<div
+class="option"
+onclick="openWhatsApp()">
+
+<div class="num">4</div>
+
+WhatsApp-এ ফিরে যাই
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+
+<!-- ======================================================
+     COMMENT MODAL
+====================================================== -->
+
+<div
+class="modal"
+id="commentModal">
+
+<div class="modalbox">
+
+<h2>
+💌 তোমার reply
+</h2>
+
+<p style="color:#ffffffaa;margin:12px 0">
+
+যা বলতে ইচ্ছে করছে লিখে দাও। ❤️
+
+</p>
+
+<form id="commentForm">
+
+<textarea
+id="commentText"
+required
+placeholder="এখানে তোমার কথা লিখো...">
+</textarea>
+
+<button class="btn">
+💌 Reply পাঠিয়ে দাও
+</button>
+
+<button
+type="button"
+class="btn"
+onclick="closeModal('commentModal')">
+
+← ফিরে যাই
+
+</button>
+
+<div
+class="status"
+id="commentStatus">
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- ======================================================
+     GIFT MODAL
+====================================================== -->
+
+<div
+class="modal"
+id="giftModal">
+
+<div class="modalbox">
+
+<h2>
+🎁 Birthday Gift
+</h2>
+
+<p style="color:#ffffffaa;margin:12px 0">
+
+কোনটা চাইবে? 🥰
+
+</p>
+
+<form id="giftForm">
+
+<label>
+🍫
+<input
+type="radio"
+name="gift"
+value="চকলেট"
+required>
+চকলেট
+</label>
+
+<br><br>
+
+<label>
+🥰
+<input
+type="radio"
+name="gift"
+value="দেখা করা">
+দেখা করা
+</label>
+
+<br><br>
+
+<label>
+🌸
+<input
+type="radio"
+name="gift"
+value="ঘুরতে নিয়ে যাওয়া">
+ঘুরতে নিয়ে যাওয়া
+</label>
+
+<br>
+
+<button class="btn">
+🎁 পছন্দ পাঠাও
+</button>
+
+<button
+type="button"
+class="btn"
+onclick="closeModal('giftModal')">
+
+← ফিরে যাই
+
+</button>
+
+<div
+class="status"
+id="giftStatus">
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
 
 <script>
-/* ---------- general ---------- */
-const WNUM="8801863385785";
-function go(n){
- document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));
- document.getElementById("s"+n).classList.add("active");
- if(n===2)type("t2","কিছু surpise সবাইকে দেওয়ার মত হয় না আবার সকল মানুষের জন্য তা হয়ও না কিন্তু কিছু কিছু মানুষ খুবই গুরুত্বপূর্ণ... কিছু surprise শুধু একজন বিশেষ মানুষের জন্য রাখা হয়। বিশেষ মানুষ সবসময়ই বিশেষ হয়ে থাকে ❤️");
- if(n===3)type("t3","আজকের দিনটা ক্যালেন্ডারের আর দশটা দিনের মতো নয়। কারণ আজ এমন একজনের জন্মদিন, যার জন্য এই ছোট্ট আয়োজন। ✨");
- if(n===7)startCats();
-}
-function type(id,text){let e=document.getElementById(id);e.textContent="";let i=0;(function w(){if(i<text.length){e.textContent+=text[i++];setTimeout(w,30)}})()}
-function check(){let v=document.getElementById("pw").value.trim().toLowerCase();if(["15","1508","15/08","15-08","15 august","15august","15 august 2000"].includes(v))go(2);else document.getElementById("err").textContent="❌ জন্মদিনের তারিখ দিয়ে চেষ্টা করো।"}
-document.getElementById("pw").addEventListener("keydown",e=>{if(e.key==="Enter")check()});
-function pop(){document.getElementById("balloon").textContent="💥";setTimeout(()=>go(6),800)}
-function birthday(){go(9);confetti()}
-function confetti(){for(let i=0;i<100;i++){let x=document.createElement("div");x.textContent=["🎉","✨","💖","🎊","🌸","🎂"][Math.random()*6|0];x.style.cssText=`position:fixed;z-index:50;left:${Math.random()*100}vw;top:-30px;font-size:${12+Math.random()*20}px;animation:fall ${2+Math.random()*3}s linear forwards`;document.body.appendChild(x);setTimeout(()=>x.remove(),5500)}}
-const st=document.createElement("style");st.textContent="@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:0}}";document.head.appendChild(st);
-function openM(id){document.getElementById(id).classList.add("show")}
-function closeM(id){document.getElementById(id).classList.remove("show")}
-function whatsapp(){location.href="https://wa.me/"+WNUM+"?text="+encodeURIComponent("🎂 Happy Birthday surprise দেখলাম ❤️")}
-function restart(){closeM("comment");closeM("gift");go(1);document.getElementById("pw").value="";document.getElementById("balloon").textContent="🎈"}
-document.getElementById("cf").onsubmit=e=>{e.preventDefault();document.getElementById("cs").textContent="💖 Reply প্রস্তুত হয়েছে। চাইলে WhatsApp-এ পাঠাতে পারো।";setTimeout(()=>whatsapp(),900)}
-document.getElementById("gf").onsubmit=e=>{e.preventDefault();document.getElementById("gs").textContent="🎁 তোমার পছন্দ সংরক্ষিত হয়েছে। ❤️";}
 
-/* ---------- stars ---------- */
-const sc=document.getElementById("stars"),sx=sc.getContext("2d");let P=[];
-function rs(){sc.width=innerWidth;sc.height=innerHeight}rs();onresize=rs;
-for(let i=0;i<120;i++)P.push({x:Math.random(),y:Math.random(),r:Math.random()*2+.3,s:Math.random()*.0007+.0002});
-(function star(){sx.clearRect(0,0,sc.width,sc.height);P.forEach(p=>{p.y-=p.s;if(p.y<0)p.y=1;sx.beginPath();sx.arc(p.x*sc.width,p.y*sc.height,p.r,0,7);sx.fillStyle="rgba(255,190,220,.5)";sx.fill()});requestAnimationFrame(star)})();
+/* ======================================================
+   BASIC SETTINGS
+====================================================== */
 
-/* ---/* =========================================================
-   REAL TIME 3D CAT STAGE
-   ========================================================= */
+const WHATSAPP_NUMBER = "8801863385785";
 
-.cat-3d-stage{
-    position:relative;
-    width:min(760px,94vw);
-    height:min(620px,68vh);
-    margin:0 auto 12px;
-    border-radius:32px;
-    overflow:hidden;
-    border:1px solid #ffffff20;
-    background:
-        radial-gradient(circle at 50% 35%,#40152f,#08040d 70%);
-    box-shadow:
-        0 30px 90px #0009,
-        inset 0 0 80px #ff4f9a12;
-}
 
-#cat3DCanvas{
-    display:block;
-    width:100%;
-    height:100%;
+/* ======================================================
+   SCREEN NAVIGATION
+====================================================== */
+
+function go(number){
+
+    document
+        .querySelectorAll(".screen")
+        .forEach(screen=>{
+            screen.classList.remove("active");
+        });
+
+    const target =
+        document.getElementById("screen" + number);
+
+    if(!target) return;
+
+    target.classList.add("active");
+
+    window.scrollTo(0,0);
+
+    if(number === 2){
+
+        typeWriter(
+            "text2",
+            "কিছু surprise সবাইকে দেওয়ার মতো হয় না। আবার সকল মানুষের জন্য তা হয়ও না। কিছু মানুষ খুবই গুরুত্বপূর্ণ... কিছু surprise শুধু একজন বিশেষ মানুষের জন্য রাখা হয়। বিশেষ মানুষ সবসময়ই বিশেষ হয়ে থাকে। ❤️"
+        );
+    }
+
+    if(number === 3){
+
+        typeWriter(
+            "text3",
+            "আজকের দিনটা ক্যালেন্ডারের আর দশটা দিনের মতো নয়। কারণ আজ এমন একজনের জন্মদিন, যার জন্য এই ছোট্ট আয়োজন। ✨"
+        );
+    }
+
+    if(number === 7){
+
+        start3DCats();
+
+    }
 }
 
-.cat-3d-overlay{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    padding:20px;
-    background:
-        linear-gradient(transparent,#000c);
-    font-family:'Cormorant Garamond',serif;
-    font-size:20px;
-    pointer-events:none;
+
+/* ======================================================
+   TYPEWRITER
+====================================================== */
+
+let typingTimer = null;
+
+function typeWriter(id,text){
+
+    const element =
+        document.getElementById(id);
+
+    if(!element) return;
+
+    clearTimeout(typingTimer);
+
+    element.textContent = "";
+
+    let index = 0;
+
+    function write(){
+
+        if(index < text.length){
+
+            element.textContent +=
+                text.charAt(index);
+
+            index++;
+
+            typingTimer =
+                setTimeout(write,28);
+
+        }
+    }
+
+    write();
 }
 
-.cat-status{
-    min-height:26px;
-    color:#ffafd2;
-    margin-top:10px;
-    font-size:13px;
- }
- <script type="module">
 
-/* =========================================================
-   THREE.JS
-   ========================================================= */
+/* ======================================================
+   PASSWORD
+====================================================== */
+
+function checkPassword(){
+
+    const input =
+        document
+        .getElementById("password")
+        .value
+        .trim()
+        .toLowerCase();
+
+    const validPasswords = [
+
+        "15",
+        "1508",
+        "15/08",
+        "15-08",
+        "15 august",
+        "15august",
+        "15 august 2000",
+        "15/08/2000",
+        "15-08-2000"
+
+    ];
+
+    if(validPasswords.includes(input)){
+
+        document
+            .getElementById("passwordError")
+            .textContent = "";
+
+        go(2);
+
+    }else{
+
+        document
+            .getElementById("passwordError")
+            .textContent =
+                "❌ জন্মদিনের তারিখ দিয়ে চেষ্টা করো।";
+
+    }
+}
+
+
+document
+    .getElementById("password")
+    .addEventListener(
+        "keydown",
+        event=>{
+
+            if(event.key === "Enter"){
+                checkPassword();
+            }
+
+        }
+    );
+
+
+/* ======================================================
+   BALLOON
+====================================================== */
+
+function popBalloon(){
+
+    const balloon =
+        document.getElementById("balloon");
+
+    balloon.textContent = "💥";
+
+    balloon.style.animation = "none";
+
+    setTimeout(()=>{
+
+        go(6);
+
+    },700);
+}
+
+
+/* ======================================================
+   BIRTHDAY
+====================================================== */
+
+function birthday(){
+
+    go(9);
+
+    createConfetti();
+
+}
+
+
+/* ======================================================
+   CONFETTI
+====================================================== */
+
+function createConfetti(){
+
+    const symbols = [
+        "🎉",
+        "✨",
+        "💖",
+        "🎊",
+        "🌸",
+        "🎂",
+        "❤️"
+    ];
+
+    for(let i=0;i<120;i++){
+
+        const piece =
+            document.createElement("div");
+
+        piece.className =
+            "confetti";
+
+        piece.textContent =
+            symbols[
+                Math.floor(
+                    Math.random()*symbols.length
+                )
+            ];
+
+        piece.style.left =
+            Math.random()*100 + "vw";
+
+        piece.style.fontSize =
+            (12 + Math.random()*22) + "px";
+
+        piece.style.animationDuration =
+            (2 + Math.random()*3) + "s";
+
+        piece.style.animationDelay =
+            Math.random()*1.2 + "s";
+
+        document.body.appendChild(piece);
+
+        setTimeout(
+            ()=>piece.remove(),
+            6000
+        );
+    }
+}
+
+
+/* ======================================================
+   MODALS
+====================================================== */
+
+function openModal(id){
+
+    document
+        .getElementById(id)
+        .classList.add("show");
+
+}
+
+function closeModal(id){
+
+    document
+        .getElementById(id)
+        .classList.remove("show");
+
+}
+
+
+document
+    .querySelectorAll(".modal")
+    .forEach(modal=>{
+
+        modal.addEventListener(
+            "click",
+            event=>{
+
+                if(event.target === modal){
+
+                    modal.classList.remove("show");
+
+                }
+
+            }
+        );
+
+    });
+
+
+/* ======================================================
+   WHATSAPP
+====================================================== */
+
+function openWhatsApp(message){
+
+    const text =
+        message ||
+        "🎂 Happy Birthday surprise দেখলাম ❤️";
+
+    window.location.href =
+        "https://wa.me/" +
+        WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(text);
+
+}
+
+
+/* ======================================================
+   COMMENT FORM
+====================================================== */
+
+document
+    .getElementById("commentForm")
+    .addEventListener(
+        "submit",
+        event=>{
+
+            event.preventDefault();
+
+            const message =
+                document
+                .getElementById("commentText")
+                .value
+                .trim();
+
+            if(!message) return;
+
+            document
+                .getElementById("commentStatus")
+                .textContent =
+                "💖 WhatsApp খুলছে...";
+
+            setTimeout(()=>{
+
+                openWhatsApp(
+                    "💌 Birthday surprise দেখে আমার reply:\n\n" +
+                    message
+                );
+
+            },700);
+
+        }
+    );
+
+
+/* ======================================================
+   GIFT FORM
+====================================================== */
+
+document
+    .getElementById("giftForm")
+    .addEventListener(
+        "submit",
+        event=>{
+
+            event.preventDefault();
+
+            const selected =
+                document
+                .querySelector(
+                    'input[name="gift"]:checked'
+                );
+
+            if(!selected) return;
+
+            document
+                .getElementById("giftStatus")
+                .textContent =
+                "🎁 পছন্দটি নেওয়া হয়েছে। ❤️";
+
+            setTimeout(()=>{
+
+                openWhatsApp(
+                    "🎁 Birthday Gift হিসেবে আমার পছন্দ: " +
+                    selected.value +
+                    " ❤️"
+                );
+
+            },900);
+
+        }
+    );
+
+
+/* ======================================================
+   RESTART
+====================================================== */
+
+function restart(){
+
+    document
+        .querySelectorAll(".screen")
+        .forEach(screen=>{
+            screen.classList.remove("active");
+        });
+
+    document
+        .getElementById("screen1")
+        .classList.add("active");
+
+    document
+        .getElementById("password")
+        .value = "";
+
+    document
+        .getElementById("passwordError")
+        .textContent = "";
+
+    document
+        .getElementById("balloon")
+        .textContent = "🎈";
+
+    document
+        .getElementById("balloon")
+        .style.animation =
+            "balloonFloat 2s ease-in-out infinite";
+
+    document
+        .getElementById("catContinue")
+        .disabled = true;
+
+    catStarted = false;
+}
+
+
+/* ======================================================
+   STARS
+====================================================== */
+
+const starsCanvas =
+    document.getElementById("stars");
+
+const starsCtx =
+    starsCanvas.getContext("2d");
+
+let stars = [];
+
+function resizeStars(){
+
+    starsCanvas.width =
+        window.innerWidth;
+
+    starsCanvas.height =
+        window.innerHeight;
+
+}
+
+resizeStars();
+
+window.addEventListener(
+    "resize",
+    resizeStars
+);
+
+
+for(let i=0;i<150;i++){
+
+    stars.push({
+
+        x:Math.random(),
+        y:Math.random(),
+        r:.3 + Math.random()*1.8,
+        speed:.0002 + Math.random()*.0007
+
+    });
+
+}
+
+
+function animateStars(){
+
+    starsCtx.clearRect(
+        0,
+        0,
+        starsCanvas.width,
+        starsCanvas.height
+    );
+
+    stars.forEach(star=>{
+
+        star.y -= star.speed;
+
+        if(star.y < 0)
+            star.y = 1;
+
+        starsCtx.beginPath();
+
+        starsCtx.arc(
+            star.x * starsCanvas.width,
+            star.y * starsCanvas.height,
+            star.r,
+            0,
+            Math.PI*2
+        );
+
+        starsCtx.fillStyle =
+            "rgba(255,190,220,.55)";
+
+        starsCtx.fill();
+
+    });
+
+    requestAnimationFrame(
+        animateStars
+    );
+
+}
+
+animateStars();
+
+</script>
+
+
+<!-- ======================================================
+     THREE.JS 3D ENGINE
+====================================================== -->
+
+<script type="module">
 
 import * as THREE from
-'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
+"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js";
 
 
-/* =========================================================
-   BASIC SETUP
-   ========================================================= */
+/* ======================================================
+   ELEMENTS
+====================================================== */
 
 const canvas =
-document.getElementById("cat3DCanvas");
-
-const status =
-document.getElementById("catStatus");
-
-const continueButton =
-document.getElementById("catContinue");
+    document.getElementById("cat3DCanvas");
 
 const stage =
-document.querySelector(".cat-3d-stage");
+    document.querySelector(".cat-3d-stage");
 
+const status =
+    document.getElementById("catStatus");
+
+const continueButton =
+    document.getElementById("catContinue");
+
+
+/* ======================================================
+   THREE SETUP
+====================================================== */
 
 const renderer =
-new THREE.WebGLRenderer({
-    canvas,
-    antialias:true,
-    alpha:true
-});
+    new THREE.WebGLRenderer({
+
+        canvas:canvas,
+        antialias:true,
+        alpha:true
+
+    });
 
 renderer.setPixelRatio(
     Math.min(window.devicePixelRatio,2)
 );
 
-renderer.setSize(
-    stage.clientWidth,
-    stage.clientHeight,
-    false
-);
+renderer.shadowMap.enabled = true;
 
-renderer.shadowMap.enabled=true;
-renderer.shadowMap.type=
-THREE.PCFSoftShadowMap;
+renderer.shadowMap.type =
+    THREE.PCFSoftShadowMap;
 
-renderer.outputColorSpace=
-THREE.SRGBColorSpace;
+renderer.outputColorSpace =
+    THREE.SRGBColorSpace;
 
 
 const scene =
-new THREE.Scene();
+    new THREE.Scene();
 
-scene.background=
-new THREE.Color(0x07030c);
+scene.background =
+    new THREE.Color(0x07030c);
 
 
 const camera =
-new THREE.PerspectiveCamera(
-    42,
-    stage.clientWidth/stage.clientHeight,
-    0.1,
-    100
-);
+    new THREE.PerspectiveCamera(
+        42,
+        1,
+        .1,
+        100
+    );
 
 camera.position.set(
     0,
-    3.5,
-    10
+    3.2,
+    9.5
 );
 
 
-/* =========================================================
+/* ======================================================
    LIGHTING
-   ========================================================= */
+====================================================== */
 
-const ambient =
-new THREE.HemisphereLight(
-    0xffd6ed,
-    0x160b25,
-    2.2
+scene.add(
+    new THREE.HemisphereLight(
+        0xffd6ed,
+        0x160b25,
+        2.2
+    )
 );
-
-scene.add(ambient);
 
 
 const keyLight =
-new THREE.DirectionalLight(
-    0xffd2e8,
-    4
-);
+    new THREE.DirectionalLight(
+        0xffd2e8,
+        4
+    );
 
 keyLight.position.set(
     -4,
@@ -363,17 +1986,17 @@ keyLight.position.set(
     6
 );
 
-keyLight.castShadow=true;
+keyLight.castShadow = true;
 
 scene.add(keyLight);
 
 
 const pinkLight =
-new THREE.PointLight(
-    0xff4f9a,
-    35,
-    12
-);
+    new THREE.PointLight(
+        0xff4f9a,
+        35,
+        14
+    );
 
 pinkLight.position.set(
     -4,
@@ -385,11 +2008,11 @@ scene.add(pinkLight);
 
 
 const purpleLight =
-new THREE.PointLight(
-    0x8a55ff,
-    28,
-    12
-);
+    new THREE.PointLight(
+        0x8a55ff,
+        28,
+        14
+    );
 
 purpleLight.position.set(
     4,
@@ -400,49 +2023,43 @@ purpleLight.position.set(
 scene.add(purpleLight);
 
 
-/* =========================================================
+/* ======================================================
    MATERIALS
-   ========================================================= */
+====================================================== */
 
 const whiteFur =
-new THREE.MeshStandardMaterial({
-    color:0xf2eee8,
-    roughness:.82
-});
+    new THREE.MeshStandardMaterial({
+        color:0xf1eee9,
+        roughness:.85
+    });
 
 const orangeFur =
-new THREE.MeshStandardMaterial({
-    color:0xd76b25,
-    roughness:.8
-});
+    new THREE.MeshStandardMaterial({
+        color:0xd76b25,
+        roughness:.82
+    });
 
 const pink =
-new THREE.MeshStandardMaterial({
-    color:0xff719d,
-    roughness:.45
-});
+    new THREE.MeshStandardMaterial({
+        color:0xff719d,
+        roughness:.4
+    });
 
 const black =
-new THREE.MeshStandardMaterial({
-    color:0x050308,
-    roughness:.2
-});
+    new THREE.MeshStandardMaterial({
+        color:0x030206,
+        roughness:.2
+    });
 
 const eyeWhite =
-new THREE.MeshBasicMaterial({
-    color:0xffffff
-});
-
-const floorMaterial =
-new THREE.MeshStandardMaterial({
-    color:0x241328,
-    roughness:.9
-});
+    new THREE.MeshBasicMaterial({
+        color:0xffffff
+    });
 
 
-/* =========================================================
-   HELPER FUNCTIONS
-   ========================================================= */
+/* ======================================================
+   HELPERS
+====================================================== */
 
 function sphere(
     parent,
@@ -451,24 +2068,29 @@ function sphere(
     material
 ){
 
-    const geo =
-    new THREE.SphereGeometry(
-        1,
-        24,
-        16
-    );
+    const geometry =
+        new THREE.SphereGeometry(
+            1,
+            24,
+            18
+        );
 
     const mesh =
-    new THREE.Mesh(
-        geo,
-        material
+        new THREE.Mesh(
+            geometry,
+            material
+        );
+
+    mesh.position.set(
+        x,y,z
     );
 
-    mesh.position.set(x,y,z);
-    mesh.scale.set(sx,sy,sz);
+    mesh.scale.set(
+        sx,sy,sz
+    );
 
-    mesh.castShadow=true;
-    mesh.receiveShadow=true;
+    mesh.castShadow = true;
+    mesh.receiveShadow = true;
 
     parent.add(mesh);
 
@@ -484,21 +2106,24 @@ function cone(
     material
 ){
 
-    const geo =
-    new THREE.ConeGeometry(
-        radius,
-        height,
-        20
-    );
+    const geometry =
+        new THREE.ConeGeometry(
+            radius,
+            height,
+            20
+        );
 
     const mesh =
-    new THREE.Mesh(
-        geo,
-        material
+        new THREE.Mesh(
+            geometry,
+            material
+        );
+
+    mesh.position.set(
+        x,y,z
     );
 
-    mesh.position.set(x,y,z);
-    mesh.castShadow=true;
+    mesh.castShadow = true;
 
     parent.add(mesh);
 
@@ -506,9 +2131,9 @@ function cone(
 }
 
 
-/* =========================================================
+/* ======================================================
    TAIL
-   ========================================================= */
+====================================================== */
 
 function createTail(
     parent,
@@ -516,30 +2141,32 @@ function createTail(
 ){
 
     const curve =
-    new THREE.CatmullRomCurve3([
-        new THREE.Vector3(0,0,0),
-        new THREE.Vector3(.45,.25,.1),
-        new THREE.Vector3(.9,.65,.1),
-        new THREE.Vector3(.7,1.05,.1),
-        new THREE.Vector3(.35,1.35,.1)
-    ]);
+        new THREE.CatmullRomCurve3([
+
+            new THREE.Vector3(0,0,0),
+            new THREE.Vector3(.45,.25,.1),
+            new THREE.Vector3(.9,.65,.1),
+            new THREE.Vector3(.7,1.05,.1),
+            new THREE.Vector3(.35,1.35,.1)
+
+        ]);
 
     const geometry =
-    new THREE.TubeGeometry(
-        curve,
-        20,
-        .09,
-        10,
-        false
-    );
+        new THREE.TubeGeometry(
+            curve,
+            20,
+            .09,
+            10,
+            false
+        );
 
     const tail =
-    new THREE.Mesh(
-        geometry,
-        material
-    );
+        new THREE.Mesh(
+            geometry,
+            material
+        );
 
-    tail.castShadow=true;
+    tail.castShadow = true;
 
     parent.add(tail);
 
@@ -547,22 +2174,22 @@ function createTail(
 }
 
 
-/* =========================================================
+/* ======================================================
    CREATE CAT
-   ========================================================= */
+====================================================== */
 
 function createCat(
     fur,
     ribbonColor
 ){
 
-    const cat =
-    new THREE.Group();
+    const root =
+        new THREE.Group();
 
     const body =
-    new THREE.Group();
+        new THREE.Group();
 
-    cat.add(body);
+    root.add(body);
 
 
     /* BODY */
@@ -588,10 +2215,12 @@ function createCat(
     /* HEAD */
 
     const head =
-    new THREE.Group();
+        new THREE.Group();
 
     head.position.set(
-        0,2.25,-.18
+        0,
+        2.25,
+        -.18
     );
 
     body.add(head);
@@ -628,32 +2257,31 @@ function createCat(
     /* EARS */
 
     const earL =
-    cone(
-        head,
-        -.34,.46,-.02,
-        .22,.48,
-        fur
-    );
+        cone(
+            head,
+            -.34,.46,-.02,
+            .22,.48,
+            fur
+        );
 
-    earL.rotation.z=
-    THREE.MathUtils.degToRad(-14);
+    earL.rotation.z =
+        THREE.MathUtils.degToRad(-14);
 
 
     const earR =
-    cone(
-        head,
-        .34,.46,-.02,
-        .22,.48,
-        fur
-    );
+        cone(
+            head,
+            .34,.46,-.02,
+            .22,.48,
+            fur
+        );
 
-    earR.rotation.z=
-    THREE.MathUtils.degToRad(14);
+    earR.rotation.z =
+        THREE.MathUtils.degToRad(14);
 
 
     /* EYES */
 
-    const eyeL =
     sphere(
         head,
         -.22,-.43,-.15,
@@ -661,7 +2289,6 @@ function createCat(
         black
     );
 
-    const eyeR =
     sphere(
         head,
         .22,-.43,-.15,
@@ -670,7 +2297,7 @@ function createCat(
     );
 
 
-    /* EYE HIGHLIGHTS */
+    /* EYE SHINE */
 
     sphere(
         head,
@@ -690,10 +2317,10 @@ function createCat(
     /* ARMS */
 
     const armL =
-    new THREE.Group();
+        new THREE.Group();
 
     const armR =
-    new THREE.Group();
+        new THREE.Group();
 
     armL.position.set(
         -.42,1.05,-.35
@@ -759,10 +2386,10 @@ function createCat(
     /* TAIL */
 
     const tail =
-    createTail(
-        body,
-        fur
-    );
+        createTail(
+            body,
+            fur
+        );
 
     tail.position.set(
         .52,.95,.25
@@ -771,36 +2398,34 @@ function createCat(
 
     /* RIBBON */
 
+    const ribbonMaterial =
+        new THREE.MeshStandardMaterial({
+            color:ribbonColor,
+            roughness:.4
+        });
+
     const ribbon =
-    new THREE.Group();
+        new THREE.Group();
 
     sphere(
         ribbon,
         -.18,0,0,
         .18,.07,.14,
-        new THREE.MeshStandardMaterial({
-            color:ribbonColor,
-            roughness:.45
-        })
+        ribbonMaterial
     );
 
     sphere(
         ribbon,
         .18,0,0,
         .18,.07,.14,
-        new THREE.MeshStandardMaterial({
-            color:ribbonColor,
-            roughness:.45
-        })
+        ribbonMaterial
     );
 
     sphere(
         ribbon,
         0,0,0,
         .08,.08,.08,
-        new THREE.MeshStandardMaterial({
-            color:ribbonColor
-        })
+        ribbonMaterial
     );
 
     ribbon.position.set(
@@ -811,7 +2436,7 @@ function createCat(
 
 
     return {
-        root:cat,
+        root,
         body,
         head,
         armL,
@@ -821,30 +2446,25 @@ function createCat(
 }
 
 
-/* =========================================================
-   CREATE TWO CATS
-   ========================================================= */
+/* ======================================================
+   CATS
+====================================================== */
 
 const whiteCat =
-createCat(
-    0xf3eee8,
-    0x4896ff
-);
+    createCat(
+        0xf3eee8,
+        0x4896ff
+    );
 
 const orangeCat =
-createCat(
-    0xd86b25,
-    0xff4f9a
-);
+    createCat(
+        0xd86b25,
+        0xff4f9a
+    );
 
+whiteCat.root.position.x = -2;
 
-whiteCat.root.position.set(
-    -2.0,0,0
-);
-
-orangeCat.root.position.set(
-    2.0,0,0
-);
+orangeCat.root.position.x = 2;
 
 scene.add(
     whiteCat.root,
@@ -852,486 +2472,463 @@ scene.add(
 );
 
 
-/* =========================================================
+/* ======================================================
    GROUND
-   ========================================================= */
+====================================================== */
+
+const groundMaterial =
+    new THREE.MeshStandardMaterial({
+        color:0x241328,
+        roughness:.9
+    });
 
 const ground =
-new THREE.Mesh(
-    new THREE.CircleGeometry(12,64),
-    floorMaterial
-);
+    new THREE.Mesh(
+        new THREE.CircleGeometry(
+            12,
+            64
+        ),
+        groundMaterial
+    );
 
-ground.rotation.x=
--Math.PI/2;
+ground.rotation.x =
+    -Math.PI/2;
 
-ground.position.y=0;
-
-ground.receiveShadow=true;
+ground.receiveShadow = true;
 
 scene.add(ground);
 
 
-/* =========================================================
-   HEARTS
-   ========================================================= */
+/* ======================================================
+   HEART EFFECT
+====================================================== */
 
-const hearts=[];
+function floatingHeart(){
 
-function makeHeart(){
+    const heart =
+        document.createElement("div");
 
-    const div=
-    document.createElement("div");
+    heart.textContent = "❤️";
 
-    div.innerHTML="❤️";
+    heart.style.position = "fixed";
+    heart.style.zIndex = "150";
+    heart.style.pointerEvents = "none";
 
-    div.style.position="fixed";
-    div.style.zIndex="10000";
-    div.style.pointerEvents="none";
-    div.style.fontSize=
-        (18+Math.random()*20)+"px";
+    heart.style.left =
+        (40 + Math.random()*20) + "vw";
 
-    div.style.left=
-        (40+Math.random()*20)+"vw";
+    heart.style.top =
+        (35 + Math.random()*20) + "vh";
 
-    div.style.top=
-        (35+Math.random()*20)+"vh";
+    heart.style.fontSize =
+        (18 + Math.random()*22) + "px";
 
-    document.body.appendChild(div);
+    document.body.appendChild(heart);
 
-    hearts.push({
-        el:div,
-        life:0,
-        x:0,
-        y:0
-    });
+    let life = 0;
+
+    const timer =
+        setInterval(()=>{
+
+            life += .025;
+
+            heart.style.transform =
+                `translateY(${-life*90}px)
+                 scale(${1+life*.5})`;
+
+            heart.style.opacity =
+                String(
+                    Math.max(
+                        0,
+                        1-life
+                    )
+                );
+
+            if(life >= 1){
+
+                clearInterval(timer);
+
+                heart.remove();
+
+            }
+
+        },16);
 }
 
 
-/* =========================================================
-   ANIMATION TIMELINE
-   ========================================================= */
+/* ======================================================
+   ANIMATION
+====================================================== */
 
-/*
-   0 - 2 sec
-   LOOK AT EACH OTHER
-
-   2 - 3.5
-   PLAYFUL PAW PUSH
-
-   3.5 - 5
-   LITTLE FIGHT
-
-   5 - 6
-   PAW HOLD
-
-   6 - 7
-   COME CLOSE
-
-   7 - 7.8
-   NOSE KISS
-
-   7.8 - 9
-   LIFT + HUG
-
-   9 - 10
-   HAPPY BOUNCE
-
-   10 - 12
-   TAIL + HAPPY END
-*/
-
+let catStarted = false;
+let catFinished = false;
 
 const clock =
-new THREE.Clock();
+    new THREE.Clock();
 
-let animationStarted=false;
-let animationFinished=false;
-
-
-function smoothStep(t){
+function smooth(t){
 
     return t*t*(3-2*t);
 
 }
 
 
-function lerp(a,b,t){
+function animateCats(){
 
-    return a+(b-a)*t;
+    if(!catStarted) return;
 
-}
-
-
-function animateCats(time){
-
-    const t=time%12;
+    const t =
+        clock.getElapsedTime() % 12;
 
 
-    /* ---------------------------------------------
-       RESET BASE POSITIONS
-       --------------------------------------------- */
+    /* RESET */
 
-    let wx=-2;
-    let ox=2;
+    whiteCat.root.rotation.z = 0;
+    orangeCat.root.rotation.z = 0;
 
-    let wy=0;
-    let oy=0;
+    whiteCat.armL.rotation.z = 0;
+    whiteCat.armR.rotation.z = 0;
 
-    let wz=0;
-    let oz=0;
+    orangeCat.armL.rotation.z = 0;
+    orangeCat.armR.rotation.z = 0;
 
 
-    /* ---------------------------------------------
-       0-2
-       LOOK
-       --------------------------------------------- */
+    /* ================= 0-2 LOOK ================= */
 
-    if(t<2){
+    if(t < 2){
 
-        const p=
-        smoothStep(t/2);
+        const p =
+            smooth(t/2);
 
-        wx=lerp(-2,-1.65,p);
-        ox=lerp(2,1.65,p);
+        whiteCat.root.position.x =
+            -2 + p*.35;
 
-        whiteCat.head.rotation.z=
-        THREE.MathUtils.degToRad(-10*p);
+        orangeCat.root.position.x =
+            2 - p*.35;
 
-        orangeCat.head.rotation.z=
-        THREE.MathUtils.degToRad(10*p);
+        whiteCat.head.rotation.z =
+            THREE.MathUtils.degToRad(-10*p);
+
+        orangeCat.head.rotation.z =
+            THREE.MathUtils.degToRad(10*p);
 
     }
 
 
-    /* ---------------------------------------------
-       2-3.5
-       PLAYFUL PAW PUSH
-       --------------------------------------------- */
+    /* ================= 2-3.5 PLAY ================= */
 
-    else if(t<3.5){
+    else if(t < 3.5){
 
-        const p=(t-2)/1.5;
+        const p =
+            (t-2)/1.5;
 
-        wx=-1.55;
-        ox=1.55;
+        whiteCat.root.position.x = -1.65;
+        orangeCat.root.position.x = 1.65;
 
-        const swing=
-        Math.sin(p*Math.PI*4);
+        const swing =
+            Math.sin(p*Math.PI*4);
 
-        whiteCat.armR.rotation.z=
-        THREE.MathUtils.degToRad(
-            -55*swing
-        );
+        whiteCat.armR.rotation.z =
+            THREE.MathUtils.degToRad(
+                -55*swing
+            );
 
-        orangeCat.armL.rotation.z=
-        THREE.MathUtils.degToRad(
-            55*swing
-        );
+        orangeCat.armL.rotation.z =
+            THREE.MathUtils.degToRad(
+                55*swing
+            );
 
     }
 
 
-    /* ---------------------------------------------
-       3.5-5
-       LITTLE FIGHT
-       --------------------------------------------- */
+    /* ================= 3.5-5 FIGHT ================= */
 
-    else if(t<5){
+    else if(t < 5){
 
-        const p=(t-3.5)/1.5;
+        const p =
+            (t-3.5)/1.5;
 
-        wx=lerp(-1.55,-.75,p);
-        ox=lerp(1.55,.75,p);
+        whiteCat.root.position.x =
+            -1.55 + p*.8;
 
-        whiteCat.root.rotation.z=
-        THREE.MathUtils.degToRad(
-            8*Math.sin(p*Math.PI*4)
-        );
+        orangeCat.root.position.x =
+            1.55 - p*.8;
 
-        orangeCat.root.rotation.z=
-        THREE.MathUtils.degToRad(
-            -8*Math.sin(p*Math.PI*4)
-        );
+        const shake =
+            Math.sin(p*Math.PI*4);
 
-        whiteCat.armR.rotation.z=
-        THREE.MathUtils.degToRad(-45);
+        whiteCat.root.rotation.z =
+            shake*.12;
 
-        orangeCat.armL.rotation.z=
-        THREE.MathUtils.degToRad(45);
+        orangeCat.root.rotation.z =
+            -shake*.12;
 
-    }
+        whiteCat.armR.rotation.z =
+            -.7;
 
-
-    /* ---------------------------------------------
-       5-6
-       PAW HOLD
-       --------------------------------------------- */
-
-    else if(t<6){
-
-        const p=
-        smoothStep(t-5);
-
-        wx=lerp(-.75,-.45,p);
-        ox=lerp(.75,.45,p);
-
-        whiteCat.armR.rotation.z=
-        THREE.MathUtils.degToRad(-65);
-
-        orangeCat.armL.rotation.z=
-        THREE.MathUtils.degToRad(65);
-
-        whiteCat.head.rotation.z=
-        THREE.MathUtils.degToRad(-5);
-
-        orangeCat.head.rotation.z=
-        THREE.MathUtils.degToRad(5);
+        orangeCat.armL.rotation.z =
+            .7;
 
     }
 
 
-    /* ---------------------------------------------
-       6-7
-       COME CLOSE
-       --------------------------------------------- */
+    /* ================= 5-6 PAW HOLD ================= */
 
-    else if(t<7){
+    else if(t < 6){
 
-        const p=
-        smoothStep(t-6);
+        const p =
+            smooth(t-5);
 
-        wx=lerp(-.45,-.15,p);
-        ox=lerp(.45,.15,p);
+        whiteCat.root.position.x =
+            -.75 + p*.3;
 
-        whiteCat.armR.rotation.z=
-        THREE.MathUtils.degToRad(-25);
+        orangeCat.root.position.x =
+            .75 - p*.3;
 
-        orangeCat.armL.rotation.z=
-        THREE.MathUtils.degToRad(25);
+        whiteCat.armR.rotation.z =
+            -1.1;
 
-        whiteCat.head.rotation.z=
-        THREE.MathUtils.degToRad(-8);
+        orangeCat.armL.rotation.z =
+            1.1;
 
-        orangeCat.head.rotation.z=
-        THREE.MathUtils.degToRad(8);
+        whiteCat.head.rotation.z =
+            -.08;
+
+        orangeCat.head.rotation.z =
+            .08;
 
     }
 
 
-    /* ---------------------------------------------
-       7-7.8
-       NOSE KISS
-       --------------------------------------------- */
+    /* ================= 6-7 CLOSE ================= */
 
-    else if(t<7.8){
+    else if(t < 7){
 
-        const p=
-        smoothStep((t-7)/.8);
+        const p =
+            smooth(t-6);
 
-        wx=lerp(-.15,0,p);
-        ox=lerp(.15,0,p);
+        whiteCat.root.position.x =
+            -.45 + p*.3;
 
-        wz=
-        Math.sin(p*Math.PI)*.08;
+        orangeCat.root.position.x =
+            .45 - p*.3;
 
-        oz=
-        Math.sin(p*Math.PI)*.08;
+        whiteCat.armR.rotation.z =
+            -.45;
 
-        whiteCat.head.rotation.z=
-        THREE.MathUtils.degToRad(-8+8*p);
+        orangeCat.armL.rotation.z =
+            .45;
 
-        orangeCat.head.rotation.z=
-        THREE.MathUtils.degToRad(8-8*p);
+    }
 
-        if(Math.random()<.08){
-            makeHeart();
+
+    /* ================= 7-7.8 KISS ================= */
+
+    else if(t < 7.8){
+
+        const p =
+            smooth((t-7)/.8);
+
+        whiteCat.root.position.x =
+            -.15 + p*.15;
+
+        orangeCat.root.position.x =
+            .15 - p*.15;
+
+        whiteCat.head.rotation.z =
+            THREE.MathUtils.degToRad(
+                -8 + 8*p
+            );
+
+        orangeCat.head.rotation.z =
+            THREE.MathUtils.degToRad(
+                8 - 8*p
+            );
+
+        if(Math.random() < .08){
+
+            floatingHeart();
+
         }
 
     }
 
 
-    /* ---------------------------------------------
-       7.8-9
-       LIFT + HUG
-       --------------------------------------------- */
+    /* ================= 7.8-9 HUG ================= */
 
-    else if(t<9){
+    else if(t < 9){
 
-        const p=
-        smoothStep((t-7.8)/1.2);
+        const p =
+            smooth((t-7.8)/1.2);
 
-        wx=lerp(0,-.05,p);
-        ox=lerp(0,.05,p);
+        whiteCat.root.position.x =
+            -.05;
 
-        oz=
-        lerp(0,.65,p);
+        orangeCat.root.position.x =
+            .05;
 
-        oy=
-        lerp(0,.25,p);
+        whiteCat.root.position.y =
+            .15*p;
 
-        whiteCat.armR.rotation.z=
-        THREE.MathUtils.degToRad(-70*p);
+        orangeCat.root.position.y =
+            .15*p;
 
-        whiteCat.armL.rotation.z=
-        THREE.MathUtils.degToRad(55*p);
+        whiteCat.armR.rotation.z =
+            -.9*p;
 
-        orangeCat.armL.rotation.z=
-        THREE.MathUtils.degToRad(70*p);
+        whiteCat.armL.rotation.z =
+            .7*p;
 
-        orangeCat.armR.rotation.z=
-        THREE.MathUtils.degToRad(-55*p);
+        orangeCat.armL.rotation.z =
+            .9*p;
 
-        if(p>.65 && Math.random()<.1){
-            makeHeart();
+        orangeCat.armR.rotation.z =
+            -.7*p;
+
+        if(
+            p > .55 &&
+            Math.random() < .1
+        ){
+
+            floatingHeart();
+
         }
 
     }
 
 
-    /* ---------------------------------------------
-       9-10
-       HAPPY BOUNCE
-       --------------------------------------------- */
+    /* ================= 9-10 HAPPY ================= */
 
-    else if(t<10){
+    else if(t < 10){
 
-        const p=(t-9);
+        const p =
+            t-9;
 
-        wx=-.45;
-        ox=.45;
+        whiteCat.root.position.x =
+            -.45;
 
-        wz=
-        Math.abs(Math.sin(p*Math.PI*3))*.35;
+        orangeCat.root.position.x =
+            .45;
 
-        oz=
-        Math.abs(Math.sin(p*Math.PI*3))*.35;
+        whiteCat.root.position.y =
+            Math.abs(
+                Math.sin(p*Math.PI*3)
+            )*.25;
 
-        whiteCat.root.rotation.z=
-        Math.sin(p*Math.PI*6)*.08;
+        orangeCat.root.position.y =
+            Math.abs(
+                Math.sin(p*Math.PI*3)
+            )*.25;
 
-        orangeCat.root.rotation.z=
-        -Math.sin(p*Math.PI*6)*.08;
+        whiteCat.root.rotation.z =
+            Math.sin(p*Math.PI*6)*.08;
+
+        orangeCat.root.rotation.z =
+            -Math.sin(p*Math.PI*6)*.08;
 
     }
 
 
-    /* ---------------------------------------------
-       10-12
-       HAPPY END
-       --------------------------------------------- */
+    /* ================= 10-12 HAPPY END ================= */
 
     else{
 
-        wx=-.75;
-        ox=.75;
+        whiteCat.root.position.x =
+            -.75;
 
-        whiteCat.head.rotation.z=
-        THREE.MathUtils.degToRad(
-            Math.sin(t*4)*5
-        );
+        orangeCat.root.position.x =
+            .75;
 
-        orangeCat.head.rotation.z=
-        THREE.MathUtils.degToRad(
-            -Math.sin(t*4)*5
-        );
+        whiteCat.head.rotation.z =
+            Math.sin(t*4)*.08;
+
+        orangeCat.head.rotation.z =
+            -Math.sin(t*4)*.08;
 
     }
 
 
-    /* ---------------------------------------------
-       APPLY ROOT POSITIONS
-       --------------------------------------------- */
+    /* BODY BOUNCE */
 
-    whiteCat.root.position.x=wx;
-    orangeCat.root.position.x=ox;
+    const bounce =
+        Math.abs(
+            Math.sin(t*5)
+        )*.035;
 
-    whiteCat.root.position.y=wy+wz;
-    orangeCat.root.position.y=oy+oz;
+    whiteCat.body.position.y =
+        bounce;
+
+    orangeCat.body.position.y =
+        bounce;
 
 
-    /* ---------------------------------------------
-       TAIL MOVEMENT
-       --------------------------------------------- */
+    /* TAIL */
 
-    whiteCat.tail.rotation.z=
+    whiteCat.tail.rotation.z =
         Math.sin(t*4)*.38;
 
-    orangeCat.tail.rotation.z=
+    orangeCat.tail.rotation.z =
         Math.sin(t*4+Math.PI)*.38;
 
 
-    /* ---------------------------------------------
-       LITTLE BODY BOUNCE
-       --------------------------------------------- */
+    /* FINISH */
 
-    const bounce=
-    Math.abs(Math.sin(t*5))*.035;
+    if(
+        t > 11.2 &&
+        !catFinished
+    ){
 
-    whiteCat.body.position.y=bounce;
-    orangeCat.body.position.y=bounce;
+        catFinished = true;
 
+        status.textContent =
+            "❤️ 3D গল্প শেষ — এখন পরের surprise-এর পালা।";
 
-    /* ---------------------------------------------
-       HEART CLEANUP
-       --------------------------------------------- */
-
-    for(let i=hearts.length-1;i>=0;i--){
-
-        const h=hearts[i];
-
-        h.life+=.016;
-
-        h.el.style.transform=
-            `translateY(${-h.life*70}px) scale(${1+h.life*.4})`;
-
-        h.el.style.opacity=
-            String(Math.max(0,1-h.life));
-
-        if(h.life>1){
-
-            h.el.remove();
-            hearts.splice(i,1);
-
-        }
-
-    }
-
-
-    /* ---------------------------------------------
-       END
-       --------------------------------------------- */
-
-    if(t>11.2 && !animationFinished){
-
-        animationFinished=true;
-
-        status.innerHTML=
-        "❤️ 3D গল্প শেষ — এখন পরের surprise-এর পালা।";
-
-        continueButton.disabled=false;
+        continueButton.disabled =
+            false;
 
     }
 
 }
 
 
-/* =========================================================
-   RENDER LOOP
-   ========================================================= */
+/* ======================================================
+   RENDER
+====================================================== */
+
+function resize3D(){
+
+    const width =
+        stage.clientWidth;
+
+    const height =
+        stage.clientHeight;
+
+    camera.aspect =
+        width/height;
+
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(
+        width,
+        height,
+        false
+    );
+
+}
+
+resize3D();
+
+window.addEventListener(
+    "resize",
+    resize3D
+);
+
 
 function render(){
 
     requestAnimationFrame(render);
 
-    if(animationStarted){
-
-        const elapsed=
-        clock.getElapsedTime();
-
-        animateCats(elapsed);
-
-    }
+    animateCats();
 
     camera.lookAt(
         0,
@@ -1349,149 +2946,29 @@ function render(){
 render();
 
 
-/* =========================================================
-   START 3D ANIMATION
-   ========================================================= */
+/* ======================================================
+   START
+====================================================== */
 
-function start3DCats(){
+window.start3DCats =
+function(){
 
-    if(animationStarted)return;
+    if(catStarted) return;
 
-    animationStarted=true;
+    catStarted = true;
+    catFinished = false;
 
-    animationFinished=false;
+    continueButton.disabled =
+        true;
+
+    status.textContent =
+        "🐱❤️ 3D animation চলছে...";
 
     clock.start();
 
-    status.innerHTML=
-    "🐱❤️ 3D animation চলছে...";
+};
 
-}
-
-
-/* =========================================================
-   RESIZE
-   ========================================================= */
-
-window.addEventListener(
-"resize",
-()=>{
-
-    const w=
-    stage.clientWidth;
-
-    const h=
-    stage.clientHeight;
-
-    camera.aspect=w/h;
-
-    camera.updateProjectionMatrix();
-
-    renderer.setSize(
-        w,
-        h,
-        false
-    );
-
-});
-
-
-/* =========================================================
-   EXPOSE TO MAIN HTML
-   ========================================================= */
-
-window.start3DCats=
-start3DCats;
-
-function goTo(n){
-
-    document
-    .querySelectorAll(".screen")
-    .forEach(s=>{
-        s.classList.remove("active");
-    });
-
-    const target=
-    document.getElementById("screen"+n);
-
-    if(!target)return;
-
-    target.classList.add("active");
-
-
-    if(n===2)
-        setTimeout(
-            ()=>typeWriter("type2",texts.type2),
-            700
-        );
-
-
-    if(n===3)
-        setTimeout(
-            ()=>typeWriter("type3",texts.type3),
-            700
-        );
-
-
-    /* =========================================
-       SCREEN 7 — START REAL 3D
-       ========================================= */
-
-    if(n===7){
-
-        setTimeout(()=>{
-
-            if(window.start3DCats){
-
-                window.start3DCats();
-
-            }
-
-        },300);
-
-    }
-
-}
- function restart(){
-
-    closeModal("commentModal");
-    closeModal("giftModal");
-
-    document
-    .querySelectorAll(".screen")
-    .forEach(s=>{
-        s.classList.remove("active");
-    });
-
-    document
-    .getElementById("screen1")
-    .classList.add("active");
-
-    document
-    .getElementById("password")
-    .value="";
-
-    document
-    .getElementById("passwordError")
-    .innerHTML="";
-
-    document
-    .getElementById("flame")
-    .classList.remove("off");
-
-    const balloon=
-    document.getElementById("popBalloon");
-
-    balloon.innerHTML="🎈";
-    balloon.style.transform="";
-
-    if("speechSynthesis" in window){
-        speechSynthesis.cancel();
-    }
-
- }
-/* optional close by backdrop */
-document.querySelectorAll(".modal").forEach(m=>m.onclick=e=>{if(e.target===m)m.classList.remove("show")});
 </script>
+
 </body>
 </html>
