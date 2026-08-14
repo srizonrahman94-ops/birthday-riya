@@ -3,606 +3,413 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#08020f">
-
 <title>A Little Birthday Surprise — Fatima Islam Riya</title>
 
 <style>
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0
 }
 
 html,body{
-    width:100%;
-    height:100%;
-    overflow:hidden;
+  width:100%;
+  height:100%;
+  overflow:hidden
 }
 
 body{
-    background:#07020d;
-    color:#fff;
-    font-family:Arial,sans-serif;
+  background:
+    radial-gradient(circle at 20% 20%,#40132f,transparent 35%),
+    radial-gradient(circle at 80% 70%,#241044,transparent 35%),
+    #07020d;
+  color:#fff;
+  font-family:Arial,sans-serif;
 }
-
-/* ================= BACKGROUND ================= */
 
 .bg{
-    position:fixed;
-    inset:-30%;
-    z-index:0;
-    background:
-        radial-gradient(circle at 20% 20%,#ff3f8f38,transparent 25%),
-        radial-gradient(circle at 80% 70%,#7d4dff35,transparent 28%),
-        radial-gradient(circle at 50% 50%,#30113d22,transparent 45%);
-    animation:bgMove 18s ease-in-out infinite alternate;
+  position:fixed;
+  inset:-30%;
+  z-index:0;
+  background:
+    radial-gradient(circle,#ff4f9a22,transparent 25%),
+    radial-gradient(circle at 80% 30%,#a35cff22,transparent 25%);
+  animation:bg 15s infinite alternate;
 }
 
-@keyframes bgMove{
-    to{
-        transform:translate(5%,4%) scale(1.12);
-    }
+@keyframes bg{
+  to{
+    transform:translate(5%,4%) scale(1.12)
+  }
 }
 
 #stars{
-    position:fixed;
-    inset:0;
-    z-index:1;
-    pointer-events:none;
+  position:fixed;
+  inset:0;
+  z-index:1;
+  pointer-events:none
 }
 
-/* ================= MAIN ================= */
-
 .wrap{
-    position:relative;
-    z-index:5;
-    width:100%;
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:16px;
+  position:relative;
+  z-index:5;
+  width:100%;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px
 }
 
 .screen{
-    position:absolute;
-    width:min(920px,96vw);
-    max-height:94vh;
-    overflow:auto;
-    text-align:center;
-
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-
-    transform:translateY(35px) scale(.94);
-    filter:blur(7px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s cubic-bezier(.2,.8,.2,1),
-        filter .8s ease,
-        visibility .8s;
+  position:absolute;
+  width:min(920px,95vw);
+  max-height:94vh;
+  overflow:auto;
+  text-align:center;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(35px) scale(.94);
+  filter:blur(7px);
+  transition:1s cubic-bezier(.2,.8,.2,1);
+  pointer-events:none
 }
 
 .screen.active{
-    opacity:1;
-    visibility:visible;
-    pointer-events:auto;
-    transform:none;
-    filter:none;
+  opacity:1;
+  visibility:visible;
+  transform:none;
+  filter:none;
+  pointer-events:auto
 }
 
 .screen::-webkit-scrollbar{
-    display:none;
+  display:none
 }
-
-/* ================= CARD ================= */
 
 .card{
-    width:min(800px,96vw);
-    margin:auto;
-    padding:34px 24px;
-    border-radius:30px;
-
-    background:#ffffff0b;
-    border:1px solid #ffffff1e;
-
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-
-    box-shadow:
-        0 30px 100px #0009,
-        inset 0 1px #ffffff10;
-}
-
-.password-card{
-    width:min(530px,96vw);
-    padding:40px 25px;
+  width:min(800px,95vw);
+  margin:auto;
+  padding:32px 22px;
+  border-radius:30px;
+  background:#ffffff0b;
+  border:1px solid #ffffff20;
+  backdrop-filter:blur(18px);
+  box-shadow:0 30px 90px #0008
 }
 
 .eyebrow{
-    font-size:11px;
-    letter-spacing:.28em;
-    text-transform:uppercase;
-    color:#ffffffa8;
-    margin-bottom:18px;
+  font-size:11px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:#ffffffa8;
+  margin-bottom:18px
 }
 
 .title{
-    font-family:Georgia,serif;
-    font-size:clamp(36px,7vw,72px);
-    line-height:1.08;
-    margin-bottom:20px;
-    text-shadow:0 0 35px #ff75b533;
+  font-family:Georgia,serif;
+  font-size:clamp(38px,8vw,76px);
+  line-height:1.05;
+  margin-bottom:20px;
+  text-shadow:0 0 30px #ff75b533
 }
 
-.script{
-    font-family:cursive;
+.type,.message{
+  font-family:Georgia,serif;
+  font-size:clamp(19px,4vw,27px);
+  line-height:1.65;
+  color:#ffffffdf
 }
 
-.type,
-.message{
-    font-family:Georgia,serif;
-    font-size:clamp(18px,4vw,26px);
-    line-height:1.7;
-    color:#ffffffdf;
+.password-card{
+  width:min(520px,95vw);
+  padding:38px 22px
 }
 
 .lock{
-    font-size:64px;
-    margin-bottom:15px;
-    animation:lockFloat 3s ease-in-out infinite;
-}
-
-@keyframes lockFloat{
-    50%{
-        transform:translateY(-8px) rotate(2deg);
-    }
+  font-size:60px;
+  margin-bottom:15px
 }
 
 .password-title{
-    font-family:Georgia,serif;
-    font-size:clamp(30px,7vw,52px);
-    margin-bottom:12px;
+  font-family:Georgia,serif;
+  font-size:clamp(30px,7vw,52px);
+  margin-bottom:12px
 }
 
 .password-sub{
-    color:#ffffffaa;
-    line-height:1.7;
-    margin-bottom:20px;
+  color:#ffffffaa;
+  line-height:1.7
 }
 
-/* ================= INPUT ================= */
-
-input,
-textarea{
-    width:100%;
-    padding:15px 18px;
-
-    border-radius:100px;
-    border:1px solid #ffffff35;
-
-    outline:none;
-
-    background:#0006;
-    color:#fff;
-
-    text-align:center;
-    font-size:17px;
-
-    transition:.3s;
-}
-
-input:focus,
-textarea:focus{
-    border-color:#ff75b3;
-    box-shadow:0 0 0 4px #ff4f9a12;
+input,textarea{
+  width:100%;
+  padding:15px 18px;
+  border-radius:100px;
+  border:1px solid #ffffff35;
+  outline:0;
+  background:#0006;
+  color:#fff;
+  text-align:center;
+  font-size:17px;
+  margin-top:15px
 }
 
 textarea{
-    min-height:140px;
-    border-radius:20px;
-    text-align:left;
-    resize:vertical;
+  border-radius:20px;
+  text-align:left;
+  min-height:140px
 }
-
-/* ================= BUTTON ================= */
 
 .btn{
-    margin-top:24px;
-
-    padding:15px 28px;
-
-    border:1px solid #ffffff35;
-    border-radius:100px;
-
-    color:#fff;
-    background:
-        linear-gradient(135deg,#ff4f9a,#7d4dff);
-
-    font-weight:bold;
-    font-size:15px;
-
-    cursor:pointer;
-
-    box-shadow:0 15px 40px #0006;
-
-    transition:
-        transform .3s,
-        box-shadow .3s,
-        opacity .3s;
+  margin-top:24px;
+  padding:15px 28px;
+  border:1px solid #ffffff35;
+  border-radius:100px;
+  color:#fff;
+  background:linear-gradient(135deg,#ff4f9a,#7d4dff);
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 15px 40px #0006;
+  transition:.3s
 }
 
 .btn:hover{
-    transform:translateY(-3px) scale(1.03);
-    box-shadow:0 20px 50px #0008;
-}
-
-.btn:active{
-    transform:scale(.97);
+  transform:translateY(-3px) scale(1.03)
 }
 
 .btn:disabled{
-    opacity:.5;
-    cursor:not-allowed;
+  opacity:.55;
+  cursor:not-allowed
 }
-
-/* ================= HEART ================= */
 
 .heart{
-    font-size:70px;
-    animation:heartBeat 1.3s infinite;
+  font-size:70px;
+  animation:heart 1.3s infinite
 }
 
-@keyframes heartBeat{
-    15%{transform:scale(1.2)}
-    30%{transform:scale(1)}
-    45%{transform:scale(1.1)}
-    100%{transform:scale(1)}
+@keyframes heart{
+  15%{transform:scale(1.2)}
+  30%,100%{transform:scale(1)}
+  45%{transform:scale(1.1)}
 }
-
-/* ================= CAKE ================= */
 
 .cake{
-    font-size:150px;
-    margin:20px;
-    animation:cakeFloat 3s ease-in-out infinite;
+  font-size:150px;
+  margin:20px;
+  animation:float 3s ease-in-out infinite
 }
 
-@keyframes cakeFloat{
-    50%{
-        transform:translateY(-10px);
-    }
+@keyframes float{
+  50%{transform:translateY(-10px)}
 }
-
-/* ================= BIRTHDAY ================= */
 
 .big{
-    font-family:Georgia,serif;
-    font-weight:bold;
-    font-size:clamp(36px,8vw,80px);
-    line-height:1.05;
+  font-family:Georgia,serif;
+  font-weight:bold;
+  font-size:clamp(38px,8vw,80px);
+  line-height:1.05
 }
 
-.big span,
-.name{
-    display:block;
-
-    font-family:cursive;
-    font-size:clamp(48px,11vw,110px);
-
-    background:
-        linear-gradient(
-            90deg,
-            #fff,
-            #ff9fca,
-            #fff,
-            #d6a1ff,
-            #fff
-        );
-
-    background-size:300%;
-
-    -webkit-background-clip:text;
-    background-clip:text;
-
-    color:transparent;
-
-    animation:shine 3s linear infinite;
+.big span,.name{
+  display:block;
+  font-family:cursive;
+  font-size:clamp(55px,12vw,115px);
+  background:linear-gradient(
+    90deg,
+    #fff,
+    #ff9fca,
+    #fff,
+    #d6a1ff,
+    #fff
+  );
+  background-size:300%;
+  -webkit-background-clip:text;
+  color:transparent;
+  animation:shine 3s linear infinite
 }
 
 @keyframes shine{
-    to{
-        background-position:300%;
-    }
+  to{background-position:300%}
 }
 
-/* ================= LOVE ================= */
-
 .love{
-    position:relative;
-    height:280px;
+  position:relative;
+  height:280px
 }
 
 .love span{
-    position:absolute;
-    bottom:10px;
-    font-size:120px;
-
-    animation:
-        lovers 3s ease-in-out infinite alternate;
+  position:absolute;
+  font-size:120px;
+  bottom:10px;
+  animation:love 3s ease-in-out infinite alternate
 }
 
 .love .a{left:18%}
-.love .b{right:18%;animation-delay:.4s}
+.love .b{right:18%}
 
-@keyframes lovers{
-    to{
-        transform:translateX(35px) rotate(5deg);
-    }
+@keyframes love{
+  to{
+    transform:translateX(35px) rotate(5deg)
+  }
 }
-
-/* ================= LANGUAGE ================= */
 
 .lang{
-    text-align:left;
-    max-height:45vh;
-    overflow:auto;
-
-    padding:18px;
-
-    border-radius:20px;
-    background:#0003;
-
-    line-height:1.9;
-    font-family:Georgia,serif;
+  text-align:left;
+  max-height:45vh;
+  overflow:auto;
+  padding:15px;
+  border-radius:20px;
+  background:#0003;
+  line-height:1.8;
+  font-family:Georgia,serif
 }
-
-.lang::-webkit-scrollbar{
-    width:4px;
-}
-
-.lang::-webkit-scrollbar-thumb{
-    background:#ff75b355;
-    border-radius:10px;
-}
-
-/* ================= OPTIONS ================= */
 
 .options{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:14px;
-    margin-top:25px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-top:25px
 }
 
 .option{
-    padding:23px 15px;
-
-    border-radius:22px;
-    border:1px solid #ffffff18;
-
-    background:#ffffff08;
-
-    cursor:pointer;
-
-    transition:.3s;
+  padding:23px 15px;
+  border-radius:22px;
+  border:1px solid #ffffff18;
+  background:#ffffff08;
+  cursor:pointer;
+  transition:.3s
 }
 
 .option:hover{
-    transform:translateY(-6px);
-    background:#ffffff12;
+  transform:translateY(-6px)
 }
 
 .num{
-    margin:0 auto 10px;
-
-    width:44px;
-    height:44px;
-
-    border-radius:50%;
-
-    display:grid;
-    place-items:center;
-
-    background:
-        linear-gradient(135deg,#ff4f9a,#7d4dff);
-
-    font-weight:bold;
+  margin:auto auto 10px;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(135deg,#ff4f9a,#7d4dff);
+  font-weight:bold
 }
 
-/* ================= MODAL ================= */
-
 .modal{
-    position:fixed;
-    inset:0;
-    z-index:100;
-
-    display:none;
-    place-items:center;
-
-    padding:20px;
-
-    background:#000c;
-    backdrop-filter:blur(15px);
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:none;
+  place-items:center;
+  padding:20px;
+  background:#000c;
+  backdrop-filter:blur(15px)
 }
 
 .modal.show{
-    display:grid;
+  display:grid
 }
 
 .modalbox{
-    width:min(520px,95vw);
-
-    padding:28px;
-
-    border-radius:28px;
-
-    background:#201027;
-    border:1px solid #ffffff20;
-
-    box-shadow:0 30px 100px #000;
+  width:min(520px,95vw);
+  padding:28px;
+  border-radius:28px;
+  background:#201027;
+  border:1px solid #ffffff20
 }
 
-.modalbox h2{
-    font-family:Georgia,serif;
+.error,.status{
+  min-height:24px;
+  color:#ff9fc5;
+  margin-top:10px;
+  font-size:14px
 }
 
-.status,
-.error{
-    min-height:24px;
-    margin-top:10px;
-    color:#ff9fc5;
-    font-size:14px;
+/* =====================================================
+   2D CAT STAGE
+   ===================================================== */
+
+.cat-stage{
+  position:relative;
+  width:min(800px,95vw);
+  height:min(520px,68vh);
+  margin:10px auto 15px;
+  border-radius:32px;
+  overflow:hidden;
+  border:1px solid #ffffff20;
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      #542044,
+      #150817 58%,
+      #08030d 100%
+    );
+  box-shadow:
+    0 30px 90px #0009,
+    inset 0 0 100px #ff4f9a12;
 }
 
-/* =========================================================
-   3D CAT STAGE
-   ========================================================= */
-
-.cat-3d-stage{
-    position:relative;
-
-    width:min(800px,96vw);
-    height:min(600px,64vh);
-
-    margin:0 auto 12px;
-
-    border-radius:32px;
-    overflow:hidden;
-
-    border:1px solid #ffffff20;
-
-    background:
-        radial-gradient(
-            circle at 50% 35%,
-            #40152f,
-            #08040d 70%
-        );
-
-    box-shadow:
-        0 30px 90px #0009,
-        inset 0 0 80px #ff4f9a12;
+#catCanvas{
+  display:block;
+  width:100%;
+  height:100%;
 }
 
-#cat3DCanvas{
-    display:block;
-
-    width:100%;
-    height:100%;
-}
-
-.cat-3d-overlay{
-    position:absolute;
-
-    left:0;
-    right:0;
-    bottom:0;
-
-    padding:22px;
-
-    background:
-        linear-gradient(
-            transparent,
-            #000d
-        );
-
-    font-family:Georgia,serif;
-    font-size:19px;
-
-    pointer-events:none;
+.cat-caption{
+  position:absolute;
+  left:15px;
+  right:15px;
+  bottom:12px;
+  padding:13px;
+  border-radius:18px;
+  background:linear-gradient(
+    transparent,
+    #000c
+  );
+  font-family:Georgia,serif;
+  font-size:18px;
+  pointer-events:none
 }
 
 .cat-status{
-    min-height:26px;
-
-    color:#ffafd2;
-    margin-top:10px;
-
-    font-size:13px;
+  min-height:25px;
+  color:#ffafd2;
+  margin-top:8px;
+  font-size:14px
 }
-
-/* ================= BALLOON ================= */
-
-#balloon{
-    font-size:110px;
-    margin:25px;
-    cursor:pointer;
-
-    display:inline-block;
-
-    animation:balloonFloat 2s ease-in-out infinite;
-}
-
-@keyframes balloonFloat{
-    50%{
-        transform:translateY(-14px);
-    }
-}
-
-/* ================= CONFETTI ================= */
-
-.confetti{
-    position:fixed;
-    z-index:200;
-
-    pointer-events:none;
-
-    top:-40px;
-
-    animation:
-        confettiFall linear forwards;
-}
-
-@keyframes confettiFall{
-    to{
-        transform:
-            translateY(110vh)
-            rotate(720deg);
-
-        opacity:0;
-    }
-}
-
-/* ================= MOBILE ================= */
 
 @media(max-width:650px){
 
-    .card{
-        padding:28px 18px;
-    }
+  .options{
+    grid-template-columns:1fr
+  }
 
-    .options{
-        grid-template-columns:1fr;
-    }
+  .love span{
+    font-size:90px
+  }
 
-    .love span{
-        font-size:88px;
-    }
+  .love .a{
+    left:5%
+  }
 
-    .love .a{
-        left:3%;
-    }
+  .love .b{
+    right:5%
+  }
 
-    .love .b{
-        right:3%;
-    }
+  .cat-stage{
+    height:390px
+  }
 
-    .cat-3d-stage{
-        height:52vh;
-        min-height:360px;
-    }
+}
 
-    .cat-3d-overlay{
-        font-size:16px;
-        padding:15px;
-    }
+/* CONFETTI */
 
-    .cake{
-        font-size:110px;
-    }
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(720deg);
+    opacity:0
+  }
 }
 </style>
 </head>
@@ -614,18 +421,18 @@ textarea{
 
 <div class="wrap">
 
-<!-- ======================================================
+<!-- =====================================================
      SCREEN 1
-====================================================== -->
+===================================================== -->
 
-<section class="screen active" id="screen1">
+<section class="screen active" id="s1">
 
 <div class="card password-card">
 
 <div class="lock">🔐</div>
 
 <div class="eyebrow">
-A Private Little Surprise
+A private little surprise
 </div>
 
 <h1 class="password-title">
@@ -633,116 +440,88 @@ A Private Little Surprise
 </h1>
 
 <p class="password-sub">
-
 এই দরজাটি খোলার চাবি কিন্তু তোমার কাছেই আছে। ❤️
-
 <br><br>
-
 <b>
 তোমার জন্মদিনই এই জায়গায় প্রবেশের পাসওয়ার্ড।
 </b>
-
 </p>
 
 <input
-id="password"
+id="pw"
 type="password"
 placeholder="জন্মদিন লিখো"
 autocomplete="off"
 >
 
-<div
-class="error"
-id="passwordError">
-</div>
+<div class="error" id="err"></div>
 
-<button
-class="btn"
-onclick="checkPassword()">
-
+<button class="btn" onclick="check()">
 ✨ দরজাটি খুলে দেখো
-
 </button>
 
 </div>
-
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      SCREEN 2
-====================================================== -->
+===================================================== -->
 
-<section class="screen" id="screen2">
+<section class="screen" id="s2">
 
 <div class="heart">♡</div>
 
 <div class="eyebrow">
-Password Accepted
+Password accepted
 </div>
 
 <h1 class="title">
-তাহলে তুমি সঠিকভাবে<br>
-দরজাটি খুলে এসে গেছো...
+তাহলে তুমি সঠিকভাবে দরজাটি খুলে এসে গেছো...
 </h1>
 
-<div
-class="type"
-id="text2">
-</div>
+<div class="type" id="t2"></div>
 
-<button
-class="btn"
-onclick="go(3)">
-
+<button class="btn" onclick="go(3)">
 🌙 একটু এগিয়ে যাই
-
 </button>
 
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      SCREEN 3
-====================================================== -->
+===================================================== -->
 
-<section class="screen" id="screen3">
+<section class="screen" id="s3">
 
 <div class="eyebrow">
-But Wait...
+But wait...
 </div>
 
 <h1 class="title">
-
-আজকের দিনটা<br>
+আজকের দিনটা
+<br>
 কেন যেন একটু বেশি special...
-
 </h1>
 
-<div
-class="type"
-id="text3">
-</div>
+<div class="type" id="t3"></div>
 
-<button
-class="btn"
-onclick="go(4)">
-
+<button class="btn" onclick="go(4)">
 🎁 কারণটা জানতে চাই
-
 </button>
 
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      SCREEN 4
-====================================================== -->
+===================================================== -->
 
-<section class="screen" id="screen4">
+<section class="screen" id="s4">
 
 <div class="eyebrow">
-Something Is About To Happen
+Something is about to happen
 </div>
 
 <div class="heart">
@@ -754,32 +533,26 @@ Ready?
 </h1>
 
 <div class="type">
-
-এবার একটু মন দিয়ে দেখো...<br>
-সামনে যা আসছে,<br>
-সেটা শুধু তোমার জন্য। ✨
-
+এবার একটু মন দিয়ে দেখো...
+<br>
+সামনে যা আসছে, সেটা শুধু তোমার জন্য। ✨
 </div>
 
-<button
-class="btn"
-onclick="go(5)">
-
+<button class="btn" onclick="go(5)">
 ✨ Surprise শুরু হোক
-
 </button>
 
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      SCREEN 5
-====================================================== -->
+===================================================== -->
 
-<section class="screen" id="screen5">
+<section class="screen" id="s5">
 
 <div class="eyebrow">
-One Little Game
+One little game
 </div>
 
 <h1 class="title">
@@ -787,31 +560,35 @@ One Little Game
 </h1>
 
 <div class="type">
-
-নিচের balloon-টা click করো...<br>
-এরপর দেখো কী হয়। 👀
-
+নিচের balloon-টা click করো...
+<br>
+এরপর দেখো কি হয়। 👀
 </div>
 
 <div
 id="balloon"
-onclick="popBalloon()">
-
+style="
+font-size:110px;
+margin:25px;
+cursor:pointer;
+display:inline-block;
+transition:.4s;
+"
+onclick="pop()">
 🎈
-
 </div>
 
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      SCREEN 6
-====================================================== -->
+===================================================== -->
 
-<section class="screen" id="screen6">
+<section class="screen" id="s6">
 
 <div class="eyebrow">
-Make A Wish
+Make a wish
 </div>
 
 <h1 class="title">
@@ -823,28 +600,23 @@ Make A Wish
 </div>
 
 <div class="type">
-
-নিজেকে নিয়ে সুন্দর একটা wish করো...<br>
+নিজেকে নিয়ে সুন্দর একটা wish করো...
+<br>
 তারপর candle-টা নিভিয়ে দাও। ✨
-
 </div>
 
-<button
-class="btn"
-onclick="go(7)">
-
+<button class="btn" onclick="go(7)">
 🕯️ Candle নিভাও
-
 </button>
 
 </section>
 
 
-<!-- ======================================================
-     SCREEN 7 — 3D CATS
-====================================================== -->
+<!-- =====================================================
+     SCREEN 7 — 2D CATS
+===================================================== -->
 
-<section class="screen" id="screen7">
+<section class="screen" id="s7">
 
 <div class="eyebrow">
 Meanwhile...
@@ -854,36 +626,30 @@ Meanwhile...
 দুইজন ছোট্ট অতিথি এসেছে 🐱
 </h1>
 
-<div class="cat-3d-stage">
+<div class="cat-stage">
 
-<canvas id="cat3DCanvas"></canvas>
+<canvas id="catCanvas"></canvas>
 
-<div class="cat-3d-overlay">
-
+<div class="cat-caption">
 🐱 White Cat × 🐱 Orange Cat —
 খুনসুটি থেকে ভালোবাসা ❤️
-
 </div>
 
 </div>
 
-<div
-class="cat-status"
-id="catStatus">
-
-3D animation প্রস্তুত হচ্ছে...
-
+<div class="cat-status" id="catStatus">
+🐱 দুইটি বিড়াল আসছে...
 </div>
 
 <div class="type">
 
-প্রথমে একে অপরকে দেখা...<br>
-তারপর খুনসুটি ও ছোট্ট ঝগড়া...<br>
-তারপর হাত/পা ধরা...<br>
-কাছে আসা...<br>
-nose kiss...<br>
-তারপর sweet hug...<br>
-আর শেষে happy bounce। 🥹❤️
+প্রথমে একে অপরকে দেখা...
+<br>
+তারপর খুনসুটি ও ছোট্ট ঝগড়া...
+<br>
+তারপর হাত/পা ধরা, কাছে আসা, nose kiss,
+<br>
+hug আর শেষে happy bounce। 🥹❤️
 
 </div>
 
@@ -892,22 +658,20 @@ class="btn"
 id="catContinue"
 onclick="go(8)"
 disabled>
-
 🥰 তাদের শেষ কাণ্ডটা দেখো
-
 </button>
 
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      SCREEN 8
-====================================================== -->
+===================================================== -->
 
-<section class="screen" id="screen8">
+<section class="screen" id="s8">
 
 <div class="eyebrow">
-A Little More Love...
+A little more love...
 </div>
 
 <div class="love">
@@ -928,9 +692,7 @@ top:25px;
 transform:translateX(-50%);
 font-size:45px;
 ">
-
 ❤️
-
 </div>
 
 </div>
@@ -940,37 +702,29 @@ font-size:45px;
 </h1>
 
 <div class="type">
-
-এখন শুধু ভালোবাসা,<br>
-হাসি আর আদর। 🫶
-
+এখন শুধু ভালোবাসা, হাসি আর আদর। 🫶
 </div>
 
-<button
-class="btn"
-onclick="birthday()">
-
+<button class="btn" onclick="birthday()">
 🎉 এবার আসল surprise
-
 </button>
 
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      SCREEN 9
-====================================================== -->
+===================================================== -->
 
-<section class="screen" id="screen9">
+<section class="screen" id="s9">
 
 <div class="eyebrow">
-This Moment Is Yours
+This moment is yours
 </div>
 
 <div class="big">
 
-HAPPY BIRTHDAY<br>
-TO YOU DEAR MINE
+HAPPY BIRTHDAY TO YOU DEAR MINE
 
 <span>
 FATIMA ISLAM RIYA
@@ -982,27 +736,23 @@ FATIMA ISLAM RIYA
 🥳🎂✨
 </div>
 
-<button
-class="btn"
-onclick="go(10)">
-
+<button class="btn" onclick="go(10)">
 💌 তোমার জন্য একটা কথা আছে
-
 </button>
 
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      SCREEN 10
-====================================================== -->
+===================================================== -->
 
-<section class="screen" id="screen10">
+<section class="screen" id="s10">
 
 <div class="card">
 
 <div class="eyebrow">
-From The Heart ❤️
+From the heart ❤️
 </div>
 
 <h1 class="name">
@@ -1017,23 +767,31 @@ From The Heart ❤️
 
 <br><br>
 
-অনেকদিন আমাদের কথা হয় না। মাঝখানে অনেক কিছু বদলে গেছে, কিছু মনোমালিন্য হয়েছে, আর আমাদের সম্পর্কের মধ্যেও হয়তো একটা দূরত্ব তৈরি হয়েছে।
+অনেকদিন আমাদের কথা হয় না। মাঝখানে অনেক কিছু বদলে গেছে,
+কিছু মনোমালিন্য হয়েছে, আর আমাদের সম্পর্কের মধ্যেও হয়তো
+একটা দূরত্ব তৈরি হয়েছে।
 
 <br><br>
 
-তবুও সত্যি বলতে, কিছু মানুষ জীবনে এমন একটা জায়গা নিয়ে থাকে, যেখানে অভিমান বা দূরত্ব তৈরি হলেও তাদের জন্য ভালো চাওয়াটা কখনো কমে যায় না।
+তবুও সত্যি বলতে, কিছু মানুষ জীবনে এমন একটা জায়গা নিয়ে থাকে,
+যেখানে অভিমান বা দূরত্ব তৈরি হলেও তাদের জন্য ভালো চাওয়াটা
+কখনো কমে যায় না।
 
 <br><br>
 
-আজ তোমার জন্মদিন, তাই পুরোনো কোনো কথা বা অভিমান টেনে তোমার দিনটা ভারী করতে চাই না।
+আজ তোমার জন্মদিন, তাই পুরোনো কোনো কথা বা অভিমান টেনে
+তোমার দিনটা ভারী করতে চাই না।
 
 <br><br>
 
-শুধু মন থেকে চাই, তুমি সবসময় ভালো থাকো, হাসিখুশি থাকো এবং তোমার জীবনের প্রতিটা ভালো জিনিস তুমি পাও। 💐
+শুধু মন থেকে চাই, তুমি সবসময় ভালো থাকো,
+হাসিখুশি থাকো এবং তোমার জীবনের প্রতিটা ভালো জিনিস তুমি পাও। 💐
 
 <br><br>
 
-আমাদের মধ্যে এখন যতই দূরত্ব থাকুক, একসময়কার সুন্দর স্মৃতিগুলোর জন্য তোমার প্রতি আমার সম্মান আর শুভকামনা সবসময় থাকবে।
+আমাদের মধ্যে এখন যতই দূরত্ব থাকুক,
+একসময়কার সুন্দর স্মৃতিগুলোর জন্য তোমার প্রতি
+আমার সম্মান আর শুভকামনা সবসময় থাকবে।
 
 <br><br>
 
@@ -1044,19 +802,12 @@ From The Heart ❤️
 <br><br>
 
 আবারও জন্মদিনের শুভেচ্ছা রইল।
-
-<br>
-
 সবসময় হাসি খুশি থেকো। ❤️🎂
 
 </div>
 
-<button
-class="btn"
-onclick="go(11)">
-
+<button class="btn" onclick="go(11)">
 🌍 আরও একটি surprise
-
 </button>
 
 </div>
@@ -1064,79 +815,142 @@ onclick="go(11)">
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      SCREEN 11
-====================================================== -->
+===================================================== -->
 
-<section class="screen" id="screen11">
+<section class="screen" id="s11">
 
 <div class="card">
 
 <div class="eyebrow">
-A Birthday Wish Around The World
+A birthday wish around the world
 </div>
 
 <h1 class="title">
-🎉 Happy Birthday<br>
-in Many Languages 🌍✨
+🎉 Happy Birthday in Many Languages 🌍✨
 </h1>
 
 <div class="lang">
 
-🇬🇧 English — 🎉 Happy Birthday Fatima Islam Riya! ✨🫰<br>
-🇧🇩 Bengali — 🎉 ফাতিমা ইসলাম রিয়া, শুভ জন্মদিন! ✨🫰<br>
-🇵🇰 Urdu — 🎉 سالگرہ مبارک فاطمہ اسلام ریا! ✨🫰<br>
-🇮🇳 Hindi — 🎉 फातिमा इस्लाम रिया, जन्मदिन मुबारक! ✨🫰<br>
-🇮🇳 Gujarati — 🎉 ફાતિમા ઇસલામ રિયા, જન્મદિવસની શુભેચ્છાઓ! ✨🫰<br>
-🇮🇳 Marathi — 🎉 फातिमा इस्लाम रिया, वाढदिवसाच्या शुभेच्छा! ✨🫰<br>
-🇮🇳 Tamil — 🎉 ஃபாத்திமா இஸ்லாம் ரியா, இனிய பிறந்தநாள் வாழ்த்துகள்! ✨🫰<br>
-🇮🇳 Telugu — 🎉 ఫాతిమా ఇస్లాం రియా, పుట్టినరోజు శుభాకాంక్షలు! ✨🫰<br>
-🇮🇳 Malayalam — 🎉 ഫാത്തിമ ഇസ്ലാം റിയ, ജന്മദിനാശംസകൾ! ✨🫰<br>
-🇸🇦 Arabic — 🎉 فاطمة إسلام ريا، عيد ميلاد سعيد! ✨🫰<br>
-🇫🇷 French — 🎉 Joyeux anniversaire, Fatima Islam Riya! ✨🫰<br>
-🇪🇸 Spanish — 🎉 ¡Feliz cumpleaños, Fatima Islam Riya! ✨🫰<br>
-🇵🇹 Portuguese — 🎉 Feliz aniversário, Fatima Islam Riya! ✨🫰<br>
-🇮🇹 Italian — 🎉 Buon compleanno, Fatima Islam Riya! ✨🫰<br>
-🇩🇪 German — 🎉 Alles Gute zum Geburtstag, Fatima Islam Riya! ✨🫰<br>
-🇹🇷 Turkish — 🎉 Fatima Islam Riya, doğum günün kutlu olsun! ✨🫰<br>
-🇨🇳 Chinese — 🎉 法蒂玛·伊斯兰·里娅，生日快乐！✨🫰<br>
-🇯🇵 Japanese — 🎉 ファティマ・イスラム・リヤ、お誕生日おめでとう！✨🫰<br>
-🇰🇷 Korean — 🎉 파티마 이슬람 리야, 생일 축하합니다! ✨🫰<br>
-🇹🇭 Thai — 🎉 ฟาติมา อิสลาม ริยา สุขสันต์วันเกิด! ✨🫰<br>
-🇻🇳 Vietnamese — 🎉 Chúc mừng sinh nhật Fatima Islam Riya! ✨🫰<br>
-🇮🇩 Indonesian — 🎉 Selamat ulang tahun Fatima Islam Riya! ✨🫰<br>
-🇲🇾 Malay — 🎉 Selamat hari jadi Fatima Islam Riya! ✨🫰<br>
-🇵🇭 Filipino — 🎉 Maligayang kaarawan, Fatima Islam Riya! ✨🫰<br>
-🇷🇺 Russian — 🎉 С днём рождения, Фатима Ислам Рия! ✨🫰<br>
-🇺🇦 Ukrainian — 🎉 З днем народження, Фатіма Іслам Рія! ✨🫰<br>
-🇬🇷 Greek — 🎉 Χρόνια πολλά, Fatima Islam Riya! ✨🫰<br>
-🇵🇱 Polish — 🎉 Wszystkiego najlepszego, Fatima Islam Riya! ✨🫰<br>
-🇨🇿 Czech — 🎉 Všechno nejlepší, Fatima Islam Riya! ✨🫰<br>
-🇸🇪 Swedish — 🎉 Grattis på födelsedagen, Fatima Islam Riya! ✨🫰<br>
-🇳🇴 Norwegian — 🎉 Gratulerer med dagen, Fatima Islam Riya! ✨🫰<br>
-🇩🇰 Danish — 🎉 Tillykke med fødselsdagen, Fatima Islam Riya! ✨🫰<br>
-🇫🇮 Finnish — 🎉 Hyvää syntymäpäivää, Fatima Islam Riya! ✨🫰<br>
-🇮🇪 Irish — 🎉 Lá breithe sona duit, Fatima Islam Riya! ✨🫰<br>
-🇮🇱 Hebrew — 🎉 פאטימה אסלאם ריה, יום הולדת שמח! ✨🫰<br>
+🇬🇧 English — 🎉 Happy Birthday Fatima Islam Riya! ✨🫰
+<br>
+
+🇧🇩 Bengali — 🎉 ফাতিমা ইসলাম রিয়া, শুভ জন্মদিন! ✨🫰
+<br>
+
+🇵🇰 Urdu — 🎉 سالگرہ مبارک فاطمہ اسلام ریا! ✨🫰
+<br>
+
+🇮🇳 Hindi — 🎉 फातिमा इस्लाम रिया, जन्मदिन मुबारक! ✨🫰
+<br>
+
+🇮🇳 Gujarati — 🎉 ફાતિમા ઇસલામ રિયા, જન્મદિવસની શુભેચ્છાઓ! ✨🫰
+<br>
+
+🇮🇳 Marathi — 🎉 फातिमा इस्लाम रिया, वाढदिवसाच्या शुभेच्छा! ✨🫰
+<br>
+
+🇮🇳 Tamil — 🎉 ஃபாத்திமா இஸ்லாம் ரியா, இனிய பிறந்தநாள் வாழ்த்துகள்! ✨🫰
+<br>
+
+🇮🇳 Telugu — 🎉 ఫాతిమా ఇస్లాం రియా, పుట్టినరోజు శుభాకాంక్షలు! ✨🫰
+<br>
+
+🇮🇳 Malayalam — 🎉 ഫാത്തിമ ഇസ്ലാം റിയ, ജന്മദിനാശംസകൾ! ✨🫰
+<br>
+
+🇸🇦 Arabic — 🎉 فاطمة إسلام ريا، عيد ميلاد سعيد! ✨🫰
+<br>
+
+🇫🇷 French — 🎉 Joyeux anniversaire, Fatima Islam Riya! ✨🫰
+<br>
+
+🇪🇸 Spanish — 🎉 ¡Feliz cumpleaños, Fatima Islam Riya! ✨🫰
+<br>
+
+🇵🇹 Portuguese — 🎉 Feliz aniversário, Fatima Islam Riya! ✨🫰
+<br>
+
+🇮🇹 Italian — 🎉 Buon compleanno, Fatima Islam Riya! ✨🫰
+<br>
+
+🇩🇪 German — 🎉 Alles Gute zum Geburtstag, Fatima Islam Riya! ✨🫰
+<br>
+
+🇹🇷 Turkish — 🎉 Fatima Islam Riya, doğum günün kutlu olsun! ✨🫰
+<br>
+
+🇨🇳 Chinese — 🎉 法蒂玛·伊斯兰·里娅，生日快乐！✨🫰
+<br>
+
+🇯🇵 Japanese — 🎉 ファティマ・イスラム・リヤ、お誕生日おめでとう！✨🫰
+<br>
+
+🇰🇷 Korean — 🎉 파티마 이슬람 리야, 생일 축하합니다! ✨🫰
+<br>
+
+🇹🇭 Thai — 🎉 ฟาติมา อิสลาม ริยา สุขสันต์วันเกิด! ✨🫰
+<br>
+
+🇻🇳 Vietnamese — 🎉 Chúc mừng sinh nhật Fatima Islam Riya! ✨🫰
+<br>
+
+🇮🇩 Indonesian — 🎉 Selamat ulang tahun Fatima Islam Riya! ✨🫰
+<br>
+
+🇲🇾 Malay — 🎉 Selamat hari jadi Fatima Islam Riya! ✨🫰
+<br>
+
+🇵🇭 Filipino — 🎉 Maligayang kaarawan, Fatima Islam Riya! ✨🫰
+<br>
+
+🇷🇺 Russian — 🎉 С днём рождения, Фатима Ислам Рия! ✨🫰
+<br>
+
+🇺🇦 Ukrainian — 🎉 З днем народження, Фатіма Іслам Рія! ✨🫰
+<br>
+
+🇬🇷 Greek — 🎉 Χρόνια πολλά, Fatima Islam Riya! ✨🫰
+<br>
+
+🇵🇱 Polish — 🎉 Wszystkiego najlepszego, Fatima Islam Riya! ✨🫰
+<br>
+
+🇨🇿 Czech — 🎉 Všechno nejlepší, Fatima Islam Riya! ✨🫰
+<br>
+
+🇸🇪 Swedish — 🎉 Grattis på födelsedagen, Fatima Islam Riya! ✨🫰
+<br>
+
+🇳🇴 Norwegian — 🎉 Gratulerer med dagen, Fatima Islam Riya! ✨🫰
+<br>
+
+🇩🇰 Danish — 🎉 Tillykke med fødselsdagen, Fatima Islam Riya! ✨🫰
+<br>
+
+🇫🇮 Finnish — 🎉 Hyvää syntymäpäivää, Fatima Islam Riya! ✨🫰
+<br>
+
+🇮🇪 Irish — 🎉 Lá breithe sona duit, Fatima Islam Riya! ✨🫰
+<br>
+
+🇮🇱 Hebrew — 🎉 פאטימה אסלאם ריה, יום הולדת שמח! ✨🫰
+<br>
+
 🇱🇦 Latin — 🎉 Felix natalis, Fatima Islam Riya! ✨🫰
 
 <br><br>
 
 🎂🌍
-
 <b>
-HAPPY BIRTHDAY FATIMA ISLAM RIYA!
-✨🫰🎉
+HAPPY BIRTHDAY FATIMA ISLAM RIYA! ✨🫰🎉
 </b>
 
 </div>
 
-<button
-class="btn"
-onclick="go(12)">
-
+<button class="btn" onclick="go(12)">
 ❤️ শেষ কথাটা শুনবে?
-
 </button>
 
 </div>
@@ -1144,11 +958,11 @@ onclick="go(12)">
 </section>
 
 
-<!-- ======================================================
+<!-- =====================================================
      SCREEN 12
-====================================================== -->
+===================================================== -->
 
-<section class="screen" id="screen12">
+<section class="screen" id="s12">
 
 <div class="card">
 
@@ -1171,64 +985,66 @@ onclick="go(12)">
 <br><br>
 
 <strong>
-
-ভালো থেকো।<br>
-হাসিখুশি থেকো।<br>
+ভালো থেকো।
+<br>
+হাসিখুশি থেকো।
+<br>
 আর তোমার সব সুন্দর স্বপ্ন পূরণ হোক। 🌸
-
 </strong>
 
 <br><br>
 
 🎂 Happy Birthday
-
 <br>
 
 ❤️ Dear Mine
-
 <br>
 
 𝗙𝗔𝗧𝗜𝗠𝗔 𝗜𝗦𝗟𝗔𝗠 𝗥𝗜𝗬𝗔
 
 </div>
 
+
 <div class="options">
 
-<div
-class="option"
-onclick="restart()">
+<div class="option" onclick="restart()">
 
-<div class="num">1</div>
+<div class="num">
+1
+</div>
 
 পুনরায় শুরু থেকে শুরু করুন
 
 </div>
 
-<div
-class="option"
-onclick="openModal('commentModal')">
 
-<div class="num">2</div>
+<div class="option" onclick="openM('comment')">
+
+<div class="num">
+2
+</div>
 
 WhatsApp-এ reply দিতে ফিরে যাও
 
 </div>
 
-<div
-class="option"
-onclick="openModal('giftModal')">
 
-<div class="num">3</div>
+<div class="option" onclick="openM('gift')">
+
+<div class="num">
+3
+</div>
 
 জন্মদিনের উপহার হিসেবে কী চাও?
 
 </div>
 
-<div
-class="option"
-onclick="openWhatsApp()">
 
-<div class="num">4</div>
+<div class="option" onclick="whatsapp()">
+
+<div class="num">
+4
+</div>
 
 WhatsApp-এ ফিরে যাই
 
@@ -1243,13 +1059,11 @@ WhatsApp-এ ফিরে যাই
 </div>
 
 
-<!-- ======================================================
+<!-- =====================================================
      COMMENT MODAL
-====================================================== -->
+===================================================== -->
 
-<div
-class="modal"
-id="commentModal">
+<div class="modal" id="comment">
 
 <div class="modalbox">
 
@@ -1258,18 +1072,16 @@ id="commentModal">
 </h2>
 
 <p style="color:#ffffffaa;margin:12px 0">
-
 যা বলতে ইচ্ছে করছে লিখে দাও। ❤️
-
 </p>
 
-<form id="commentForm">
+<form id="cf">
 
 <textarea
-id="commentText"
+name="message"
 required
-placeholder="এখানে তোমার কথা লিখো...">
-</textarea>
+placeholder="এখানে তোমার কথা লিখো..."
+></textarea>
 
 <button class="btn">
 💌 Reply পাঠিয়ে দাও
@@ -1278,31 +1090,23 @@ placeholder="এখানে তোমার কথা লিখো...">
 <button
 type="button"
 class="btn"
-onclick="closeModal('commentModal')">
-
+onclick="closeM('comment')">
 ← ফিরে যাই
-
 </button>
 
-<div
-class="status"
-id="commentStatus">
-</div>
+<div class="status" id="cs"></div>
 
 </form>
 
 </div>
-
 </div>
 
 
-<!-- ======================================================
+<!-- =====================================================
      GIFT MODAL
-====================================================== -->
+===================================================== -->
 
-<div
-class="modal"
-id="giftModal">
+<div class="modal" id="gift">
 
 <div class="modalbox">
 
@@ -1311,12 +1115,10 @@ id="giftModal">
 </h2>
 
 <p style="color:#ffffffaa;margin:12px 0">
-
 কোনটা চাইবে? 🥰
-
 </p>
 
-<form id="giftForm">
+<form id="gf">
 
 <label>
 🍫
@@ -1359,1614 +1161,2025 @@ value="ঘুরতে নিয়ে যাওয়া">
 <button
 type="button"
 class="btn"
-onclick="closeModal('giftModal')">
-
+onclick="closeM('gift')">
 ← ফিরে যাই
-
 </button>
 
-<div
-class="status"
-id="giftStatus">
-</div>
+<div class="status" id="gs"></div>
 
 </form>
 
 </div>
-
 </div>
 
 
-<!-- ======================================================
-     JAVASCRIPT
-====================================================== -->
-
 <script>
 
-/* ======================================================
-   BASIC SETTINGS
-====================================================== */
+/* =====================================================
+   GENERAL
+===================================================== */
 
-const WHATSAPP_NUMBER = "8801863385785";
+const WNUM="8801863385785";
 
 
-/* ======================================================
-   SCREEN NAVIGATION
-====================================================== */
+function go(n){
 
-function go(number){
+  document
+  .querySelectorAll(".screen")
+  .forEach(x=>{
+    x.classList.remove("active");
+  });
 
-    document
-        .querySelectorAll(".screen")
-        .forEach(screen=>{
-            screen.classList.remove("active");
-        });
+  const target=document.getElementById("s"+n);
 
-    const target =
-        document.getElementById("screen" + number);
+  if(!target)return;
 
-    if(!target) return;
+  target.classList.add("active");
 
-    target.classList.add("active");
 
-    window.scrollTo(0,0);
+  if(n===2){
 
-    if(number === 2){
+    type(
+      "t2",
+      "কিছু surprise সবাইকে দেওয়ার মত হয় না আবার সকল মানুষের জন্য তা হয়ও না কিন্তু কিছু কিছু মানুষ খুবই গুরুত্বপূর্ণ... কিছু surprise শুধু একজন বিশেষ মানুষের জন্য রাখা হয়। বিশেষ মানুষ সবসময়ই বিশেষ হয়ে থাকে ❤️"
+    );
 
-        typeWriter(
-            "text2",
-            "কিছু surprise সবাইকে দেওয়ার মতো হয় না। আবার সকল মানুষের জন্য তা হয়ও না। কিছু মানুষ খুবই গুরুত্বপূর্ণ... কিছু surprise শুধু একজন বিশেষ মানুষের জন্য রাখা হয়। বিশেষ মানুষ সবসময়ই বিশেষ হয়ে থাকে। ❤️"
-        );
-    }
+  }
 
-    if(number === 3){
 
-        typeWriter(
-            "text3",
-            "আজকের দিনটা ক্যালেন্ডারের আর দশটা দিনের মতো নয়। কারণ আজ এমন একজনের জন্মদিন, যার জন্য এই ছোট্ট আয়োজন। ✨"
-        );
-    }
+  if(n===3){
 
-    if(number === 7){
+    type(
+      "t3",
+      "আজকের দিনটা ক্যালেন্ডারের আর দশটা দিনের মতো নয়। কারণ আজ এমন একজনের জন্মদিন, যার জন্য এই ছোট্ট আয়োজন। ✨"
+    );
 
-        start3DCats();
+  }
 
-    }
+
+  if(n===7){
+
+    setTimeout(()=>{
+      startCats();
+    },400);
+
+  }
+
 }
 
 
-/* ======================================================
-   TYPEWRITER
-====================================================== */
+function type(id,text){
 
-let typingTimer = null;
+  const e=document.getElementById(id);
 
-function typeWriter(id,text){
+  if(!e)return;
 
-    const element =
-        document.getElementById(id);
+  e.textContent="";
 
-    if(!element) return;
+  let i=0;
 
-    clearTimeout(typingTimer);
+  function writer(){
 
-    element.textContent = "";
+    if(i<text.length){
 
-    let index = 0;
+      e.textContent+=text[i++];
 
-    function write(){
+      setTimeout(writer,30);
 
-        if(index < text.length){
-
-            element.textContent +=
-                text.charAt(index);
-
-            index++;
-
-            typingTimer =
-                setTimeout(write,28);
-
-        }
     }
 
-    write();
+  }
+
+  writer();
+
 }
 
 
-/* ======================================================
+/* =====================================================
    PASSWORD
-====================================================== */
+===================================================== */
 
-function checkPassword(){
+function check(){
 
-    const input =
-        document
-        .getElementById("password")
-        .value
-        .trim()
-        .toLowerCase();
+  const v=document
+  .getElementById("pw")
+  .value
+  .trim()
+  .toLowerCase();
 
-    const validPasswords = [
+  const passwords=[
+    "15",
+    "1508",
+    "15/08",
+    "15-08",
+    "15 august",
+    "15august",
+    "15 august 2000"
+  ];
 
-        "15",
-        "1508",
-        "15/08",
-        "15-08",
-        "15 august",
-        "15august",
-        "15 august 2000",
-        "15/08/2000",
-        "15-08-2000"
+  if(passwords.includes(v)){
 
-    ];
+    document.getElementById("err").textContent="";
 
-    if(validPasswords.includes(input)){
+    go(2);
 
-        document
-            .getElementById("passwordError")
-            .textContent = "";
+  }else{
 
-        go(2);
+    document.getElementById("err").textContent=
+      "❌ জন্মদিনের তারিখ দিয়ে চেষ্টা করো।";
 
-    }else{
+  }
 
-        document
-            .getElementById("passwordError")
-            .textContent =
-                "❌ জন্মদিনের তারিখ দিয়ে চেষ্টা করো।";
-
-    }
 }
 
 
 document
-    .getElementById("password")
-    .addEventListener(
-        "keydown",
-        event=>{
-
-            if(event.key === "Enter"){
-                checkPassword();
-            }
-
-        }
-    );
+.getElementById("pw")
+.addEventListener(
+  "keydown",
+  e=>{
+    if(e.key==="Enter")check();
+  }
+);
 
 
-/* ======================================================
+/* =====================================================
    BALLOON
-====================================================== */
+===================================================== */
 
-function popBalloon(){
+function pop(){
 
-    const balloon =
-        document.getElementById("balloon");
+  const balloon=document.getElementById("balloon");
 
-    balloon.textContent = "💥";
+  balloon.textContent="💥";
 
-    balloon.style.animation = "none";
+  balloon.style.transform="scale(1.5) rotate(15deg)";
 
-    setTimeout(()=>{
+  setTimeout(()=>{
+    go(6);
+  },700);
 
-        go(6);
-
-    },700);
 }
 
 
-/* ======================================================
+/* =====================================================
    BIRTHDAY
-====================================================== */
+===================================================== */
 
 function birthday(){
 
-    go(9);
+  go(9);
 
-    createConfetti();
+  confetti();
 
 }
 
 
-/* ======================================================
-   CONFETTI
-====================================================== */
+function confetti(){
 
-function createConfetti(){
+  for(let i=0;i<100;i++){
 
-    const symbols = [
-        "🎉",
-        "✨",
-        "💖",
-        "🎊",
-        "🌸",
-        "🎂",
-        "❤️"
-    ];
+    const x=document.createElement("div");
 
-    for(let i=0;i<120;i++){
+    x.textContent=[
+      "🎉",
+      "✨",
+      "💖",
+      "🎊",
+      "🌸",
+      "🎂"
+    ][Math.random()*6|0];
 
-        const piece =
-            document.createElement("div");
+    x.style.cssText=`
+      position:fixed;
+      z-index:50;
+      left:${Math.random()*100}vw;
+      top:-30px;
+      font-size:${12+Math.random()*20}px;
+      animation:fall ${2+Math.random()*3}s linear forwards;
+      pointer-events:none;
+    `;
 
-        piece.className =
-            "confetti";
+    document.body.appendChild(x);
 
-        piece.textContent =
-            symbols[
-                Math.floor(
-                    Math.random()*symbols.length
-                )
-            ];
+    setTimeout(()=>{
+      x.remove();
+    },5500);
 
-        piece.style.left =
-            Math.random()*100 + "vw";
+  }
 
-        piece.style.fontSize =
-            (12 + Math.random()*22) + "px";
-
-        piece.style.animationDuration =
-            (2 + Math.random()*3) + "s";
-
-        piece.style.animationDelay =
-            Math.random()*1.2 + "s";
-
-        document.body.appendChild(piece);
-
-        setTimeout(
-            ()=>piece.remove(),
-            6000
-        );
-    }
 }
 
 
-/* ======================================================
+/* =====================================================
    MODALS
-====================================================== */
+===================================================== */
 
-function openModal(id){
+function openM(id){
 
-    document
-        .getElementById(id)
-        .classList.add("show");
+  const modal=document.getElementById(id);
 
-}
-
-function closeModal(id){
-
-    document
-        .getElementById(id)
-        .classList.remove("show");
+  if(modal){
+    modal.classList.add("show");
+  }
 
 }
 
 
-document
-    .querySelectorAll(".modal")
-    .forEach(modal=>{
+function closeM(id){
 
-        modal.addEventListener(
-            "click",
-            event=>{
+  const modal=document.getElementById(id);
 
-                if(event.target === modal){
+  if(modal){
+    modal.classList.remove("show");
+  }
 
-                    modal.classList.remove("show");
-
-                }
-
-            }
-        );
-
-    });
+}
 
 
-/* ======================================================
+/* =====================================================
    WHATSAPP
-====================================================== */
+===================================================== */
 
-function openWhatsApp(message){
+function whatsapp(){
 
-    const text =
-        message ||
-        "🎂 Happy Birthday surprise দেখলাম ❤️";
-
-    window.location.href =
-        "https://wa.me/" +
-        WHATSAPP_NUMBER +
-        "?text=" +
-        encodeURIComponent(text);
+  location.href=
+    "https://wa.me/"+WNUM+
+    "?text="+
+    encodeURIComponent(
+      "🎂 Happy Birthday surprise দেখলাম ❤️"
+    );
 
 }
 
 
-/* ======================================================
-   COMMENT FORM
-====================================================== */
-
-document
-    .getElementById("commentForm")
-    .addEventListener(
-        "submit",
-        event=>{
-
-            event.preventDefault();
-
-            const message =
-                document
-                .getElementById("commentText")
-                .value
-                .trim();
-
-            if(!message) return;
-
-            document
-                .getElementById("commentStatus")
-                .textContent =
-                "💖 WhatsApp খুলছে...";
-
-            setTimeout(()=>{
-
-                openWhatsApp(
-                    "💌 Birthday surprise দেখে আমার reply:\n\n" +
-                    message
-                );
-
-            },700);
-
-        }
-    );
-
-
-/* ======================================================
-   GIFT FORM
-====================================================== */
-
-document
-    .getElementById("giftForm")
-    .addEventListener(
-        "submit",
-        event=>{
-
-            event.preventDefault();
-
-            const selected =
-                document
-                .querySelector(
-                    'input[name="gift"]:checked'
-                );
-
-            if(!selected) return;
-
-            document
-                .getElementById("giftStatus")
-                .textContent =
-                "🎁 পছন্দটি নেওয়া হয়েছে। ❤️";
-
-            setTimeout(()=>{
-
-                openWhatsApp(
-                    "🎁 Birthday Gift হিসেবে আমার পছন্দ: " +
-                    selected.value +
-                    " ❤️"
-                );
-
-            },900);
-
-        }
-    );
-
-
-/* ======================================================
+/* =====================================================
    RESTART
-====================================================== */
+===================================================== */
 
 function restart(){
 
-    document
-        .querySelectorAll(".screen")
-        .forEach(screen=>{
-            screen.classList.remove("active");
-        });
+  closeM("comment");
 
-    document
-        .getElementById("screen1")
-        .classList.add("active");
+  closeM("gift");
 
-    document
-        .getElementById("password")
-        .value = "";
+  go(1);
 
-    document
-        .getElementById("passwordError")
-        .textContent = "";
+  document.getElementById("pw").value="";
 
-    document
-        .getElementById("balloon")
-        .textContent = "🎈";
+  document.getElementById("err").textContent="";
 
-    document
-        .getElementById("balloon")
-        .style.animation =
-            "balloonFloat 2s ease-in-out infinite";
+  document.getElementById("balloon").textContent="🎈";
 
-    document
-        .getElementById("catContinue")
-        .disabled = true;
+  document.getElementById("balloon").style.transform="";
 
-    catStarted = false;
+  resetCats();
+
 }
 
 
-/* ======================================================
+/* =====================================================
+   FORMS
+===================================================== */
+
+document
+.getElementById("cf")
+.onsubmit=e=>{
+
+  e.preventDefault();
+
+  document.getElementById("cs").textContent=
+    "💖 Reply প্রস্তুত হয়েছে। চাইলে WhatsApp-এ পাঠাতে পারো।";
+
+  setTimeout(()=>{
+    whatsapp();
+  },900);
+
+};
+
+
+document
+.getElementById("gf")
+.onsubmit=e=>{
+
+  e.preventDefault();
+
+  const selected=
+    document.querySelector(
+      'input[name="gift"]:checked'
+    );
+
+  if(selected){
+
+    document.getElementById("gs").textContent=
+      "🎁 তোমার পছন্দ \""+
+      selected.value+
+      "\" — সংরক্ষিত হয়েছে। ❤️";
+
+  }
+
+};
+
+
+/* modal backdrop */
+
+document
+.querySelectorAll(".modal")
+.forEach(m=>{
+
+  m.onclick=e=>{
+
+    if(e.target===m){
+      m.classList.remove("show");
+    }
+
+  };
+
+});
+
+
+/* =====================================================
    STARS
-====================================================== */
+===================================================== */
 
-const starsCanvas =
-    document.getElementById("stars");
+const sc=document.getElementById("stars");
 
-const starsCtx =
-    starsCanvas.getContext("2d");
+const sx=sc.getContext("2d");
 
-let stars = [];
+let P=[];
+
 
 function resizeStars(){
 
-    starsCanvas.width =
-        window.innerWidth;
+  sc.width=innerWidth;
 
-    starsCanvas.height =
-        window.innerHeight;
+  sc.height=innerHeight;
 
 }
+
 
 resizeStars();
 
 window.addEventListener(
-    "resize",
-    resizeStars
+  "resize",
+  resizeStars
 );
 
 
-for(let i=0;i<150;i++){
+for(let i=0;i<120;i++){
 
-    stars.push({
+  P.push({
 
-        x:Math.random(),
-        y:Math.random(),
-        r:.3 + Math.random()*1.8,
-        speed:.0002 + Math.random()*.0007
+    x:Math.random(),
 
-    });
+    y:Math.random(),
+
+    r:Math.random()*2+.3,
+
+    s:Math.random()*.0007+.0002
+
+  });
 
 }
 
 
-function animateStars(){
+(function star(){
 
-    starsCtx.clearRect(
-        0,
-        0,
-        starsCanvas.width,
-        starsCanvas.height
-    );
-
-    stars.forEach(star=>{
-
-        star.y -= star.speed;
-
-        if(star.y < 0)
-            star.y = 1;
-
-        starsCtx.beginPath();
-
-        starsCtx.arc(
-            star.x * starsCanvas.width,
-            star.y * starsCanvas.height,
-            star.r,
-            0,
-            Math.PI*2
-        );
-
-        starsCtx.fillStyle =
-            "rgba(255,190,220,.55)";
-
-        starsCtx.fill();
-
-    });
-
-    requestAnimationFrame(
-        animateStars
-    );
-
-}
-
-animateStars();
-
-</script>
-
-
-<!-- ======================================================
-     THREE.JS 3D ENGINE
-====================================================== -->
-
-<script type="module">
-
-import * as THREE from
-"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js";
-
-
-/* ======================================================
-   ELEMENTS
-====================================================== */
-
-const canvas =
-    document.getElementById("cat3DCanvas");
-
-const stage =
-    document.querySelector(".cat-3d-stage");
-
-const status =
-    document.getElementById("catStatus");
-
-const continueButton =
-    document.getElementById("catContinue");
-
-
-/* ======================================================
-   THREE SETUP
-====================================================== */
-
-const renderer =
-    new THREE.WebGLRenderer({
-
-        canvas:canvas,
-        antialias:true,
-        alpha:true
-
-    });
-
-renderer.setPixelRatio(
-    Math.min(window.devicePixelRatio,2)
-);
-
-renderer.shadowMap.enabled = true;
-
-renderer.shadowMap.type =
-    THREE.PCFSoftShadowMap;
-
-renderer.outputColorSpace =
-    THREE.SRGBColorSpace;
-
-
-const scene =
-    new THREE.Scene();
-
-scene.background =
-    new THREE.Color(0x07030c);
-
-
-const camera =
-    new THREE.PerspectiveCamera(
-        42,
-        1,
-        .1,
-        100
-    );
-
-camera.position.set(
+  sx.clearRect(
     0,
-    3.2,
-    9.5
-);
+    0,
+    sc.width,
+    sc.height
+  );
 
+  P.forEach(p=>{
 
-/* ======================================================
-   LIGHTING
-====================================================== */
+    p.y-=p.s;
 
-scene.add(
-    new THREE.HemisphereLight(
-        0xffd6ed,
-        0x160b25,
-        2.2
-    )
-);
+    if(p.y<0)p.y=1;
 
+    sx.beginPath();
 
-const keyLight =
-    new THREE.DirectionalLight(
-        0xffd2e8,
-        4
+    sx.arc(
+      p.x*sc.width,
+      p.y*sc.height,
+      p.r,
+      0,
+      7
     );
 
-keyLight.position.set(
-    -4,
-    8,
-    6
-);
+    sx.fillStyle=
+      "rgba(255,190,220,.5)";
 
-keyLight.castShadow = true;
+    sx.fill();
 
-scene.add(keyLight);
+  });
+
+  requestAnimationFrame(star);
+
+})();
 
 
-const pinkLight =
-    new THREE.PointLight(
-        0xff4f9a,
-        35,
-        14
+/* =====================================================
+   =====================================================
+   2D CAT ANIMATION
+   =====================================================
+   ===================================================== */
+
+
+/* ---------- CANVAS ---------- */
+
+const catCanvas=
+  document.getElementById("catCanvas");
+
+const ctx=
+  catCanvas.getContext("2d");
+
+const catStage=
+  document.querySelector(".cat-stage");
+
+const catStatus=
+  document.getElementById("catStatus");
+
+const catContinue=
+  document.getElementById("catContinue");
+
+
+let catW=800;
+let catH=520;
+
+let catRunning=false;
+let catFinished=false;
+
+let catStart=0;
+
+
+/* ---------- RESIZE ---------- */
+
+function resizeCatCanvas(){
+
+  const rect=
+    catStage.getBoundingClientRect();
+
+  const dpr=
+    Math.min(
+      window.devicePixelRatio||1,
+      2
     );
 
-pinkLight.position.set(
-    -4,
-    3,
-    3
-);
+  catW=rect.width;
+  catH=rect.height;
 
-scene.add(pinkLight);
+  catCanvas.width=
+    Math.floor(catW*dpr);
 
+  catCanvas.height=
+    Math.floor(catH*dpr);
 
-const purpleLight =
-    new THREE.PointLight(
-        0x8a55ff,
-        28,
-        14
-    );
+  catCanvas.style.width=
+    catW+"px";
 
-purpleLight.position.set(
-    4,
-    3,
-    2
-);
+  catCanvas.style.height=
+    catH+"px";
 
-scene.add(purpleLight);
+  ctx.setTransform(
+    dpr,
+    0,
+    0,
+    dpr,
+    0,
+    0
+  );
 
-
-/* ======================================================
-   MATERIALS
-====================================================== */
-
-const whiteFur =
-    new THREE.MeshStandardMaterial({
-        color:0xf1eee9,
-        roughness:.85
-    });
-
-const orangeFur =
-    new THREE.MeshStandardMaterial({
-        color:0xd76b25,
-        roughness:.82
-    });
-
-const pink =
-    new THREE.MeshStandardMaterial({
-        color:0xff719d,
-        roughness:.4
-    });
-
-const black =
-    new THREE.MeshStandardMaterial({
-        color:0x030206,
-        roughness:.2
-    });
-
-const eyeWhite =
-    new THREE.MeshBasicMaterial({
-        color:0xffffff
-    });
-
-
-/* ======================================================
-   HELPERS
-====================================================== */
-
-function sphere(
-    parent,
-    x,y,z,
-    sx,sy,sz,
-    material
-){
-
-    const geometry =
-        new THREE.SphereGeometry(
-            1,
-            24,
-            18
-        );
-
-    const mesh =
-        new THREE.Mesh(
-            geometry,
-            material
-        );
-
-    mesh.position.set(
-        x,y,z
-    );
-
-    mesh.scale.set(
-        sx,sy,sz
-    );
-
-    mesh.castShadow = true;
-    mesh.receiveShadow = true;
-
-    parent.add(mesh);
-
-    return mesh;
 }
 
 
-function cone(
-    parent,
-    x,y,z,
-    radius,
-    height,
-    material
+window.addEventListener(
+  "resize",
+  resizeCatCanvas
+);
+
+resizeCatCanvas();
+
+
+/* =====================================================
+   CAT DRAWING HELPERS
+===================================================== */
+
+function ellipse(
+  x,
+  y,
+  rx,
+  ry,
+  color,
+  rotation=0
 ){
 
-    const geometry =
-        new THREE.ConeGeometry(
-            radius,
-            height,
-            20
-        );
+  ctx.save();
 
-    const mesh =
-        new THREE.Mesh(
-            geometry,
-            material
-        );
+  ctx.translate(x,y);
 
-    mesh.position.set(
-        x,y,z
-    );
+  ctx.rotate(rotation);
 
-    mesh.castShadow = true;
+  ctx.beginPath();
 
-    parent.add(mesh);
+  ctx.ellipse(
+    0,
+    0,
+    rx,
+    ry,
+    0,
+    0,
+    Math.PI*2
+  );
 
-    return mesh;
+  ctx.fillStyle=color;
+
+  ctx.fill();
+
+  ctx.restore();
+
 }
 
 
-/* ======================================================
-   TAIL
-====================================================== */
-
-function createTail(
-    parent,
-    material
+function circle(
+  x,
+  y,
+  r,
+  color
 ){
 
-    const curve =
-        new THREE.CatmullRomCurve3([
+  ctx.beginPath();
 
-            new THREE.Vector3(0,0,0),
-            new THREE.Vector3(.45,.25,.1),
-            new THREE.Vector3(.9,.65,.1),
-            new THREE.Vector3(.7,1.05,.1),
-            new THREE.Vector3(.35,1.35,.1)
+  ctx.arc(
+    x,
+    y,
+    r,
+    0,
+    Math.PI*2
+  );
 
-        ]);
+  ctx.fillStyle=color;
 
-    const geometry =
-        new THREE.TubeGeometry(
-            curve,
-            20,
-            .09,
-            10,
-            false
-        );
+  ctx.fill();
 
-    const tail =
-        new THREE.Mesh(
-            geometry,
-            material
-        );
-
-    tail.castShadow = true;
-
-    parent.add(tail);
-
-    return tail;
 }
 
 
-/* ======================================================
-   CREATE CAT
-====================================================== */
-
-function createCat(
-    fur,
-    ribbonColor
+function triangle(
+  x1,y1,
+  x2,y2,
+  x3,y3,
+  color
 ){
 
-    const root =
-        new THREE.Group();
+  ctx.beginPath();
 
-    const body =
-        new THREE.Group();
+  ctx.moveTo(x1,y1);
 
-    root.add(body);
+  ctx.lineTo(x2,y2);
 
+  ctx.lineTo(x3,y3);
 
-    /* BODY */
+  ctx.closePath();
 
-    sphere(
-        body,
-        0,1.25,0,
-        .72,.55,.95,
-        fur
-    );
+  ctx.fillStyle=color;
+
+  ctx.fill();
+
+}
 
 
-    /* CHEST */
+function line(
+  x1,y1,
+  x2,y2,
+  color,
+  width=2
+){
 
-    sphere(
-        body,
-        0,1.55,-.12,
-        .58,.48,.58,
-        fur
-    );
+  ctx.beginPath();
+
+  ctx.moveTo(x1,y1);
+
+  ctx.lineTo(x2,y2);
+
+  ctx.strokeStyle=color;
+
+  ctx.lineWidth=width;
+
+  ctx.lineCap="round";
+
+  ctx.stroke();
+
+}
 
 
-    /* HEAD */
+/* =====================================================
+   HEART PARTICLES
+===================================================== */
 
-    const head =
-        new THREE.Group();
+let catHearts=[];
 
-    head.position.set(
+
+function createCatHeart(
+  x,
+  y
+){
+
+  catHearts.push({
+
+    x,
+    y,
+
+    life:0,
+
+    size:10+Math.random()*12
+
+  });
+
+}
+
+
+function drawCatHearts(){
+
+  for(
+    let i=catHearts.length-1;
+    i>=0;
+    i--
+  ){
+
+    const h=catHearts[i];
+
+    h.life+=.018;
+
+    h.y-=.7;
+
+    const alpha=
+      Math.max(
         0,
-        2.25,
-        -.18
+        1-h.life
+      );
+
+    ctx.save();
+
+    ctx.globalAlpha=alpha;
+
+    ctx.font=
+      `${h.size}px Arial`;
+
+    ctx.textAlign="center";
+
+    ctx.fillText(
+      "❤️",
+      h.x,
+      h.y
     );
 
-    body.add(head);
+    ctx.restore();
 
+    if(h.life>=1){
 
-    sphere(
-        head,
-        0,0,0,
-        .63,.56,.58,
-        fur
-    );
+      catHearts.splice(i,1);
 
+    }
 
-    /* MUZZLE */
+  }
 
-    sphere(
-        head,
-        0,-.40,-.08,
-        .34,.23,.24,
-        fur
-    );
-
-
-    /* NOSE */
-
-    sphere(
-        head,
-        0,-.61,-.08,
-        .08,.045,.06,
-        pink
-    );
-
-
-    /* EARS */
-
-    const earL =
-        cone(
-            head,
-            -.34,.46,-.02,
-            .22,.48,
-            fur
-        );
-
-    earL.rotation.z =
-        THREE.MathUtils.degToRad(-14);
-
-
-    const earR =
-        cone(
-            head,
-            .34,.46,-.02,
-            .22,.48,
-            fur
-        );
-
-    earR.rotation.z =
-        THREE.MathUtils.degToRad(14);
-
-
-    /* EYES */
-
-    sphere(
-        head,
-        -.22,-.43,-.15,
-        .09,.055,.105,
-        black
-    );
-
-    sphere(
-        head,
-        .22,-.43,-.15,
-        .09,.055,.105,
-        black
-    );
-
-
-    /* EYE SHINE */
-
-    sphere(
-        head,
-        -.19,-.48,-.21,
-        .025,.018,.025,
-        eyeWhite
-    );
-
-    sphere(
-        head,
-        .25,-.48,-.21,
-        .025,.018,.025,
-        eyeWhite
-    );
-
-
-    /* ARMS */
-
-    const armL =
-        new THREE.Group();
-
-    const armR =
-        new THREE.Group();
-
-    armL.position.set(
-        -.42,1.05,-.35
-    );
-
-    armR.position.set(
-        .42,1.05,-.35
-    );
-
-    body.add(armL);
-    body.add(armR);
-
-
-    sphere(
-        armL,
-        0,-.35,0,
-        .16,.48,.17,
-        fur
-    );
-
-    sphere(
-        armR,
-        0,-.35,0,
-        .16,.48,.17,
-        fur
-    );
-
-
-    /* PAWS */
-
-    sphere(
-        armL,
-        0,-.72,-.03,
-        .22,.15,.25,
-        fur
-    );
-
-    sphere(
-        armR,
-        0,-.72,-.03,
-        .22,.15,.25,
-        fur
-    );
-
-
-    /* LEGS */
-
-    sphere(
-        body,
-        -.38,.55,.05,
-        .20,.42,.25,
-        fur
-    );
-
-    sphere(
-        body,
-        .38,.55,.05,
-        .20,.42,.25,
-        fur
-    );
-
-
-    /* TAIL */
-
-    const tail =
-        createTail(
-            body,
-            fur
-        );
-
-    tail.position.set(
-        .52,.95,.25
-    );
-
-
-    /* RIBBON */
-
-    const ribbonMaterial =
-        new THREE.MeshStandardMaterial({
-            color:ribbonColor,
-            roughness:.4
-        });
-
-    const ribbon =
-        new THREE.Group();
-
-    sphere(
-        ribbon,
-        -.18,0,0,
-        .18,.07,.14,
-        ribbonMaterial
-    );
-
-    sphere(
-        ribbon,
-        .18,0,0,
-        .18,.07,.14,
-        ribbonMaterial
-    );
-
-    sphere(
-        ribbon,
-        0,0,0,
-        .08,.08,.08,
-        ribbonMaterial
-    );
-
-    ribbon.position.set(
-        0,1.55,-.52
-    );
-
-    body.add(ribbon);
-
-
-    return {
-        root,
-        body,
-        head,
-        armL,
-        armR,
-        tail
-    };
 }
 
 
-/* ======================================================
-   CATS
-====================================================== */
+/* =====================================================
+   DRAW CAT
+===================================================== */
 
-const whiteCat =
-    createCat(
-        0xf3eee8,
-        0x4896ff
+function drawCat(
+  x,
+  groundY,
+  scale,
+  fur,
+  innerEar,
+  collar,
+  facing,
+  pose
+){
+
+  ctx.save();
+
+  ctx.translate(x,groundY);
+
+  ctx.scale(
+    facing*scale,
+    scale
+  );
+
+
+  /* shadow */
+
+  ctx.globalAlpha=.28;
+
+  ellipse(
+    0,
+    5,
+    65,
+    15,
+    "#000"
+  );
+
+  ctx.globalAlpha=1;
+
+
+  /* tail */
+
+  ctx.save();
+
+  ctx.translate(
+    48,
+    -88
+  );
+
+  ctx.rotate(
+    pose.tail
+  );
+
+  ctx.beginPath();
+
+  ctx.moveTo(
+    0,
+    0
+  );
+
+  ctx.bezierCurveTo(
+    40,
+    -35,
+    72,
+    -15,
+    58,
+    -65
+  );
+
+  ctx.bezierCurveTo(
+    48,
+    -95,
+    20,
+    -70,
+    30,
+    -48
+  );
+
+  ctx.lineWidth=15;
+
+  ctx.lineCap="round";
+
+  ctx.strokeStyle=fur;
+
+  ctx.stroke();
+
+  ctx.restore();
+
+
+  /* body */
+
+  ellipse(
+    0,
+    -72,
+    65,
+    78,
+    fur,
+    pose.bodyTilt
+  );
+
+
+  /* belly */
+
+  ellipse(
+    0,
+    -58,
+    43,
+    52,
+    fur==="#f5f1ea"
+      ? "#fffaf6"
+      : "#ef934f"
+  );
+
+
+  /* back legs */
+
+  ellipse(
+    -38,
+    -12,
+    25,
+    38,
+    fur,
+    pose.legTilt
+  );
+
+  ellipse(
+    38,
+    -12,
+    25,
+    38,
+    fur,
+    -pose.legTilt
+  );
+
+
+  /* feet */
+
+  ellipse(
+    -40,
+    15,
+    25,
+    12,
+    fur
+  );
+
+  ellipse(
+    40,
+    15,
+    25,
+    12,
+    fur
+  );
+
+
+  /* neck */
+
+  ellipse(
+    0,
+    -128,
+    48,
+    28,
+    fur
+  );
+
+
+  /* collar */
+
+  ctx.save();
+
+  ctx.translate(
+    0,
+    -122
+  );
+
+  ctx.rotate(
+    pose.headTilt
+  );
+
+  ctx.fillStyle=collar;
+
+  ctx.fillRect(
+    -44,
+    -7,
+    88,
+    12
+  );
+
+  /* collar bell */
+
+  circle(
+    0,
+    9,
+    7,
+    "#ffd34e"
+  );
+
+  ctx.restore();
+
+
+  /* head */
+
+  ctx.save();
+
+  ctx.translate(
+    0,
+    -174
+  );
+
+  ctx.rotate(
+    pose.headTilt
+  );
+
+
+  circle(
+    0,
+    0,
+    58,
+    fur
+  );
+
+
+  /* ears */
+
+  triangle(
+    -48,-36,
+    -42,-90,
+    -10,-52,
+    fur
+  );
+
+  triangle(
+    48,-36,
+    42,-90,
+    10,-52,
+    fur
+  );
+
+
+  /* inner ears */
+
+  triangle(
+    -41,-49,
+    -39,-76,
+    -22,-55,
+    innerEar
+  );
+
+  triangle(
+    41,-49,
+    39,-76,
+    22,-55,
+    innerEar
+  );
+
+
+  /* cheeks */
+
+  circle(
+    -28,
+    14,
+    20,
+    fur
+  );
+
+  circle(
+    28,
+    14,
+    20,
+    fur
+  );
+
+
+  /* eyes */
+
+  const eyeY=-3;
+
+  const eyeX=22;
+
+
+  ellipse(
+    -eyeX,
+    eyeY,
+    10,
+    15,
+    "#18131b"
+  );
+
+  ellipse(
+    eyeX,
+    eyeY,
+    10,
+    15,
+    "#18131b"
+  );
+
+
+  /* eye shine */
+
+  circle(
+    -25,
+    -7,
+    4,
+    "#fff"
+  );
+
+  circle(
+    19,
+    -7,
+    4,
+    "#fff"
+  );
+
+
+  /* eyebrows */
+
+  line(
+    -34,
+    -28,
+    -13,
+    -32,
+    "#5a4050",
+    3
+  );
+
+  line(
+    13,
+    -32,
+    34,
+    -28,
+    "#5a4050",
+    3
+  );
+
+
+  /* muzzle */
+
+  ellipse(
+    -14,
+    22,
+    18,
+    14,
+    "#fff9f3"
+  );
+
+  ellipse(
+    14,
+    22,
+    18,
+    14,
+    "#fff9f3"
+  );
+
+
+  /* orange muzzle correction */
+
+  if(fur!=="#f5f1ea"){
+
+    ctx.globalAlpha=.55;
+
+    ellipse(
+      -14,
+      22,
+      17,
+      13,
+      "#ffd0a8"
     );
 
-const orangeCat =
-    createCat(
-        0xd86b25,
-        0xff4f9a
+    ellipse(
+      14,
+      22,
+      17,
+      13,
+      "#ffd0a8"
     );
 
-whiteCat.root.position.x = -2;
+    ctx.globalAlpha=1;
 
-orangeCat.root.position.x = 2;
-
-scene.add(
-    whiteCat.root,
-    orangeCat.root
-);
+  }
 
 
-/* ======================================================
-   GROUND
-====================================================== */
+  /* nose */
 
-const groundMaterial =
-    new THREE.MeshStandardMaterial({
-        color:0x241328,
-        roughness:.9
-    });
+  triangle(
+    -8,17,
+    8,17,
+    0,28,
+    "#ff719d"
+  );
 
-const ground =
-    new THREE.Mesh(
-        new THREE.CircleGeometry(
-            12,
-            64
-        ),
-        groundMaterial
+
+  /* mouth */
+
+  line(
+    0,
+    28,
+    -7,
+    34,
+    "#38202d",
+    2
+  );
+
+  line(
+    0,
+    28,
+    7,
+    34,
+    "#38202d",
+    2
+  );
+
+
+  /* whiskers */
+
+  line(
+    -17,
+    25,
+    -58,
+    16,
+    "#fff",
+    2
+  );
+
+  line(
+    -17,
+    31,
+    -61,
+    32,
+    "#fff",
+    2
+  );
+
+  line(
+    17,
+    25,
+    58,
+    16,
+    "#fff",
+    2
+  );
+
+  line(
+    17,
+    31,
+    61,
+    32,
+    "#fff",
+    2
+  );
+
+
+  ctx.restore();
+
+
+  /* arms */
+
+  function arm(
+    side,
+    angle,
+    length
+  ){
+
+    ctx.save();
+
+    ctx.translate(
+      side*43,
+      -102
     );
 
-ground.rotation.x =
-    -Math.PI/2;
+    ctx.rotate(angle);
 
-ground.receiveShadow = true;
+    ellipse(
+      0,
+      25,
+      14,
+      length,
+      fur
+    );
 
-scene.add(ground);
+    circle(
+      0,
+      48+length,
+      15,
+      fur
+    );
+
+    ctx.restore();
+
+  }
 
 
-/* ======================================================
-   HEART EFFECT
-====================================================== */
+  arm(
+    -1,
+    pose.armL,
+    34
+  );
 
-function floatingHeart(){
+  arm(
+    1,
+    pose.armR,
+    34
+  );
 
-    const heart =
-        document.createElement("div");
 
-    heart.textContent = "❤️";
+  ctx.restore();
 
-    heart.style.position = "fixed";
-    heart.style.zIndex = "150";
-    heart.style.pointerEvents = "none";
-
-    heart.style.left =
-        (40 + Math.random()*20) + "vw";
-
-    heart.style.top =
-        (35 + Math.random()*20) + "vh";
-
-    heart.style.fontSize =
-        (18 + Math.random()*22) + "px";
-
-    document.body.appendChild(heart);
-
-    let life = 0;
-
-    const timer =
-        setInterval(()=>{
-
-            life += .025;
-
-            heart.style.transform =
-                `translateY(${-life*90}px)
-                 scale(${1+life*.5})`;
-
-            heart.style.opacity =
-                String(
-                    Math.max(
-                        0,
-                        1-life
-                    )
-                );
-
-            if(life >= 1){
-
-                clearInterval(timer);
-
-                heart.remove();
-
-            }
-
-        },16);
 }
 
 
-/* ======================================================
-   ANIMATION
-====================================================== */
+/* =====================================================
+   CAT POSES
+===================================================== */
 
-let catStarted = false;
-let catFinished = false;
+function basePose(){
 
-const clock =
-    new THREE.Clock();
+  return {
+
+    bodyTilt:0,
+
+    headTilt:0,
+
+    armL:-.15,
+
+    armR:.15,
+
+    legTilt:0,
+
+    tail:.3
+
+  };
+
+}
+
+
+/* =====================================================
+   MAIN CAT ANIMATION
+===================================================== */
+
+function renderCats(){
+
+  if(!catRunning){
+
+    drawScene(0);
+
+    requestAnimationFrame(renderCats);
+
+    return;
+
+  }
+
+
+  const elapsed=
+    (performance.now()-catStart)/1000;
+
+
+  const t=
+    elapsed%14;
+
+
+  drawScene(t);
+
+
+  if(
+    elapsed>13.2 &&
+    !catFinished
+  ){
+
+    catFinished=true;
+
+    catStatus.textContent=
+      "❤️ 2D গল্প শেষ — এখন পরের surprise-এর পালা।";
+
+    catContinue.disabled=false;
+
+  }
+
+
+  requestAnimationFrame(renderCats);
+
+}
+
+
+/* =====================================================
+   DRAW SCENE
+===================================================== */
+
+function drawScene(t){
+
+  ctx.clearRect(
+    0,
+    0,
+    catW,
+    catH
+  );
+
+
+  /* background */
+
+  const gradient=
+    ctx.createLinearGradient(
+      0,
+      0,
+      0,
+      catH
+    );
+
+  gradient.addColorStop(
+    0,
+    "#3b173d"
+  );
+
+  gradient.addColorStop(
+    .55,
+    "#170a20"
+  );
+
+  gradient.addColorStop(
+    1,
+    "#08040d"
+  );
+
+  ctx.fillStyle=gradient;
+
+  ctx.fillRect(
+    0,
+    0,
+    catW,
+    catH
+  );
+
+
+  /* moon glow */
+
+  const glow=
+    ctx.createRadialGradient(
+      catW/2,
+      catH*.32,
+      5,
+      catW/2,
+      catH*.32,
+      170
+    );
+
+  glow.addColorStop(
+    0,
+    "#ff9fc733"
+  );
+
+  glow.addColorStop(
+    1,
+    "transparent"
+  );
+
+  ctx.fillStyle=glow;
+
+  ctx.fillRect(
+    0,
+    0,
+    catW,
+    catH
+  );
+
+
+  /* stars */
+
+  for(let i=0;i<30;i++){
+
+    const sx=
+      (i*97)%catW;
+
+    const sy=
+      25+(i*53)%180;
+
+    const tw=
+      .35+
+      .3*Math.sin(
+        t*2+i
+      );
+
+    ctx.globalAlpha=tw;
+
+    circle(
+      sx,
+      sy,
+      1.5,
+      "#ffd5e9"
+    );
+
+  }
+
+  ctx.globalAlpha=1;
+
+
+  /* floor */
+
+  ctx.fillStyle="#100817";
+
+  ctx.beginPath();
+
+  ctx.ellipse(
+    catW/2,
+    catH-45,
+    catW*.42,
+    45,
+    0,
+    0,
+    Math.PI*2
+  );
+
+  ctx.fill();
+
+
+  /* base */
+
+  let whiteX=
+    catW*.32;
+
+  let orangeX=
+    catW*.68;
+
+  let whiteY=
+    catH-100;
+
+  let orangeY=
+    catH-100;
+
+
+  let white=
+    basePose();
+
+  let orange=
+    basePose();
+
+
+  /* =================================================
+     0 - 2.2 LOOK AT EACH OTHER
+  ================================================= */
+
+  if(t<2.2){
+
+    const p=
+      smooth(
+        t/2.2
+      );
+
+    whiteX=
+      lerp(
+        catW*.25,
+        catW*.35,
+        p
+      );
+
+    orangeX=
+      lerp(
+        catW*.75,
+        catW*.65,
+        p
+      );
+
+    white.headTilt=
+      -.10;
+
+    orange.headTilt=
+      .10;
+
+  }
+
+
+  /* =================================================
+     2.2 - 4 PLAYFUL PAW
+  ================================================= */
+
+  else if(t<4){
+
+    const p=
+      (t-2.2)/1.8;
+
+    whiteX=
+      catW*.35;
+
+    orangeX=
+      catW*.65;
+
+    const swing=
+      Math.sin(
+        p*Math.PI*4
+      )*.75;
+
+    white.armR=
+      -.35+swing;
+
+    orange.armL=
+      .35-swing;
+
+    white.headTilt=
+      -.08;
+
+    orange.headTilt=
+      .08;
+
+  }
+
+
+  /* =================================================
+     4 - 6 LITTLE FIGHT
+  ================================================= */
+
+  else if(t<6){
+
+    const p=
+      (t-4)/2;
+
+    whiteX=
+      lerp(
+        catW*.35,
+        catW*.43,
+        p
+      );
+
+    orangeX=
+      lerp(
+        catW*.65,
+        catW*.57,
+        p
+      );
+
+    white.bodyTilt=
+      Math.sin(
+        p*Math.PI*6
+      )*.08;
+
+    orange.bodyTilt=
+      -Math.sin(
+        p*Math.PI*6
+      )*.08;
+
+    white.armR=
+      -.8;
+
+    orange.armL=
+      .8;
+
+    white.headTilt=
+      -.16;
+
+    orange.headTilt=
+      .16;
+
+  }
+
+
+  /* =================================================
+     6 - 7.3 PAW HOLD
+  ================================================= */
+
+  else if(t<7.3){
+
+    const p=
+      smooth(
+        (t-6)/1.3
+      );
+
+    whiteX=
+      lerp(
+        catW*.43,
+        catW*.46,
+        p
+      );
+
+    orangeX=
+      lerp(
+        catW*.57,
+        catW*.54,
+        p
+      );
+
+    white.armR=
+      -.95;
+
+    orange.armL=
+      .95;
+
+    white.headTilt=
+      -.08;
+
+    orange.headTilt=
+      .08;
+
+  }
+
+
+  /* =================================================
+     7.3 - 8.6 COME CLOSE
+  ================================================= */
+
+  else if(t<8.6){
+
+    const p=
+      smooth(
+        (t-7.3)/1.3
+      );
+
+    whiteX=
+      lerp(
+        catW*.46,
+        catW*.49,
+        p
+      );
+
+    orangeX=
+      lerp(
+        catW*.54,
+        catW*.51,
+        p
+      );
+
+    white.armR=
+      -.55;
+
+    orange.armL=
+      .55;
+
+    white.headTilt=
+      -.12;
+
+    orange.headTilt=
+      .12;
+
+  }
+
+
+  /* =================================================
+     8.6 - 9.5 NOSE KISS
+  ================================================= */
+
+  else if(t<9.5){
+
+    const p=
+      smooth(
+        (t-8.6)/.9
+      );
+
+    whiteX=
+      lerp(
+        catW*.49,
+        catW*.495,
+        p
+      );
+
+    orangeX=
+      lerp(
+        catW*.51,
+        catW*.505,
+        p
+      );
+
+    white.headTilt=
+      lerp(
+        -.12,
+        -.02,
+        p
+      );
+
+    orange.headTilt=
+      lerp(
+        .12,
+        .02,
+        p
+      );
+
+    white.armR=
+      -.45;
+
+    orange.armL=
+      .45;
+
+
+    if(
+      Math.random()<.08
+    ){
+
+      createCatHeart(
+        catW/2+
+        (Math.random()-.5)*40,
+        catH*.35
+      );
+
+    }
+
+  }
+
+
+  /* =================================================
+     9.5 - 11.3 HUG
+  ================================================= */
+
+  else if(t<11.3){
+
+    const p=
+      smooth(
+        (t-9.5)/1.8
+      );
+
+    whiteX=
+      lerp(
+        catW*.495,
+        catW*.46,
+        p
+      );
+
+    orangeX=
+      lerp(
+        catW*.505,
+        catW*.54,
+        p
+      );
+
+    whiteY=
+      catH-100-
+      Math.sin(p*Math.PI)*20;
+
+    orangeY=
+      catH-100-
+      Math.sin(p*Math.PI)*20;
+
+    white.armR=
+      lerp(
+        -.45,
+        -1.15,
+        p
+      );
+
+    white.armL=
+      lerp(
+        -.1,
+        .8,
+        p
+      );
+
+    orange.armL=
+      lerp(
+        .45,
+        1.15,
+        p
+      );
+
+    orange.armR=
+      lerp(
+        .1,
+        -.8,
+        p
+      );
+
+    white.headTilt=
+      -.06;
+
+    orange.headTilt=
+      .06;
+
+
+    if(
+      Math.random()<.12
+    ){
+
+      createCatHeart(
+        catW/2+
+        (Math.random()-.5)*70,
+        catH*.34
+      );
+
+    }
+
+  }
+
+
+  /* =================================================
+     11.3 - 13.99 HAPPY BOUNCE
+  ================================================= */
+
+  else{
+
+    const p=
+      t-11.3;
+
+    const jump=
+      Math.abs(
+        Math.sin(
+          p*Math.PI*2
+        )
+      )*22;
+
+    whiteX=
+      catW*.38;
+
+    orangeX=
+      catW*.62;
+
+    whiteY=
+      catH-100-jump;
+
+    orangeY=
+      catH-100-jump;
+
+    white.bodyTilt=
+      Math.sin(
+        p*Math.PI*4
+      )*.07;
+
+    orange.bodyTilt=
+      -Math.sin(
+        p*Math.PI*4
+      )*.07;
+
+    white.armL=
+      -.7+
+      Math.sin(
+        p*Math.PI*4
+      )*.25;
+
+    white.armR=
+      .7+
+      Math.sin(
+        p*Math.PI*4
+      )*.25;
+
+    orange.armL=
+      -.7-
+      Math.sin(
+        p*Math.PI*4
+      )*.25;
+
+    orange.armR=
+      .7-
+      Math.sin(
+        p*Math.PI*4
+      )*.25;
+
+  }
+
+
+  /* tails */
+
+  white.tail=
+    .3+
+    Math.sin(t*3)*.25;
+
+  orange.tail=
+    -.3+
+    Math.sin(t*3+Math.PI)*.25;
+
+
+  /* draw white cat */
+
+  drawCat(
+    whiteX,
+    whiteY,
+    Math.min(
+      1,
+      catW/650
+    ),
+    "#f5f1ea",
+    "#f2a6b9",
+    "#79a9ff",
+    1,
+    white
+  );
+
+
+  /* draw orange cat */
+
+  drawCat(
+    orangeX,
+    orangeY,
+    Math.min(
+      1,
+      catW/650
+    ),
+    "#d87532",
+    "#ffb08a",
+    "#ff5e9e",
+    -1,
+    orange
+  );
+
+
+  /* floating hearts */
+
+  drawCatHearts();
+
+
+  /* status */
+
+  if(t<2.2){
+
+    catStatus.textContent=
+      "🐱 দুজন দুজনকে দেখছে...";
+
+  }
+  else if(t<4){
+
+    catStatus.textContent=
+      "😹 একটু খুনসুটি শুরু হয়েছে...";
+
+  }
+  else if(t<6){
+
+    catStatus.textContent=
+      "😾 আরে! ছোট্ট ঝগড়া লেগে গেছে!";
+
+  }
+  else if(t<7.3){
+
+    catStatus.textContent=
+      "🐾 এবার একজন আরেকজনের হাত ধরেছে...";
+
+  }
+  else if(t<8.6){
+
+    catStatus.textContent=
+      "🥹 দুজন ধীরে ধীরে কাছে আসছে...";
+
+  }
+  else if(t<9.5){
+
+    catStatus.textContent=
+      "💋 lip kiss! ❤️";
+
+  }
+  else if(t<11.3){
+
+    catStatus.textContent=
+      "🫂 দুজন এখন একে অপরকে জড়িয়ে ধরেছে...";
+
+  }
+  else{
+
+    catStatus.textContent=
+      "🥰❤️ Happy ending!";
+
+  }
+
+}
+
+
+/* =====================================================
+   MATH
+===================================================== */
+
+function lerp(
+  a,
+  b,
+  t
+){
+
+  return a+
+    (b-a)*t;
+
+}
+
 
 function smooth(t){
 
-    return t*t*(3-2*t);
-
-}
-
-
-function animateCats(){
-
-    if(!catStarted) return;
-
-    const t =
-        clock.getElapsedTime() % 12;
-
-
-    /* RESET */
-
-    whiteCat.root.rotation.z = 0;
-    orangeCat.root.rotation.z = 0;
-
-    whiteCat.armL.rotation.z = 0;
-    whiteCat.armR.rotation.z = 0;
-
-    orangeCat.armL.rotation.z = 0;
-    orangeCat.armR.rotation.z = 0;
-
-
-    /* ================= 0-2 LOOK ================= */
-
-    if(t < 2){
-
-        const p =
-            smooth(t/2);
-
-        whiteCat.root.position.x =
-            -2 + p*.35;
-
-        orangeCat.root.position.x =
-            2 - p*.35;
-
-        whiteCat.head.rotation.z =
-            THREE.MathUtils.degToRad(-10*p);
-
-        orangeCat.head.rotation.z =
-            THREE.MathUtils.degToRad(10*p);
-
-    }
-
-
-    /* ================= 2-3.5 PLAY ================= */
-
-    else if(t < 3.5){
-
-        const p =
-            (t-2)/1.5;
-
-        whiteCat.root.position.x = -1.65;
-        orangeCat.root.position.x = 1.65;
-
-        const swing =
-            Math.sin(p*Math.PI*4);
-
-        whiteCat.armR.rotation.z =
-            THREE.MathUtils.degToRad(
-                -55*swing
-            );
-
-        orangeCat.armL.rotation.z =
-            THREE.MathUtils.degToRad(
-                55*swing
-            );
-
-    }
-
-
-    /* ================= 3.5-5 FIGHT ================= */
-
-    else if(t < 5){
-
-        const p =
-            (t-3.5)/1.5;
-
-        whiteCat.root.position.x =
-            -1.55 + p*.8;
-
-        orangeCat.root.position.x =
-            1.55 - p*.8;
-
-        const shake =
-            Math.sin(p*Math.PI*4);
-
-        whiteCat.root.rotation.z =
-            shake*.12;
-
-        orangeCat.root.rotation.z =
-            -shake*.12;
-
-        whiteCat.armR.rotation.z =
-            -.7;
-
-        orangeCat.armL.rotation.z =
-            .7;
-
-    }
-
-
-    /* ================= 5-6 PAW HOLD ================= */
-
-    else if(t < 6){
-
-        const p =
-            smooth(t-5);
-
-        whiteCat.root.position.x =
-            -.75 + p*.3;
-
-        orangeCat.root.position.x =
-            .75 - p*.3;
-
-        whiteCat.armR.rotation.z =
-            -1.1;
-
-        orangeCat.armL.rotation.z =
-            1.1;
-
-        whiteCat.head.rotation.z =
-            -.08;
-
-        orangeCat.head.rotation.z =
-            .08;
-
-    }
-
-
-    /* ================= 6-7 CLOSE ================= */
-
-    else if(t < 7){
-
-        const p =
-            smooth(t-6);
-
-        whiteCat.root.position.x =
-            -.45 + p*.3;
-
-        orangeCat.root.position.x =
-            .45 - p*.3;
-
-        whiteCat.armR.rotation.z =
-            -.45;
-
-        orangeCat.armL.rotation.z =
-            .45;
-
-    }
-
-
-    /* ================= 7-7.8 KISS ================= */
-
-    else if(t < 7.8){
-
-        const p =
-            smooth((t-7)/.8);
-
-        whiteCat.root.position.x =
-            -.15 + p*.15;
-
-        orangeCat.root.position.x =
-            .15 - p*.15;
-
-        whiteCat.head.rotation.z =
-            THREE.MathUtils.degToRad(
-                -8 + 8*p
-            );
-
-        orangeCat.head.rotation.z =
-            THREE.MathUtils.degToRad(
-                8 - 8*p
-            );
-
-        if(Math.random() < .08){
-
-            floatingHeart();
-
-        }
-
-    }
-
-
-    /* ================= 7.8-9 HUG ================= */
-
-    else if(t < 9){
-
-        const p =
-            smooth((t-7.8)/1.2);
-
-        whiteCat.root.position.x =
-            -.05;
-
-        orangeCat.root.position.x =
-            .05;
-
-        whiteCat.root.position.y =
-            .15*p;
-
-        orangeCat.root.position.y =
-            .15*p;
-
-        whiteCat.armR.rotation.z =
-            -.9*p;
-
-        whiteCat.armL.rotation.z =
-            .7*p;
-
-        orangeCat.armL.rotation.z =
-            .9*p;
-
-        orangeCat.armR.rotation.z =
-            -.7*p;
-
-        if(
-            p > .55 &&
-            Math.random() < .1
-        ){
-
-            floatingHeart();
-
-        }
-
-    }
-
-
-    /* ================= 9-10 HAPPY ================= */
-
-    else if(t < 10){
-
-        const p =
-            t-9;
-
-        whiteCat.root.position.x =
-            -.45;
-
-        orangeCat.root.position.x =
-            .45;
-
-        whiteCat.root.position.y =
-            Math.abs(
-                Math.sin(p*Math.PI*3)
-            )*.25;
-
-        orangeCat.root.position.y =
-            Math.abs(
-                Math.sin(p*Math.PI*3)
-            )*.25;
-
-        whiteCat.root.rotation.z =
-            Math.sin(p*Math.PI*6)*.08;
-
-        orangeCat.root.rotation.z =
-            -Math.sin(p*Math.PI*6)*.08;
-
-    }
-
-
-    /* ================= 10-12 HAPPY END ================= */
-
-    else{
-
-        whiteCat.root.position.x =
-            -.75;
-
-        orangeCat.root.position.x =
-            .75;
-
-        whiteCat.head.rotation.z =
-            Math.sin(t*4)*.08;
-
-        orangeCat.head.rotation.z =
-            -Math.sin(t*4)*.08;
-
-    }
-
-
-    /* BODY BOUNCE */
-
-    const bounce =
-        Math.abs(
-            Math.sin(t*5)
-        )*.035;
-
-    whiteCat.body.position.y =
-        bounce;
-
-    orangeCat.body.position.y =
-        bounce;
-
-
-    /* TAIL */
-
-    whiteCat.tail.rotation.z =
-        Math.sin(t*4)*.38;
-
-    orangeCat.tail.rotation.z =
-        Math.sin(t*4+Math.PI)*.38;
-
-
-    /* FINISH */
-
-    if(
-        t > 11.2 &&
-        !catFinished
-    ){
-
-        catFinished = true;
-
-        status.textContent =
-            "❤️ 3D গল্প শেষ — এখন পরের surprise-এর পালা।";
-
-        continueButton.disabled =
-            false;
-
-    }
-
-}
-
-
-/* ======================================================
-   RENDER
-====================================================== */
-
-function resize3D(){
-
-    const width =
-        stage.clientWidth;
-
-    const height =
-        stage.clientHeight;
-
-    camera.aspect =
-        width/height;
-
-    camera.updateProjectionMatrix();
-
-    renderer.setSize(
-        width,
-        height,
-        false
+  t=
+    Math.max(
+      0,
+      Math.min(
+        1,
+        t
+      )
     );
 
-}
-
-resize3D();
-
-window.addEventListener(
-    "resize",
-    resize3D
-);
-
-
-function render(){
-
-    requestAnimationFrame(render);
-
-    animateCats();
-
-    camera.lookAt(
-        0,
-        1.7,
-        0
-    );
-
-    renderer.render(
-        scene,
-        camera
-    );
+  return t*t*
+    (3-2*t);
 
 }
 
-render();
+
+/* =====================================================
+   START CATS
+===================================================== */
+
+function startCats(){
+
+  if(catRunning)return;
+
+  resizeCatCanvas();
+
+  catRunning=true;
+
+  catFinished=false;
+
+  catContinue.disabled=true;
+
+  catStart=
+    performance.now();
+
+  catStatus.textContent=
+    "🐱 দুইটি মিষ্টি বিড়াল এসেছে...";
+
+}
 
 
-/* ======================================================
-   START
-====================================================== */
+/* =====================================================
+   RESET CATS
+===================================================== */
 
-window.start3DCats =
-function(){
+function resetCats(){
 
-    if(catStarted) return;
+  catRunning=false;
 
-    catStarted = true;
-    catFinished = false;
+  catFinished=false;
 
-    continueButton.disabled =
-        true;
+  catContinue.disabled=true;
 
-    status.textContent =
-        "🐱❤️ 3D animation চলছে...";
+  catHearts=[];
 
-    clock.start();
+  catStart=
+    performance.now();
 
-};
+  resizeCatCanvas();
+
+  drawScene(0);
+
+}
+
+
+/* =====================================================
+   START RENDER LOOP
+===================================================== */
+
+resetCats();
+
+renderCats();
 
 </script>
 
