@@ -63,28 +63,63 @@ textarea{border-radius:20px;text-align:left;min-height:140px}
 
 <section class="screen active" id="s1"><div class="card password-card">
 <div class="lock">🔐</div><div class="eyebrow">A private little surprise</div>
-<h1 class="password-title">প্রবেশের আগে একটি ছোট্ট প্রশ্ন...</h1>
-<p class="password-sub">এই ছোট্ট surprise-টির দরজা খোলার চাবি কিন্তু তোমার কাছেই আছে। ❤️<br><br><b>তোমার জন্মদিনই এই জায়গায় প্রবেশের পাসওয়ার্ড।</b></p>
+<h1 class="password-title">ভেবে দেখো...</h1>
+<p class="password-sub">এই দরজা টি খোলার চাবি কিন্তু তোমার কাছেই আছে। ❤️<br><br><b>তোমার জন্মদিনই এই জায়গায় প্রবেশের পাসওয়ার্ড।</b></p>
 <input id="pw" type="password" placeholder="জন্মদিন লিখো" autocomplete="off">
 <div class="error" id="err"></div><button class="btn" onclick="check()">✨ দরজাটি খুলে দেখো</button>
 </div></section>
 
-<section class="screen" id="s2"><div class="heart">♡</div><div class="eyebrow">Password accepted</div><h1 class="title">তাহলে তুমি এসে গেছো...</h1><div class="type" id="t2"></div><button class="btn" onclick="go(3)">🌙 একটু এগিয়ে যাই</button></section>
+<section class="screen" id="s2"><div class="heart">♡</div><div class="eyebrow">Password accepted</div><h1 class="title">তাহলে তুমি সঠিকভাবে দরজাটি খুলে এসে গেছো...</h1><div class="type" id="t2"></div><button class="btn" onclick="go(3)">🌙 একটু এগিয়ে যাই</button></section>
 
 <section class="screen" id="s3"><div class="eyebrow">But wait...</div><h1 class="title">আজকের দিনটা<br>কেন যেন একটু বেশি special...</h1><div class="type" id="t3"></div><button class="btn" onclick="go(4)">🎁 কারণটা জানতে চাই</button></section>
 
 <section class="screen" id="s4"><div class="eyebrow">Something is about to happen</div><div class="heart">💗</div><h1 class="title">Ready?</h1><div class="type">এবার একটু মন দিয়ে দেখো...<br>সামনে যা আসছে, সেটা শুধু তোমার জন্য। ✨</div><button class="btn" onclick="go(5)">✨ Surprise শুরু হোক</button></section>
 
-<section class="screen" id="s5"><div class="eyebrow">One little game</div><h1 class="title">🎈 Balloon Pop!</h1><div class="type">নিচের balloon-টা click করো...<br>এর ভেতরে একটা surprise লুকানো আছে। 👀</div><div id="balloon" style="font-size:110px;margin:25px;cursor:pointer" onclick="pop()">🎈</div></section>
+<section class="screen" id="s5"><div class="eyebrow">One little game</div><h1 class="title">🎈 Balloon Pop!</h1><div class="type">নিচের balloon-টা click করো...<br>এরপর দেখো কি হয় । 👀</div><div id="balloon" style="font-size:110px;margin:25px;cursor:pointer" onclick="pop()">🎈</div></section>
 
-<section class="screen" id="s6"><div class="eyebrow">Make a wish</div><h1 class="title">তোমার জন্য একটা Cake 🎂</h1><div class="cake">🎂</div><div class="type">একটা wish করো...<br>তারপর candle-টা নিভিয়ে দাও। ✨</div><button class="btn" onclick="go(7)">🕯️ Candle নিভাও</button></section>
+<section class="screen" id="s6"><div class="eyebrow">Make a wish</div><h1 class="title">তোমার জন্য একটা Cake 🎂</h1><div class="cake">🎂</div><div class="type">নিজেকে নিয়ে সুন্দর একটা wish করো...<br>তারপর candle-টা নিভিয়ে দাও। ✨</div><button class="btn" onclick="go(7)">🕯️ Candle নিভাও</button></section>
+<!-- =========================================================
+     SCREEN 7 — REAL-TIME 3D TWO CAT ANIMATION
+     No MP4 / No external Blender render required
+     ========================================================= -->
+<section class="screen" id="screen7">
 
-<section class="screen" id="s7">
-<div class="eyebrow">Meanwhile...</div><h1 class="title">দুইজন ছোট্ট অতিথি এসেছে 🐱</h1>
-<div class="cat-stage"><canvas id="catCanvas"></canvas><div class="cat-caption" id="catText">🐱 একে অপরকে দেখে থেমে গেছে...</div></div>
-<div class="status" id="catStatus">3D animation প্রস্তুত হচ্ছে...</div>
-<div class="type">দেখা → খুনসুটি/পা দিয়ে ঠেলা → ছোট্ট ঝগড়া → হাত/পা ধরা → কাছে আসা → নাক দিয়ে kiss → কোলে তুলে নেওয়া → hug → happy bounce → tail movement ❤️</div>
-<button class="btn" id="catNext" onclick="go(8)" disabled>🥰 তাদের শেষ কাণ্ডটা দেখো</button>
+<div class="eyebrow">Meanwhile...</div>
+
+<h1 class="title">
+দুইজন ছোট্ট অতিথি এসেছে 🐱
+</h1>
+
+<div class="cat-3d-stage">
+
+<canvas id="cat3DCanvas"></canvas>
+
+<div class="cat-3d-overlay">
+🐱 White Cat × 🐱 Orange Cat —
+খুনসুটি থেকে ভালোবাসা ❤️
+</div>
+
+</div>
+
+<div class="cat-status" id="catStatus">
+3D animation প্রস্তুত হচ্ছে...
+</div>
+
+<div class="type">
+প্রথমে একে অপরকে দেখা...<br>
+তারপর খুনসুটি ও ছোট্ট ঝগড়া...<br>
+তারপর হাত/পা ধরা, কাছে আসা, nose kiss,
+কোলে তুলে নেওয়া, hug আর শেষে happy bounce। 🥹❤️
+</div>
+
+<button
+class="btn"
+id="catContinue"
+onclick="goTo(8)"
+disabled>
+🥰 তাদের শেষ কাণ্ডটা দেখো
+</button>
+
 </section>
 
 <section class="screen" id="s8"><div class="eyebrow">A little more love...</div><div class="love"><span class="a">🤍🐱</span><span class="b">🐱🤍</span><div style="position:absolute;left:50%;top:25px;transform:translateX(-50%);font-size:45px">❤️</div></div><h1 class="title">ঠিক আছে... আর ঝগড়া নয়! 😂❤️</h1><div class="type">এখন শুধু ভালোবাসা, হাসি আর আদর। 🫶</div><button class="btn" onclick="birthday()">🎉 এবার আসল surprise</button></section>
@@ -98,7 +133,7 @@ textarea{border-radius:20px;text-align:left;min-height:140px}
 আজ তোমার জন্মদিন, তাই পুরোনো কোনো কথা বা অভিমান টেনে তোমার দিনটা ভারী করতে চাই না।<br><br>
 শুধু মন থেকে চাই, তুমি সবসময় ভালো থাকো, হাসিখুশি থাকো এবং তোমার জীবনের প্রতিটা ভালো জিনিস তুমি পাও। 💐<br><br>
 আমাদের মধ্যে এখন যতই দূরত্ব থাকুক, একসময়কার সুন্দর স্মৃতিগুলোর জন্য তোমার প্রতি আমার সম্মান আর শুভকামনা সবসময় থাকবে।<br><br>
-<strong>(এই website টি শুধু মাত্র তোমার জন্য তৈরি করেছি। 🫰✨)</strong><br><br>
+<strong>(🫰✨)</strong><br><br>
 আবারও জন্মদিনের শুভেচ্ছা রইল। সবসময় হাসি খুশি থেকো। ❤️🎂
 </div><button class="btn" onclick="go(11)">🌍 আরও একটি surprise</button></div></section>
 
@@ -160,7 +195,7 @@ const WNUM="8801863385785";
 function go(n){
  document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));
  document.getElementById("s"+n).classList.add("active");
- if(n===2)type("t2","কিছু surprise সবাইকে দেখানো যায় না... কিছু surprise শুধু একজন বিশেষ মানুষের জন্য রাখা হয়। ❤️");
+ if(n===2)type("t2","কিছু surpise সবাইকে দেওয়ার মত হয় না আবার সকল মানুষের জন্য তা হয়ও না কিন্তু কিছু কিছু মানুষ খুবই গুরুত্বপূর্ণ... কিছু surprise শুধু একজন বিশেষ মানুষের জন্য রাখা হয়। বিশেষ মানুষ সবসময়ই বিশেষ হয়ে থাকে ❤️");
  if(n===3)type("t3","আজকের দিনটা ক্যালেন্ডারের আর দশটা দিনের মতো নয়। কারণ আজ এমন একজনের জন্মদিন, যার জন্য এই ছোট্ট আয়োজন। ✨");
  if(n===7)startCats();
 }
@@ -184,87 +219,1277 @@ function rs(){sc.width=innerWidth;sc.height=innerHeight}rs();onresize=rs;
 for(let i=0;i<120;i++)P.push({x:Math.random(),y:Math.random(),r:Math.random()*2+.3,s:Math.random()*.0007+.0002});
 (function star(){sx.clearRect(0,0,sc.width,sc.height);P.forEach(p=>{p.y-=p.s;if(p.y<0)p.y=1;sx.beginPath();sx.arc(p.x*sc.width,p.y*sc.height,p.r,0,7);sx.fillStyle="rgba(255,190,220,.5)";sx.fill()});requestAnimationFrame(star)})();
 
-/* ---------- embedded procedural 3D cats ----------
-   No Blender file, MP4, Three.js or external library is required.
-   The canvas uses a perspective projection and shaded ellipsoids.
-*/
-const c=document.getElementById("catCanvas"),ctx=c.getContext("2d");
-let cw=720,ch=720,t0=0,catStarted=false,catDone=false;
-function resizeCat(){let r=c.getBoundingClientRect();cw=c.width=Math.max(320,r.width*devicePixelRatio);ch=c.height=Math.max(420,r.height*devicePixelRatio);ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0)}
-resizeCat();addEventListener("resize",resizeCat);
-function phase(time){
- let sec=(time-t0)/1000;
- if(sec<2)return["একটু দূর থেকে একে অপরকে দেখছে...","look"];
- if(sec<4)return["🐾 খুনসুটি শুরু — পা দিয়ে হালকা ঠেলা!","play"];
- if(sec<6)return["😾 ছোট্ট ঝগড়া... তারপর দুজনেই থেমে গেল","fight"];
- if(sec<8)return["🤝 পা ধরে মিল হয়ে যাচ্ছে...","hold"];
- if(sec<10)return["❤️ কাছে আসছে... nose kiss!","kiss"];
- if(sec<13)return["🥹 একজন আরেকজনকে কোলে তুলে নিল!","lift"];
- if(sec<16)return["🫂 বড়সড় hug!","hug"];
- if(sec<19)return["🎉 Happy bounce + tail movement!","bounce"];
- return["❤️ গল্প শেষ — ভালোবাসাই জিতল।","done"];
-}
-function ellipse(x,y,rx,ry,fill,rot=0){
- ctx.save();ctx.translate(x,y);ctx.rotate(rot);ctx.scale(1,ry/rx);ctx.beginPath();ctx.arc(0,0,rx,0,Math.PI*2);ctx.fillStyle=fill;ctx.fill();ctx.restore();
-}
-function cat(x,y,s,fur,dir,pose){
- ctx.save();ctx.translate(x,y);ctx.scale(s,s);
- let bob=pose==="bounce"?Math.sin(performance.now()/90)*8:0;
- ctx.translate(0,bob);
- // shadow
- ctx.globalAlpha=.35;ellipse(0,105,82,18,"#000");ctx.globalAlpha=1;
- // tail
- let sw=Math.sin(performance.now()/180)*20*(pose==="bounce"?1.7:1);
- ctx.strokeStyle=fur;ctx.lineWidth=18;ctx.lineCap="round";ctx.beginPath();ctx.moveTo(dir*55,55);ctx.quadraticCurveTo(dir*(105+sw),20,dir*(110+sw),-40);ctx.stroke();
- // body/head
- ellipse(0,35,65,78,fur);
- ellipse(0,-48,58,55,fur);
- // ears
- ctx.fillStyle=fur;ctx.beginPath();ctx.moveTo(-42,-83);ctx.lineTo(-25,-135);ctx.lineTo(-5,-88);ctx.fill();ctx.beginPath();ctx.moveTo(5,-88);ctx.lineTo(25,-135);ctx.lineTo(42,-83);ctx.fill();
- // ears inner
- ctx.fillStyle="#ff9ab0";ctx.beginPath();ctx.moveTo(-34,-91);ctx.lineTo(-25,-118);ctx.lineTo(-13,-91);ctx.fill();ctx.beginPath();ctx.moveTo(13,-91);ctx.lineTo(25,-118);ctx.lineTo(34,-91);ctx.fill();
- // eyes
- ellipse(-20,-54,8,12,"#111");ellipse(20,-54,8,12,"#111");ellipse(-17,-58,3,4,"#fff");ellipse(23,-58,3,4,"#fff");
- // muzzle/nose
- ellipse(0,-25,25,18,fur);
- ellipse(0,-29,6,4,"#ff5577");
- // paws, animated toward partner
- let reach=pose==="play"||pose==="fight"||pose==="hold"||pose==="hug"?42:0;
- if(pose==="lift"||pose==="hug")reach=58;
- let lift=pose==="lift"||pose==="hug"?-28:0;
- ctx.strokeStyle=fur;ctx.lineWidth=18;ctx.lineCap="round";
- ctx.beginPath();ctx.moveTo(-30,45);ctx.lineTo(-dir*(42+reach),70+lift);ctx.stroke();
- ctx.beginPath();ctx.moveTo(30,45);ctx.lineTo(dir*(42+reach),70+lift);ctx.stroke();
- ctx.restore();
-}
-function startCats(){
- if(catStarted)return;
- catStarted=true;t0=performance.now();
- requestAnimationFrame(catLoop);
-}
-function catLoop(now){
- let sec=(now-t0)/1000;let [txt,pose]=phase(now);
- document.getElementById("catText").textContent=txt;
- ctx.clearRect(0,0,c.clientWidth,c.clientHeight);
- let w=c.clientWidth,h=c.clientHeight;
- // ground
- ctx.fillStyle="#0d0a13";ctx.fillRect(0,0,w,h);
- let mid=w/2,base=h*.60,dist;
- if(pose==="look")dist=125;
- else if(pose==="play")dist=105;
- else if(pose==="fight")dist=90;
- else if(pose==="hold")dist=62;
- else if(pose==="kiss")dist=35;
- else dist=18;
- if(pose==="lift"||pose==="hug"){cat(mid-18,base,1.0,"#eeeae4",1,pose);cat(mid+25,base-65,.95,"#d97827",-1,pose)}
- else {cat(mid-dist,base,1.0,"#eeeae4",1,pose);cat(mid+dist,base,1.0,"#d97827",-1,pose)}
- // decorative heart during kiss/hug
- if(pose==="kiss"||pose==="hug"||pose==="bounce"){ctx.font="42px serif";ctx.textAlign="center";ctx.fillText("❤️",mid,base-170)}
- if(pose==="done"){catDone=true;document.getElementById("catNext").disabled=false;document.getElementById("catStatus").textContent="❤️ 3D গল্প শেষ — এখন পরের surprise-এর পালা."}
- else document.getElementById("catStatus").textContent="🐱❤️ 3D animation চলছে...";
- if(sec<20)requestAnimationFrame(catLoop);else{document.getElementById("catNext").disabled=false;document.getElementById("catStatus").textContent="❤️ Animation complete."}
+/* ---/* =========================================================
+   REAL TIME 3D CAT STAGE
+   ========================================================= */
+
+.cat-3d-stage{
+    position:relative;
+    width:min(760px,94vw);
+    height:min(620px,68vh);
+    margin:0 auto 12px;
+    border-radius:32px;
+    overflow:hidden;
+    border:1px solid #ffffff20;
+    background:
+        radial-gradient(circle at 50% 35%,#40152f,#08040d 70%);
+    box-shadow:
+        0 30px 90px #0009,
+        inset 0 0 80px #ff4f9a12;
 }
 
+#cat3DCanvas{
+    display:block;
+    width:100%;
+    height:100%;
+}
+
+.cat-3d-overlay{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:20px;
+    background:
+        linear-gradient(transparent,#000c);
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;
+    pointer-events:none;
+}
+
+.cat-status{
+    min-height:26px;
+    color:#ffafd2;
+    margin-top:10px;
+    font-size:13px;
+ }
+ <script type="module">
+
+/* =========================================================
+   THREE.JS
+   ========================================================= */
+
+import * as THREE from
+'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
+
+
+/* =========================================================
+   BASIC SETUP
+   ========================================================= */
+
+const canvas =
+document.getElementById("cat3DCanvas");
+
+const status =
+document.getElementById("catStatus");
+
+const continueButton =
+document.getElementById("catContinue");
+
+const stage =
+document.querySelector(".cat-3d-stage");
+
+
+const renderer =
+new THREE.WebGLRenderer({
+    canvas,
+    antialias:true,
+    alpha:true
+});
+
+renderer.setPixelRatio(
+    Math.min(window.devicePixelRatio,2)
+);
+
+renderer.setSize(
+    stage.clientWidth,
+    stage.clientHeight,
+    false
+);
+
+renderer.shadowMap.enabled=true;
+renderer.shadowMap.type=
+THREE.PCFSoftShadowMap;
+
+renderer.outputColorSpace=
+THREE.SRGBColorSpace;
+
+
+const scene =
+new THREE.Scene();
+
+scene.background=
+new THREE.Color(0x07030c);
+
+
+const camera =
+new THREE.PerspectiveCamera(
+    42,
+    stage.clientWidth/stage.clientHeight,
+    0.1,
+    100
+);
+
+camera.position.set(
+    0,
+    3.5,
+    10
+);
+
+
+/* =========================================================
+   LIGHTING
+   ========================================================= */
+
+const ambient =
+new THREE.HemisphereLight(
+    0xffd6ed,
+    0x160b25,
+    2.2
+);
+
+scene.add(ambient);
+
+
+const keyLight =
+new THREE.DirectionalLight(
+    0xffd2e8,
+    4
+);
+
+keyLight.position.set(
+    -4,
+    8,
+    6
+);
+
+keyLight.castShadow=true;
+
+scene.add(keyLight);
+
+
+const pinkLight =
+new THREE.PointLight(
+    0xff4f9a,
+    35,
+    12
+);
+
+pinkLight.position.set(
+    -4,
+    3,
+    3
+);
+
+scene.add(pinkLight);
+
+
+const purpleLight =
+new THREE.PointLight(
+    0x8a55ff,
+    28,
+    12
+);
+
+purpleLight.position.set(
+    4,
+    3,
+    2
+);
+
+scene.add(purpleLight);
+
+
+/* =========================================================
+   MATERIALS
+   ========================================================= */
+
+const whiteFur =
+new THREE.MeshStandardMaterial({
+    color:0xf2eee8,
+    roughness:.82
+});
+
+const orangeFur =
+new THREE.MeshStandardMaterial({
+    color:0xd76b25,
+    roughness:.8
+});
+
+const pink =
+new THREE.MeshStandardMaterial({
+    color:0xff719d,
+    roughness:.45
+});
+
+const black =
+new THREE.MeshStandardMaterial({
+    color:0x050308,
+    roughness:.2
+});
+
+const eyeWhite =
+new THREE.MeshBasicMaterial({
+    color:0xffffff
+});
+
+const floorMaterial =
+new THREE.MeshStandardMaterial({
+    color:0x241328,
+    roughness:.9
+});
+
+
+/* =========================================================
+   HELPER FUNCTIONS
+   ========================================================= */
+
+function sphere(
+    parent,
+    x,y,z,
+    sx,sy,sz,
+    material
+){
+
+    const geo =
+    new THREE.SphereGeometry(
+        1,
+        24,
+        16
+    );
+
+    const mesh =
+    new THREE.Mesh(
+        geo,
+        material
+    );
+
+    mesh.position.set(x,y,z);
+    mesh.scale.set(sx,sy,sz);
+
+    mesh.castShadow=true;
+    mesh.receiveShadow=true;
+
+    parent.add(mesh);
+
+    return mesh;
+}
+
+
+function cone(
+    parent,
+    x,y,z,
+    radius,
+    height,
+    material
+){
+
+    const geo =
+    new THREE.ConeGeometry(
+        radius,
+        height,
+        20
+    );
+
+    const mesh =
+    new THREE.Mesh(
+        geo,
+        material
+    );
+
+    mesh.position.set(x,y,z);
+    mesh.castShadow=true;
+
+    parent.add(mesh);
+
+    return mesh;
+}
+
+
+/* =========================================================
+   TAIL
+   ========================================================= */
+
+function createTail(
+    parent,
+    material
+){
+
+    const curve =
+    new THREE.CatmullRomCurve3([
+        new THREE.Vector3(0,0,0),
+        new THREE.Vector3(.45,.25,.1),
+        new THREE.Vector3(.9,.65,.1),
+        new THREE.Vector3(.7,1.05,.1),
+        new THREE.Vector3(.35,1.35,.1)
+    ]);
+
+    const geometry =
+    new THREE.TubeGeometry(
+        curve,
+        20,
+        .09,
+        10,
+        false
+    );
+
+    const tail =
+    new THREE.Mesh(
+        geometry,
+        material
+    );
+
+    tail.castShadow=true;
+
+    parent.add(tail);
+
+    return tail;
+}
+
+
+/* =========================================================
+   CREATE CAT
+   ========================================================= */
+
+function createCat(
+    fur,
+    ribbonColor
+){
+
+    const cat =
+    new THREE.Group();
+
+    const body =
+    new THREE.Group();
+
+    cat.add(body);
+
+
+    /* BODY */
+
+    sphere(
+        body,
+        0,1.25,0,
+        .72,.55,.95,
+        fur
+    );
+
+
+    /* CHEST */
+
+    sphere(
+        body,
+        0,1.55,-.12,
+        .58,.48,.58,
+        fur
+    );
+
+
+    /* HEAD */
+
+    const head =
+    new THREE.Group();
+
+    head.position.set(
+        0,2.25,-.18
+    );
+
+    body.add(head);
+
+
+    sphere(
+        head,
+        0,0,0,
+        .63,.56,.58,
+        fur
+    );
+
+
+    /* MUZZLE */
+
+    sphere(
+        head,
+        0,-.40,-.08,
+        .34,.23,.24,
+        fur
+    );
+
+
+    /* NOSE */
+
+    sphere(
+        head,
+        0,-.61,-.08,
+        .08,.045,.06,
+        pink
+    );
+
+
+    /* EARS */
+
+    const earL =
+    cone(
+        head,
+        -.34,.46,-.02,
+        .22,.48,
+        fur
+    );
+
+    earL.rotation.z=
+    THREE.MathUtils.degToRad(-14);
+
+
+    const earR =
+    cone(
+        head,
+        .34,.46,-.02,
+        .22,.48,
+        fur
+    );
+
+    earR.rotation.z=
+    THREE.MathUtils.degToRad(14);
+
+
+    /* EYES */
+
+    const eyeL =
+    sphere(
+        head,
+        -.22,-.43,-.15,
+        .09,.055,.105,
+        black
+    );
+
+    const eyeR =
+    sphere(
+        head,
+        .22,-.43,-.15,
+        .09,.055,.105,
+        black
+    );
+
+
+    /* EYE HIGHLIGHTS */
+
+    sphere(
+        head,
+        -.19,-.48,-.21,
+        .025,.018,.025,
+        eyeWhite
+    );
+
+    sphere(
+        head,
+        .25,-.48,-.21,
+        .025,.018,.025,
+        eyeWhite
+    );
+
+
+    /* ARMS */
+
+    const armL =
+    new THREE.Group();
+
+    const armR =
+    new THREE.Group();
+
+    armL.position.set(
+        -.42,1.05,-.35
+    );
+
+    armR.position.set(
+        .42,1.05,-.35
+    );
+
+    body.add(armL);
+    body.add(armR);
+
+
+    sphere(
+        armL,
+        0,-.35,0,
+        .16,.48,.17,
+        fur
+    );
+
+    sphere(
+        armR,
+        0,-.35,0,
+        .16,.48,.17,
+        fur
+    );
+
+
+    /* PAWS */
+
+    sphere(
+        armL,
+        0,-.72,-.03,
+        .22,.15,.25,
+        fur
+    );
+
+    sphere(
+        armR,
+        0,-.72,-.03,
+        .22,.15,.25,
+        fur
+    );
+
+
+    /* LEGS */
+
+    sphere(
+        body,
+        -.38,.55,.05,
+        .20,.42,.25,
+        fur
+    );
+
+    sphere(
+        body,
+        .38,.55,.05,
+        .20,.42,.25,
+        fur
+    );
+
+
+    /* TAIL */
+
+    const tail =
+    createTail(
+        body,
+        fur
+    );
+
+    tail.position.set(
+        .52,.95,.25
+    );
+
+
+    /* RIBBON */
+
+    const ribbon =
+    new THREE.Group();
+
+    sphere(
+        ribbon,
+        -.18,0,0,
+        .18,.07,.14,
+        new THREE.MeshStandardMaterial({
+            color:ribbonColor,
+            roughness:.45
+        })
+    );
+
+    sphere(
+        ribbon,
+        .18,0,0,
+        .18,.07,.14,
+        new THREE.MeshStandardMaterial({
+            color:ribbonColor,
+            roughness:.45
+        })
+    );
+
+    sphere(
+        ribbon,
+        0,0,0,
+        .08,.08,.08,
+        new THREE.MeshStandardMaterial({
+            color:ribbonColor
+        })
+    );
+
+    ribbon.position.set(
+        0,1.55,-.52
+    );
+
+    body.add(ribbon);
+
+
+    return {
+        root:cat,
+        body,
+        head,
+        armL,
+        armR,
+        tail
+    };
+}
+
+
+/* =========================================================
+   CREATE TWO CATS
+   ========================================================= */
+
+const whiteCat =
+createCat(
+    0xf3eee8,
+    0x4896ff
+);
+
+const orangeCat =
+createCat(
+    0xd86b25,
+    0xff4f9a
+);
+
+
+whiteCat.root.position.set(
+    -2.0,0,0
+);
+
+orangeCat.root.position.set(
+    2.0,0,0
+);
+
+scene.add(
+    whiteCat.root,
+    orangeCat.root
+);
+
+
+/* =========================================================
+   GROUND
+   ========================================================= */
+
+const ground =
+new THREE.Mesh(
+    new THREE.CircleGeometry(12,64),
+    floorMaterial
+);
+
+ground.rotation.x=
+-Math.PI/2;
+
+ground.position.y=0;
+
+ground.receiveShadow=true;
+
+scene.add(ground);
+
+
+/* =========================================================
+   HEARTS
+   ========================================================= */
+
+const hearts=[];
+
+function makeHeart(){
+
+    const div=
+    document.createElement("div");
+
+    div.innerHTML="❤️";
+
+    div.style.position="fixed";
+    div.style.zIndex="10000";
+    div.style.pointerEvents="none";
+    div.style.fontSize=
+        (18+Math.random()*20)+"px";
+
+    div.style.left=
+        (40+Math.random()*20)+"vw";
+
+    div.style.top=
+        (35+Math.random()*20)+"vh";
+
+    document.body.appendChild(div);
+
+    hearts.push({
+        el:div,
+        life:0,
+        x:0,
+        y:0
+    });
+}
+
+
+/* =========================================================
+   ANIMATION TIMELINE
+   ========================================================= */
+
+/*
+   0 - 2 sec
+   LOOK AT EACH OTHER
+
+   2 - 3.5
+   PLAYFUL PAW PUSH
+
+   3.5 - 5
+   LITTLE FIGHT
+
+   5 - 6
+   PAW HOLD
+
+   6 - 7
+   COME CLOSE
+
+   7 - 7.8
+   NOSE KISS
+
+   7.8 - 9
+   LIFT + HUG
+
+   9 - 10
+   HAPPY BOUNCE
+
+   10 - 12
+   TAIL + HAPPY END
+*/
+
+
+const clock =
+new THREE.Clock();
+
+let animationStarted=false;
+let animationFinished=false;
+
+
+function smoothStep(t){
+
+    return t*t*(3-2*t);
+
+}
+
+
+function lerp(a,b,t){
+
+    return a+(b-a)*t;
+
+}
+
+
+function animateCats(time){
+
+    const t=time%12;
+
+
+    /* ---------------------------------------------
+       RESET BASE POSITIONS
+       --------------------------------------------- */
+
+    let wx=-2;
+    let ox=2;
+
+    let wy=0;
+    let oy=0;
+
+    let wz=0;
+    let oz=0;
+
+
+    /* ---------------------------------------------
+       0-2
+       LOOK
+       --------------------------------------------- */
+
+    if(t<2){
+
+        const p=
+        smoothStep(t/2);
+
+        wx=lerp(-2,-1.65,p);
+        ox=lerp(2,1.65,p);
+
+        whiteCat.head.rotation.z=
+        THREE.MathUtils.degToRad(-10*p);
+
+        orangeCat.head.rotation.z=
+        THREE.MathUtils.degToRad(10*p);
+
+    }
+
+
+    /* ---------------------------------------------
+       2-3.5
+       PLAYFUL PAW PUSH
+       --------------------------------------------- */
+
+    else if(t<3.5){
+
+        const p=(t-2)/1.5;
+
+        wx=-1.55;
+        ox=1.55;
+
+        const swing=
+        Math.sin(p*Math.PI*4);
+
+        whiteCat.armR.rotation.z=
+        THREE.MathUtils.degToRad(
+            -55*swing
+        );
+
+        orangeCat.armL.rotation.z=
+        THREE.MathUtils.degToRad(
+            55*swing
+        );
+
+    }
+
+
+    /* ---------------------------------------------
+       3.5-5
+       LITTLE FIGHT
+       --------------------------------------------- */
+
+    else if(t<5){
+
+        const p=(t-3.5)/1.5;
+
+        wx=lerp(-1.55,-.75,p);
+        ox=lerp(1.55,.75,p);
+
+        whiteCat.root.rotation.z=
+        THREE.MathUtils.degToRad(
+            8*Math.sin(p*Math.PI*4)
+        );
+
+        orangeCat.root.rotation.z=
+        THREE.MathUtils.degToRad(
+            -8*Math.sin(p*Math.PI*4)
+        );
+
+        whiteCat.armR.rotation.z=
+        THREE.MathUtils.degToRad(-45);
+
+        orangeCat.armL.rotation.z=
+        THREE.MathUtils.degToRad(45);
+
+    }
+
+
+    /* ---------------------------------------------
+       5-6
+       PAW HOLD
+       --------------------------------------------- */
+
+    else if(t<6){
+
+        const p=
+        smoothStep(t-5);
+
+        wx=lerp(-.75,-.45,p);
+        ox=lerp(.75,.45,p);
+
+        whiteCat.armR.rotation.z=
+        THREE.MathUtils.degToRad(-65);
+
+        orangeCat.armL.rotation.z=
+        THREE.MathUtils.degToRad(65);
+
+        whiteCat.head.rotation.z=
+        THREE.MathUtils.degToRad(-5);
+
+        orangeCat.head.rotation.z=
+        THREE.MathUtils.degToRad(5);
+
+    }
+
+
+    /* ---------------------------------------------
+       6-7
+       COME CLOSE
+       --------------------------------------------- */
+
+    else if(t<7){
+
+        const p=
+        smoothStep(t-6);
+
+        wx=lerp(-.45,-.15,p);
+        ox=lerp(.45,.15,p);
+
+        whiteCat.armR.rotation.z=
+        THREE.MathUtils.degToRad(-25);
+
+        orangeCat.armL.rotation.z=
+        THREE.MathUtils.degToRad(25);
+
+        whiteCat.head.rotation.z=
+        THREE.MathUtils.degToRad(-8);
+
+        orangeCat.head.rotation.z=
+        THREE.MathUtils.degToRad(8);
+
+    }
+
+
+    /* ---------------------------------------------
+       7-7.8
+       NOSE KISS
+       --------------------------------------------- */
+
+    else if(t<7.8){
+
+        const p=
+        smoothStep((t-7)/.8);
+
+        wx=lerp(-.15,0,p);
+        ox=lerp(.15,0,p);
+
+        wz=
+        Math.sin(p*Math.PI)*.08;
+
+        oz=
+        Math.sin(p*Math.PI)*.08;
+
+        whiteCat.head.rotation.z=
+        THREE.MathUtils.degToRad(-8+8*p);
+
+        orangeCat.head.rotation.z=
+        THREE.MathUtils.degToRad(8-8*p);
+
+        if(Math.random()<.08){
+            makeHeart();
+        }
+
+    }
+
+
+    /* ---------------------------------------------
+       7.8-9
+       LIFT + HUG
+       --------------------------------------------- */
+
+    else if(t<9){
+
+        const p=
+        smoothStep((t-7.8)/1.2);
+
+        wx=lerp(0,-.05,p);
+        ox=lerp(0,.05,p);
+
+        oz=
+        lerp(0,.65,p);
+
+        oy=
+        lerp(0,.25,p);
+
+        whiteCat.armR.rotation.z=
+        THREE.MathUtils.degToRad(-70*p);
+
+        whiteCat.armL.rotation.z=
+        THREE.MathUtils.degToRad(55*p);
+
+        orangeCat.armL.rotation.z=
+        THREE.MathUtils.degToRad(70*p);
+
+        orangeCat.armR.rotation.z=
+        THREE.MathUtils.degToRad(-55*p);
+
+        if(p>.65 && Math.random()<.1){
+            makeHeart();
+        }
+
+    }
+
+
+    /* ---------------------------------------------
+       9-10
+       HAPPY BOUNCE
+       --------------------------------------------- */
+
+    else if(t<10){
+
+        const p=(t-9);
+
+        wx=-.45;
+        ox=.45;
+
+        wz=
+        Math.abs(Math.sin(p*Math.PI*3))*.35;
+
+        oz=
+        Math.abs(Math.sin(p*Math.PI*3))*.35;
+
+        whiteCat.root.rotation.z=
+        Math.sin(p*Math.PI*6)*.08;
+
+        orangeCat.root.rotation.z=
+        -Math.sin(p*Math.PI*6)*.08;
+
+    }
+
+
+    /* ---------------------------------------------
+       10-12
+       HAPPY END
+       --------------------------------------------- */
+
+    else{
+
+        wx=-.75;
+        ox=.75;
+
+        whiteCat.head.rotation.z=
+        THREE.MathUtils.degToRad(
+            Math.sin(t*4)*5
+        );
+
+        orangeCat.head.rotation.z=
+        THREE.MathUtils.degToRad(
+            -Math.sin(t*4)*5
+        );
+
+    }
+
+
+    /* ---------------------------------------------
+       APPLY ROOT POSITIONS
+       --------------------------------------------- */
+
+    whiteCat.root.position.x=wx;
+    orangeCat.root.position.x=ox;
+
+    whiteCat.root.position.y=wy+wz;
+    orangeCat.root.position.y=oy+oz;
+
+
+    /* ---------------------------------------------
+       TAIL MOVEMENT
+       --------------------------------------------- */
+
+    whiteCat.tail.rotation.z=
+        Math.sin(t*4)*.38;
+
+    orangeCat.tail.rotation.z=
+        Math.sin(t*4+Math.PI)*.38;
+
+
+    /* ---------------------------------------------
+       LITTLE BODY BOUNCE
+       --------------------------------------------- */
+
+    const bounce=
+    Math.abs(Math.sin(t*5))*.035;
+
+    whiteCat.body.position.y=bounce;
+    orangeCat.body.position.y=bounce;
+
+
+    /* ---------------------------------------------
+       HEART CLEANUP
+       --------------------------------------------- */
+
+    for(let i=hearts.length-1;i>=0;i--){
+
+        const h=hearts[i];
+
+        h.life+=.016;
+
+        h.el.style.transform=
+            `translateY(${-h.life*70}px) scale(${1+h.life*.4})`;
+
+        h.el.style.opacity=
+            String(Math.max(0,1-h.life));
+
+        if(h.life>1){
+
+            h.el.remove();
+            hearts.splice(i,1);
+
+        }
+
+    }
+
+
+    /* ---------------------------------------------
+       END
+       --------------------------------------------- */
+
+    if(t>11.2 && !animationFinished){
+
+        animationFinished=true;
+
+        status.innerHTML=
+        "❤️ 3D গল্প শেষ — এখন পরের surprise-এর পালা।";
+
+        continueButton.disabled=false;
+
+    }
+
+}
+
+
+/* =========================================================
+   RENDER LOOP
+   ========================================================= */
+
+function render(){
+
+    requestAnimationFrame(render);
+
+    if(animationStarted){
+
+        const elapsed=
+        clock.getElapsedTime();
+
+        animateCats(elapsed);
+
+    }
+
+    camera.lookAt(
+        0,
+        1.7,
+        0
+    );
+
+    renderer.render(
+        scene,
+        camera
+    );
+
+}
+
+render();
+
+
+/* =========================================================
+   START 3D ANIMATION
+   ========================================================= */
+
+function start3DCats(){
+
+    if(animationStarted)return;
+
+    animationStarted=true;
+
+    animationFinished=false;
+
+    clock.start();
+
+    status.innerHTML=
+    "🐱❤️ 3D animation চলছে...";
+
+}
+
+
+/* =========================================================
+   RESIZE
+   ========================================================= */
+
+window.addEventListener(
+"resize",
+()=>{
+
+    const w=
+    stage.clientWidth;
+
+    const h=
+    stage.clientHeight;
+
+    camera.aspect=w/h;
+
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(
+        w,
+        h,
+        false
+    );
+
+});
+
+
+/* =========================================================
+   EXPOSE TO MAIN HTML
+   ========================================================= */
+
+window.start3DCats=
+start3DCats;
+
+function goTo(n){
+
+    document
+    .querySelectorAll(".screen")
+    .forEach(s=>{
+        s.classList.remove("active");
+    });
+
+    const target=
+    document.getElementById("screen"+n);
+
+    if(!target)return;
+
+    target.classList.add("active");
+
+
+    if(n===2)
+        setTimeout(
+            ()=>typeWriter("type2",texts.type2),
+            700
+        );
+
+
+    if(n===3)
+        setTimeout(
+            ()=>typeWriter("type3",texts.type3),
+            700
+        );
+
+
+    /* =========================================
+       SCREEN 7 — START REAL 3D
+       ========================================= */
+
+    if(n===7){
+
+        setTimeout(()=>{
+
+            if(window.start3DCats){
+
+                window.start3DCats();
+
+            }
+
+        },300);
+
+    }
+
+}
+ function restart(){
+
+    closeModal("commentModal");
+    closeModal("giftModal");
+
+    document
+    .querySelectorAll(".screen")
+    .forEach(s=>{
+        s.classList.remove("active");
+    });
+
+    document
+    .getElementById("screen1")
+    .classList.add("active");
+
+    document
+    .getElementById("password")
+    .value="";
+
+    document
+    .getElementById("passwordError")
+    .innerHTML="";
+
+    document
+    .getElementById("flame")
+    .classList.remove("off");
+
+    const balloon=
+    document.getElementById("popBalloon");
+
+    balloon.innerHTML="🎈";
+    balloon.style.transform="";
+
+    if("speechSynthesis" in window){
+        speechSynthesis.cancel();
+    }
+
+ }
 /* optional close by backdrop */
 document.querySelectorAll(".modal").forEach(m=>m.onclick=e=>{if(e.target===m)m.classList.remove("show")});
 </script>
