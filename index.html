@@ -2,361 +2,1696 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-<title>For Fatima Islam Riya ❤️</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>A Little Birthday Surprise</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{width:100%;height:100%;overflow:hidden}
-body{font-family:Montserrat,sans-serif;background:#07000d;color:#fff}
-body:before{content:"";position:fixed;inset:-50%;z-index:-3;background:
-radial-gradient(circle at 20% 20%,#ff3f8d33,transparent 24%),
-radial-gradient(circle at 80% 25%,#9b5cff33,transparent 25%),
-radial-gradient(circle at 50% 90%,#ff8fc422,transparent 28%);
-animation:bg 16s ease-in-out infinite alternate}
-@keyframes bg{to{transform:translate(5%,3%) scale(1.12)}}
-#stars{position:fixed;inset:0;z-index:-2}
-.wrap{height:100vh;width:100%;display:flex;align-items:center;justify-content:center;padding:18px}
-.screen{position:absolute;width:min(900px,94vw);max-height:94vh;overflow:auto;text-align:center;opacity:0;visibility:hidden;transform:translateY(35px) scale(.96);transition:1s cubic-bezier(.2,.8,.2,1);pointer-events:none;scrollbar-width:none}
-.screen::-webkit-scrollbar{display:none}
-.screen.active{opacity:1;visibility:visible;transform:none;pointer-events:auto}
-.eyebrow{font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:#ffffff99;margin-bottom:18px}
-.title{font-family:"Cormorant Garamond",serif;font-size:clamp(40px,8vw,76px);line-height:1.05;margin-bottom:18px}
-.script{font-family:"Great Vibes",cursive}
-.type{font-family:"Cormorant Garamond",serif;font-size:clamp(20px,4vw,29px);line-height:1.55;color:#fffdebd9;max-width:720px;margin:auto;min-height:60px}
-.heart-wrap{width:100px;height:100px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;position:relative}
-.heart{font-size:68px;filter:drop-shadow(0 0 10px #ff4b91) drop-shadow(0 0 30px #ff1682);animation:pulse 1.3s infinite}
-.heart-wrap:after{content:"";position:absolute;width:76px;height:76px;border:1px solid #ff9fc766;border-radius:50%;animation:ring 2s infinite}
-@keyframes pulse{14%{transform:scale(1.2)}28%{transform:scale(1)}42%{transform:scale(1.12)}100%{transform:scale(1)}}
-@keyframes ring{to{transform:scale(1.7);opacity:0}}
-.hero{font-family:"Cormorant Garamond",serif;font-size:clamp(38px,8vw,78px)}
-.hero span,.name{display:block;font-family:"Great Vibes",cursive;font-weight:400;font-size:clamp(56px,13vw,125px);background:linear-gradient(90deg,#fff,#ff9ec9,#fff,#d9a5ff,#fff);background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite}
-@keyframes shine{to{background-position:300%}}
-.btn{border:1px solid #ffffff4d;border-radius:999px;padding:14px 27px;margin-top:25px;color:#fff;background:linear-gradient(135deg,#ff559bcc,#7b4cffcc);font-weight:700;cursor:pointer;box-shadow:0 15px 45px #0007,0 0 25px #ff50aa33;transition:.3s}
-.btn:hover{transform:translateY(-3px) scale(1.03)}
-input{width:min(330px,88vw);padding:15px 20px;border-radius:99px;border:1px solid #ffffff44;background:#ffffff12;color:#fff;text-align:center;outline:none;margin-top:20px}
-.error{height:24px;color:#ff9ec7;font-size:12px;padding-top:8px}
-.card{max-width:760px;margin:auto;padding:28px 24px;border:1px solid #ffffff22;border-radius:28px;background:#ffffff0d;backdrop-filter:blur(18px);box-shadow:0 25px 80px #0007}
-.balloon{position:fixed;bottom:-120px;width:45px;height:58px;border-radius:50%;opacity:.7;z-index:-1;animation:balloon 15s linear infinite}
-.balloon:after{content:"";position:absolute;top:55px;left:50%;height:80px;width:1px;background:#ffffff44}
-@keyframes balloon{50%{transform:translateY(-55vh) rotate(7deg)}100%{transform:translateY(-120vh) rotate(-7deg)}}
-.memory{font-family:"Cormorant Garamond",serif;font-size:clamp(19px,3.7vw,26px);line-height:1.7;color:#fffdebe8}
-.memory strong{color:#ffafd2}
-.balloon-zone{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:28px auto;max-width:600px}
-.pop-balloon{width:68px;height:85px;border-radius:50% 50% 46% 46%;position:relative;cursor:pointer;animation:sway 2s ease-in-out infinite alternate;box-shadow:inset -10px -12px 20px #0002,0 8px 25px #0005}
-.pop-balloon:after{content:"";position:absolute;top:82px;left:50%;height:45px;width:1px;background:#ffffff55}
-.pop-balloon.popped{animation:pop .3s forwards}
-@keyframes sway{to{transform:translateY(-8px) rotate(4deg)}}
-@keyframes pop{to{transform:scale(1.8);opacity:0}}
-.cake{width:210px;height:85px;margin:30px auto 65px;position:relative;background:linear-gradient(#ff8dbb,#e8327b);border-radius:14px 14px 25px 25px;box-shadow:0 20px 40px #0006}
-.cake:before{content:"";position:absolute;top:-18px;left:0;width:210px;height:38px;background:#fff1f7;border-radius:50%}
-.cake:after{content:"";position:absolute;bottom:-12px;left:0;width:210px;height:25px;background:#c92b70;border-radius:50%}
-.candle{position:absolute;bottom:70px;left:50%;transform:translateX(-50%);width:17px;height:62px;background:repeating-linear-gradient(-45deg,#fff 0 7px,#ff5b9b 7px 14px);border-radius:6px}
-.flame{position:absolute;bottom:132px;left:50%;width:24px;height:34px;transform:translateX(-50%);border-radius:50%;background:#ffd43b;box-shadow:0 0 15px #ffb300,0 0 40px #ff6d00;animation:flame .45s infinite alternate}
-.flame.off{opacity:0;transform:translateX(-50%) scale(0)}
-@keyframes flame{to{transform:translateX(-50%) scale(1.15) rotate(4deg)}}
-.grand{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;text-align:center;background:#050008ee;opacity:0;visibility:hidden;transition:.8s;pointer-events:none}
-.grand.show{opacity:1;visibility:visible}
-.grand span,.grand strong{display:block;background:linear-gradient(90deg,#fff,#ff9ec9,#fff,#d9a5ff,#fff);background-size:300%;-webkit-background-clip:text;color:transparent;animation:shine 3s linear infinite}
-.grand span{font-family:"Cormorant Garamond",serif;font-size:clamp(23px,5vw,53px);font-weight:700}
-.grand strong{font-family:"Great Vibes",cursive;font-size:clamp(48px,12vw,115px);font-weight:400}
-.party{position:fixed;z-index:1100;font-size:42px;pointer-events:none;animation:burst 3s forwards}
-@keyframes burst{0%{opacity:0;transform:scale(.2)}12%{opacity:1;transform:scale(1.1)}100%{opacity:0;transform:translate(var(--x),var(--y)) rotate(720deg) scale(.7)}}
-.langbox{max-height:55vh;overflow:auto;text-align:left;padding:5px 12px}
-.langbox p{padding:8px 4px;border-bottom:1px solid #ffffff12;font-family:"Cormorant Garamond",serif;font-size:19px}
-.final-line{font-family:"Great Vibes",cursive;font-size:clamp(45px,10vw,90px);color:#ffafd2}
-@media(max-width:600px){.btn{width:min(90%,320px)}.card{padding:23px 16px}.pop-balloon{width:58px;height:74px}}
-
-/* ===== CUTE CAT CARTOON SCENE ===== */
-.cat-scene{
-  width:min(680px,94vw); min-height:330px; margin:0 auto 18px;
-  position:relative; overflow:hidden; border-radius:32px;
-  background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,92,160,.08));
-  border:1px solid rgba(255,255,255,.14);
-  box-shadow:0 25px 80px rgba(0,0,0,.3);
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 20% 20%,#34112d,transparent 35%),
+        radial-gradient(circle at 80% 70%,#241044,transparent 35%),
+        #07020d;
+    color:white;
+    font-family:'Montserrat',sans-serif;
+}
+
+canvas{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:1;
+}
+
+.bg-glow{
+    position:fixed;
+    inset:-30%;
+    background:
+        radial-gradient(circle,#ff4f9a22,transparent 25%),
+        radial-gradient(circle at 80% 30%,#a35cff22,transparent 25%);
+    animation:bgMove 15s infinite alternate ease-in-out;
+    z-index:0;
+}
+
+@keyframes bgMove{
+    to{
+        transform:translate(6%,4%) scale(1.12);
+    }
+}
+
+.wrapper{
+    position:relative;
+    z-index:10;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.screen{
+    position:absolute;
+    width:min(900px,94vw);
+    max-height:92vh;
+    overflow:auto;
+    text-align:center;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(35px) scale(.94);
+    transition:1s cubic-bezier(.2,.8,.2,1);
+    pointer-events:none;
+}
+
+.screen.active{
+    opacity:1;
+    visibility:visible;
+    transform:none;
+    pointer-events:auto;
+}
+
+.screen::-webkit-scrollbar{
+    display:none;
+}
+
+.eyebrow{
+    font-size:11px;
+    letter-spacing:.35em;
+    text-transform:uppercase;
+    color:#ffffffa8;
+    margin-bottom:20px;
+}
+
+.title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(42px,8vw,80px);
+    line-height:1;
+    margin-bottom:22px;
+}
+
+.script{
+    font-family:'Great Vibes',cursive;
+}
+
+.type{
+    max-width:720px;
+    margin:auto;
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(20px,4vw,29px);
+    line-height:1.55;
+    color:#ffffffdf;
+}
+
+.cursor{
+    display:inline-block;
+    width:2px;
+    height:25px;
+    background:#ffafd2;
+    margin-left:4px;
+    animation:blink .7s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0}
+}
+
+/* PASSWORD */
+
+.password-card{
+    width:min(520px,94vw);
+    margin:auto;
+    padding:38px 25px;
+    border:1px solid #ffffff22;
+    border-radius:30px;
+    background:#ffffff0b;
+    backdrop-filter:blur(20px);
+    box-shadow:0 30px 100px #0008;
+}
+
+.lock{
+    font-size:60px;
+    margin-bottom:18px;
+    animation:lockPulse 2s infinite;
+}
+
+@keyframes lockPulse{
+    50%{
+        transform:scale(1.12);
+        filter:drop-shadow(0 0 20px #ff69a8);
+    }
+}
+
+.password-title{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(32px,7vw,55px);
+    margin-bottom:12px;
+}
+
+.password-sub{
+    color:#ffffffaa;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+input{
+    width:100%;
+    padding:16px 20px;
+    border-radius:100px;
+    border:1px solid #ffffff35;
+    outline:none;
+    background:#0005;
+    color:white;
+    text-align:center;
+    font-size:18px;
+    letter-spacing:.15em;
+}
+
+input::placeholder{
+    color:#ffffff66;
+}
+
+/* BUTTON */
+
+.btn{
+    position:relative;
+    margin-top:25px;
+    padding:15px 30px;
+    border:1px solid #ffffff35;
+    border-radius:100px;
+    color:white;
+    background:linear-gradient(135deg,#ff4f9a,#7d4dff);
+    font-weight:600;
+    cursor:pointer;
+    overflow:hidden;
+    box-shadow:0 15px 40px #0006,0 0 30px #ff4f9a33;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.04);
+}
+
+.btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:80%;
+    height:100%;
+    background:#ffffff55;
+    transform:skewX(-20deg);
+    transition:.7s;
+}
+
+.btn:hover::before{
+    left:140%;
+}
+
+/* HEART */
+
+.heart{
+    font-size:70px;
+    display:inline-block;
+    animation:heartbeat 1.3s infinite;
+    filter:drop-shadow(0 0 20px #ff2e89);
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1)}
+    15%{transform:scale(1.22)}
+    30%{transform:scale(1)}
+    45%{transform:scale(1.12)}
+}
+
+/* BALLOONS */
+
+.balloon{
+    position:fixed;
+    bottom:-120px;
+    width:48px;
+    height:62px;
+    border-radius:50%;
+    z-index:3;
+    opacity:.55;
+    animation:balloonUp linear infinite;
+}
+
+.balloon:after{
+    content:"";
+    position:absolute;
+    top:58px;
+    left:50%;
+    width:1px;
+    height:100px;
+    background:#ffffff55;
+}
+
+@keyframes balloonUp{
+    0%{
+        transform:translateY(0) rotate(-5deg);
+    }
+    50%{
+        transform:translateY(-55vh) rotate(7deg);
+    }
+    100%{
+        transform:translateY(-120vh) rotate(-7deg);
+    }
+}
+
+/* REVEAL NAME */
+
+.reveal-name{
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(55px,13vw,120px);
+    line-height:1;
+    background:linear-gradient(
+        90deg,
+        #fff,
+        #ffacd2,
+        #fff,
+        #d6a4ff,
+        #fff
+    );
+    background-size:300% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    animation:shine 4s linear infinite;
+}
+
+@keyframes shine{
+    to{background-position:300% center}
+}
+
+/* BIG BIRTHDAY */
+
+.big-birthday{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(38px,8vw,80px);
+    font-weight:700;
+    line-height:1.05;
+    animation:bigReveal 2s cubic-bezier(.2,.8,.2,1);
+}
+
+.big-birthday span{
+    display:block;
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(55px,12vw,115px);
+    background:linear-gradient(90deg,#fff,#ff9fca,#fff,#d6a1ff,#fff);
+    background-size:300%;
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:shine 3s linear infinite;
+}
+
+@keyframes bigReveal{
+    from{
+        opacity:0;
+        transform:scale(.2) translateY(100px);
+        filter:blur(15px);
+    }
+    to{
+        opacity:1;
+        transform:none;
+        filter:none;
+    }
+}
+
+/* SIDE EMOJIS */
+
+.burst{
+    position:fixed;
+    top:50%;
+    font-size:30px;
+    z-index:200;
+    pointer-events:none;
+}
+
+.burst.left{
+    left:5%;
+}
+
+.burst.right{
+    right:5%;
+}
+
+.burst.fly{
+    animation:burstFly 2.2s ease-out forwards;
+}
+
+@keyframes burstFly{
+    0%{
+        opacity:0;
+        transform:translateY(-50%) scale(.2);
+    }
+    20%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            rotate(720deg)
+            scale(1.5);
+    }
+}
+
+/* CAKE */
+
+.cake-scene{
+    position:relative;
+    width:270px;
+    height:280px;
+    margin:15px auto;
+}
+
+.cake{
+    position:absolute;
+    bottom:20px;
+    left:35px;
+    width:200px;
+    height:95px;
+    border-radius:15px 15px 25px 25px;
+    background:linear-gradient(#ff9ac4,#d92872);
+    box-shadow:0 20px 40px #0008;
+}
+
+.cake:before{
+    content:"";
+    position:absolute;
+    top:-20px;
+    left:0;
+    width:200px;
+    height:40px;
+    border-radius:50%;
+    background:#fff4fa;
+}
+
+.cake:after{
+    content:"";
+    position:absolute;
+    bottom:-12px;
+    width:200px;
+    height:25px;
+    border-radius:50%;
+    background:#b51e60;
+}
+
+.candle{
+    position:absolute;
+    bottom:110px;
+    left:50%;
+    transform:translateX(-50%);
+    width:18px;
+    height:65px;
+    border-radius:6px;
+    background:repeating-linear-gradient(
+        -45deg,
+        white 0 7px,
+        #ff5596 7px 14px
+    );
+}
+
+.flame{
+    position:absolute;
+    bottom:165px;
+    left:50%;
+    width:25px;
+    height:35px;
+    transform:translateX(-50%);
+    border-radius:50%;
+    background:#ffd83d;
+    box-shadow:0 0 15px #ffbd00,0 0 45px #ff6b00;
+    animation:flame .4s infinite alternate;
+}
+
+@keyframes flame{
+    to{
+        transform:translateX(-50%) scale(1.2) rotate(4deg);
+    }
+}
+
+.flame.off{
+    opacity:0;
+    transform:translateX(-50%) scale(0);
+}
+
+/* CAT */
+
+.cats{
+    position:relative;
+    height:220px;
+    margin:10px auto 20px;
+    max-width:500px;
+}
+
 .cat{
-  position:absolute; bottom:45px; width:125px; height:115px;
-  transition:transform .7s cubic-bezier(.2,.8,.2,1);
-}
-.cat .body{position:absolute; left:18px; bottom:0; width:88px; height:70px; border-radius:48% 48% 42% 42%; background:#fff2f7; box-shadow:inset -8px -8px 0 rgba(255,105,170,.12);}
-.cat .head{position:absolute; left:25px; top:0; width:78px; height:72px; border-radius:50%; background:#fff2f7; z-index:2;}
-.cat .ear{position:absolute; top:-12px; width:27px; height:30px; background:#fff2f7; transform:rotate(35deg); clip-path:polygon(50% 0,100% 100%,0 100%);}
-.cat .ear.r{right:3px; transform:rotate(-35deg);}
-.cat .eye{position:absolute; top:28px; width:8px; height:10px; border-radius:50%; background:#35152b;}
-.cat .eye.l{left:22px}.cat .eye.r{right:22px}
-.cat .nose{position:absolute; top:43px; left:35px; color:#ff5797; font-size:13px}
-.cat .mouth{position:absolute; top:48px; left:31px; font-size:14px}
-.cat .tail{position:absolute; right:-8px; bottom:25px; width:55px; height:45px; border:9px solid #fff2f7; border-left:0; border-bottom:0; border-radius:0 45px 0 0; transform:rotate(15deg);}
-.cat.one{left:12%;}.cat.two{right:12%; transform:scaleX(-1);}
-.cat.two .head,.cat.two .body,.cat.two .ear,.cat.two .tail{filter:hue-rotate(35deg);}
-.cat-face{font-size:22px}
-.cat-action-hug .one{transform:translateX(170px) rotate(-5deg);}
-.cat-action-hug .two{transform:translateX(-170px) scaleX(-1) rotate(5deg);}
-.cat-action-kiss .one{transform:translateX(135px) rotate(-4deg);}
-.cat-action-kiss .two{transform:translateX(-135px) scaleX(-1) rotate(4deg);}
-.cat-action-kiss .one:after{content:"💋";position:absolute;right:-10px;top:8px;font-size:30px;animation:kissPop 1s ease infinite;}
-.cat-action-fight .one{animation:catShake .22s infinite alternate;}
-.cat-action-fight .two{animation:catShake .22s infinite alternate-reverse;}
-.cat-action-fight:after{content:"💢  😾  💢";position:absolute;left:50%;top:80px;transform:translateX(-50%);font-size:30px;white-space:nowrap;animation:argue 1s infinite;}
-.cat-action-carry .one{transform:translateX(130px) translateY(-12px) rotate(-3deg);}
-.cat-action-carry .two{transform:translateX(-130px) scaleX(-1) rotate(3deg);}
-.cat-action-carry .one:after{content:"🫶";position:absolute;right:-15px;top:45px;font-size:30px;animation:floatSoft 1.2s ease-in-out infinite;}
-@keyframes catShake{from{transform:translateX(-4px) rotate(-4deg)}to{transform:translateX(4px) rotate(4deg)}}
-@keyframes argue{50%{transform:translateX(-50%) scale(1.15) rotate(-3deg)}}
-@keyframes kissPop{50%{transform:scale(1.3) translateY(-8px)}}
-@keyframes floatSoft{50%{transform:translateY(-8px) scale(1.08)}}
-.cat-caption{font-family:'Cormorant Garamond',serif;font-size:24px;min-height:45px;margin:8px 15px;color:#ffeaf4}
-
-
-/* ===== BACKGROUND YOUTUBE MUSIC ===== */
-#ytPlayer{
-  position:fixed;
-  width:1px;
-  height:1px;
-  left:-10px;
-  bottom:-10px;
-  opacity:0;
-  pointer-events:none;
-  z-index:-1;
+    position:absolute;
+    bottom:15px;
+    font-size:95px;
+    transition:1s;
 }
 
+.cat1{
+    left:10%;
+    animation:cat1 3s infinite alternate ease-in-out;
+}
+
+.cat2{
+    right:10%;
+    animation:cat2 3s infinite alternate ease-in-out;
+}
+
+@keyframes cat1{
+    to{
+        transform:translateX(100px) rotate(8deg);
+    }
+}
+
+@keyframes cat2{
+    to{
+        transform:translateX(-100px) rotate(-8deg);
+    }
+}
+
+.cat-heart{
+    position:absolute;
+    left:50%;
+    top:30px;
+    transform:translateX(-50%);
+    font-size:30px;
+    animation:heartFloat 1.8s infinite;
+}
+
+@keyframes heartFloat{
+    0%{
+        opacity:0;
+        transform:translate(-50%,20px) scale(.5);
+    }
+    50%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+        transform:translate(-50%,-60px) scale(1.3);
+    }
+}
+
+/* CARD */
+
+.card{
+    max-width:760px;
+    margin:auto;
+    padding:35px 25px;
+    border-radius:30px;
+    background:#ffffff0b;
+    border:1px solid #ffffff20;
+    backdrop-filter:blur(18px);
+    box-shadow:0 30px 90px #0008;
+}
+
+.message{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(19px,4vw,26px);
+    line-height:1.7;
+    color:#ffffffea;
+}
+
+.message strong{
+    color:#ffb1d4;
+}
+
+.languages{
+    margin-top:20px;
+    max-height:45vh;
+    overflow:auto;
+    text-align:left;
+    padding:15px;
+    border-radius:20px;
+    background:#0003;
+    line-height:1.8;
+    font-family:'Cormorant Garamond',serif;
+    font-size:18px;
+}
+
+/* CONFETTI */
+
+.confetti{
+    position:fixed;
+    top:-30px;
+    z-index:999;
+    pointer-events:none;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+
+/* ERROR */
+
+.error{
+    margin-top:15px;
+    color:#ff8bb9;
+    min-height:25px;
+    font-size:14px;
+}
+
+/* HIDDEN YOUTUBE */
+
+#youtubeAudio{
+    position:fixed;
+    width:1px;
+    height:1px;
+    opacity:.01;
+    left:-10px;
+    bottom:-10px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .wrapper{
+        padding:14px;
+    }
+
+    .password-card{
+        padding:30px 18px;
+    }
+
+    .btn{
+        width:min(90%,330px);
+    }
+
+    .cat{
+        font-size:75px;
+    }
+
+    .languages{
+        max-height:38vh;
+    }
+}
 </style>
 </head>
+
 <body>
 
-<!-- BACKGROUND MUSIC — YouTube video -->
-<div id="ytPlayer" aria-hidden="true"></div>
+<div class="bg-glow"></div>
+<canvas id="particles"></canvas>
 
+<!-- BALLOONS -->
+<div class="balloon" style="left:5%;background:#ff4f91;animation-duration:15s"></div>
+<div class="balloon" style="left:20%;background:#ffd54f;animation-duration:18s;animation-delay:2s"></div>
+<div class="balloon" style="left:40%;background:#55b9ff;animation-duration:16s;animation-delay:4s"></div>
+<div class="balloon" style="left:60%;background:#b967ff;animation-duration:19s;animation-delay:1s"></div>
+<div class="balloon" style="left:80%;background:#43e0c1;animation-duration:17s;animation-delay:3s"></div>
 
-<canvas id="stars"></canvas>
+<!-- YOUTUBE MUSIC -->
+<iframe
+id="youtubeAudio"
+src="https://www.youtube.com/embed/gcnhKVZ_YE8?enablejsapi=1&autoplay=0&loop=1&playlist=gcnhKVZ_YE8"
+allow="autoplay">
+</iframe>
 
-<div class="balloon" style="left:5%;background:#ff4f91;animation-duration:14s"></div>
-<div class="balloon" style="left:23%;background:#ffd54f;animation-duration:17s;animation-delay:2s"></div>
-<div class="balloon" style="left:48%;background:#55b9ff;animation-duration:15s;animation-delay:4s"></div>
-<div class="balloon" style="left:70%;background:#b967ff;animation-duration:18s;animation-delay:1s"></div>
-<div class="balloon" style="left:90%;background:#43e0c1;animation-duration:16s;animation-delay:3s"></div>
+<div class="wrapper">
 
-<div class="wrap">
+<!-- ================= PASSWORD ================= -->
 
-<section class="screen active" id="s0">
-  <div class="eyebrow">A private little doorway ✨</div>
-  <div class="heart-wrap"><div class="heart">♡</div></div>
-  <h1 class="title">তোমার জন্মদিনই এই ছোট্ট<br>সারপ্রাইজে প্রবেশের পাসওয়ার্ড 💌</h1>
-  <div class="type">ইঙ্গিতটা খুব সহজ… তোমার নিজের জন্মদিনই এই দরজাটা খুলে দেবে।</div>
-  <input id="pass" type="password" placeholder="জন্মদিন লিখো">
-  <br>
-  <button class="btn" onclick="unlock()">🔐 প্রবেশ করো</button>
-  <div class="error" id="err"></div>
-</section>
+<section class="screen active" id="screen1">
 
-<section class="screen" id="s1">
-  <div class="eyebrow">Password accepted ✓</div>
-  <div class="heart-wrap"><div class="heart">💗</div></div>
-  <h1 class="title">দরজাটা খুলে গেছে…</h1>
-  <div class="type">কিন্তু আসল সারপ্রাইজ এখনো সামনে। সব একসাথে দেখলে তো মজাটাই নষ্ট! 😌</div>
-  <button class="btn" onclick="next(2)">🌙 একটু এগিয়ে দেখি</button>
-</section>
+    <div class="password-card">
 
-<section class="screen" id="s2">
-  <div class="eyebrow">One little question</div>
-  <h1 class="title">আজকের দিনটা কার? 👀</h1>
-  <div class="type" id="t2"></div>
-  <button class="btn" onclick="next(3)">💭 মনে হয় জানি…</button>
-</section>
+        <div class="lock">🔐</div>
 
-<section class="screen" id="s3">
-  <div class="eyebrow">Something is waiting</div>
-  <div class="heart-wrap"><div class="heart">❤️</div></div>
-  <h1 class="title">কিছু মানুষকে আলাদা করে বোঝানো যায় না…</h1>
-  <div class="type">অভিমান, দূরত্ব কিংবা সময়—কিছুই তাদের জন্য ভালো চাওয়াটা পুরোপুরি মুছে দিতে পারে না। 🌸</div>
-  <button class="btn" onclick="next(4)">💌 আরও একটু</button>
-</section>
+        <div class="eyebrow">
+            A private little surprise
+        </div>
 
-<section class="screen" id="s4">
-  <div class="eyebrow">Pop the balloons 🎈</div>
-  <h1 class="title">এই ছোট্ট কাজটা আগে করো</h1>
-  <div class="type">প্রতিটা balloon-এর ভেতরে লুকিয়ে আছে একটা ছোট্ট কথা। সবগুলো ফাটাও।</div>
-  <div class="balloon-zone" id="balloons"></div>
-  <button class="btn" id="balloonNext" style="opacity:.35;pointer-events:none" onclick="next(5)">🎁 Surprise খুলে দাও</button>
-</section>
+        <h1 class="password-title">
+            প্রবেশের আগে একটি ছোট্ট প্রশ্ন...
+        </h1>
 
-<section class="screen" id="s5">
-  <div class="eyebrow">Just for you, Mine ❤️</div>
-  <div class="card">
-    <h1 class="name" style="font-size:clamp(55px,12vw,105px)">𝗙𝗔𝗧𝗜𝗠𝗔 𝗜𝗦𝗟𝗔𝗠 𝗥𝗜𝗬𝗔</h1>
-    <div class="memory" style="margin-top:18px">
-      <strong>শুভ জন্মদিন! প্রিয় ঢেঁড়স 🎂🌸</strong><br><br>
-      অনেকদিন আমাদের কথা হয় না। মাঝখানে অনেক কিছু বদলে গেছে, কিছু মনোমালিন্য হয়েছে, আর আমাদের সম্পর্কের মধ্যেও হয়তো একটা দূরত্ব তৈরি হয়েছে। তবুও সত্যি বলতে, কিছু মানুষ জীবনে এমন একটা জায়গা নিয়ে থাকে, যেখানে অভিমান বা দূরত্ব তৈরি হলেও তাদের জন্য ভালো চাওয়াটা কখনো কমে যায় না।<br><br>
-      আজ তোমার জন্মদিন, তাই পুরোনো কোনো কথা বা অভিমান টেনে তোমার দিনটা ভারী করতে চাই না। শুধু মন থেকে চাই, তুমি সবসময় ভালো থাকো, হাসিখুশি থাকো এবং তোমার জীবনের প্রতিটা ভালো জিনিস তুমি পাও। 💐<br><br>
-      আমাদের মধ্যে এখন যতই দূরত্ব থাকুক, একসময়কার সুন্দর স্মৃতিগুলোর জন্য তোমার প্রতি আমার সম্মান আর শুভকামনা সবসময় থাকবে।<br><br>
-      <strong>(এই website টি শুধু মাত্র তোমার জন্য তৈরি করেছি। 🫰✨)</strong><br><br>
-      আবারও জন্মদিনের শুভেচ্ছা রইল। সবসময় হাসি খুশি থেকো। ❤️🎂
+        <p class="password-sub">
+            এই ছোট্ট surprise-টির দরজা খোলার চাবি
+            কিন্তু তোমার কাছেই আছে। ❤️
+            <br><br>
+            <b>তোমার জন্মদিনই এই জায়গায় প্রবেশের পাসওয়ার্ড।</b>
+        </p>
+
+        <input
+        id="password"
+        type="password"
+        placeholder="জন্মদিন লিখো"
+        autocomplete="off">
+
+        <div
+        class="error"
+        id="passwordError">
+        </div>
+
+        <button
+        class="btn"
+        onclick="checkPassword()">
+
+            ✨ দরজাটি খুলে দেখো
+
+        </button>
+
     </div>
-  </div>
-  <button class="btn" onclick="next(6)">🎂 Cake Time</button>
+
 </section>
 
-<section class="screen" id="s6">
-  <div class="eyebrow">Make a wish</div>
-  <h1 class="title">Your Cake Is Ready 🎂</h1>
-  <div class="cake">
-    <div class="flame" id="flame"></div>
-    <div class="candle"></div>
-  </div>
-  <div class="type">চোখ বন্ধ করো… একটা সুন্দর wish করো। ✨</div>
-  <button class="btn" onclick="blow()">🕯️ Candle Blow</button>
-</section>
 
-<section class="screen" id="s7">
-  <div class="eyebrow">The moment is finally here</div>
-  <div class="heart-wrap"><div class="heart">💖</div></div>
-  <h1 class="title">Ready?</h1>
-  <div class="type">এবার আর কিছু লুকিয়ে রাখছি না…</div>
-  <button class="btn" onclick="grandReveal()">✨ Open The Grand Surprise</button>
-</section>
+<!-- ================= SCREEN 2 ================= -->
 
-<section class="screen" id="s8">
-  <div class="eyebrow">100 Languages • One Wish 🌍</div>
-  <h1 class="title">একটা শুভেচ্ছা, অনেক ভাষায়</h1>
-  <div class="card langbox" id="langs"></div>
-  <button class="btn" onclick="next(9)">🌍 শেষের দিকে যাই</button>
-</section>
+<section class="screen" id="screen2">
 
-<section class="screen" id="s9">
-  <div class="card">
-    <div class="eyebrow">From the heart ❤️</div>
-    <h1 class="final-line">For you, Mine</h1>
-    <div class="memory">
-      <strong>এই website টি শুধু মাত্র তোমার জন্য তৈরি করেছি। 🫰✨</strong><br><br>
-      May your life always be filled with peace, happiness, beautiful memories and countless reasons to smile. 🌸<br><br>
-      সবসময় হাসি খুশি থেকো। ❤️🎂<br><br>
-      <strong>Happy Birthday, Fatima Islam Riya 🎉💖</strong>
+    <div class="heart">♡</div>
+
+    <div class="eyebrow">
+        Password accepted
     </div>
-  </div>
-  <button class="btn" onclick="location.reload()">🔄 Experience Again</button>
+
+    <h1 class="title">
+        তাহলে তুমি এসে গেছো...
+    </h1>
+
+    <div
+    class="type"
+    id="type2">
+    </div>
+
+    <button
+    class="btn"
+    onclick="goTo(3)">
+
+        🌙 একটু এগিয়ে যাই
+
+    </button>
+
+</section>
+
+
+<!-- ================= SCREEN 3 ================= -->
+
+<section class="screen" id="screen3">
+
+    <div class="eyebrow">
+        But wait...
+    </div>
+
+    <h1 class="title">
+        আজকের দিনটা<br>
+        কেন যেন একটু বেশি special...
+    </h1>
+
+    <div
+    class="type"
+    id="type3">
+    </div>
+
+    <button
+    class="btn"
+    onclick="goTo(4)">
+
+        🎁 কারণটা জানতে চাই
+
+    </button>
+
+</section>
+
+
+<!-- ================= SCREEN 4 ================= -->
+
+<section class="screen" id="screen4">
+
+    <div class="eyebrow">
+        Something is about to happen
+    </div>
+
+    <div class="heart">
+        💗
+    </div>
+
+    <h1 class="title">
+        Ready?
+    </h1>
+
+    <div class="type">
+        এবার একটু মন দিয়ে দেখো...
+        <br>
+        সামনে যা আসছে,
+        সেটা শুধু তোমার জন্য। ✨
+    </div>
+
+    <button
+    class="btn"
+    onclick="goTo(5)">
+
+        ✨ Surprise শুরু হোক
+
+    </button>
+
+</section>
+
+
+<!-- ================= BALLOON ================= -->
+
+<section class="screen" id="screen5">
+
+    <div class="eyebrow">
+        One little game
+    </div>
+
+    <h1 class="title">
+        🎈 Balloon Pop!
+    </h1>
+
+    <div class="type">
+        নিচের balloon-টা click করো...
+        <br>
+        এর ভেতরে একটা surprise লুকানো আছে। 👀
+    </div>
+
+    <div style="font-size:100px;margin:25px 0;cursor:pointer"
+    id="popBalloon"
+    onclick="popBalloon()">
+        🎈
+    </div>
+
+</section>
+
+
+<!-- ================= CAKE ================= -->
+
+<section class="screen" id="screen6">
+
+    <div class="eyebrow">
+        Make a wish
+    </div>
+
+    <h1 class="title">
+        তোমার জন্য একটা Cake 🎂
+    </h1>
+
+    <div class="cake-scene">
+
+        <div
+        class="flame"
+        id="flame">
+        </div>
+
+        <div class="candle"></div>
+        <div class="cake"></div>
+
+    </div>
+
+    <div class="type">
+        একটা wish করো...
+        <br>
+        তারপর candle-টা নিভিয়ে দাও। ✨
+    </div>
+
+    <button
+    class="btn"
+    onclick="blowCandle()">
+
+        🕯️ Candle নিভাও
+
+    </button>
+
+</section>
+
+
+<!-- ================= CAT ================= -->
+
+<section class="screen" id="screen7">
+
+    <div class="eyebrow">
+        Meanwhile...
+    </div>
+
+    <h1 class="title">
+        দুইজন ছোট্ট অতিথি এসেছে 🐱
+    </h1>
+
+    <div class="cats">
+
+        <div class="cat cat1">🐱</div>
+
+        <div class="cat-heart">💗</div>
+
+        <div class="cat cat2">🐈</div>
+
+    </div>
+
+    <div class="type">
+        প্রথমে একটু ঝগড়া...
+        <br>
+        তারপর আবার বন্ধুত্ব...
+        <br>
+        তারপর কোলাকুলি। 🥹❤️
+    </div>
+
+    <button
+    class="btn"
+    onclick="goTo(8)">
+
+        🥰 তাদের শেষ কাণ্ডটা দেখো
+
+    </button>
+
+</section>
+
+
+<!-- ================= CAT LOVE ================= -->
+
+<section class="screen" id="screen8">
+
+    <div class="cats">
+
+        <div
+        class="cat cat1"
+        style="animation-duration:1.5s">
+            🐱💋
+        </div>
+
+        <div
+        class="cat cat2"
+        style="animation-duration:1.5s">
+            🐈❤️
+        </div>
+
+    </div>
+
+    <h1 class="title">
+        ঠিক আছে... আর ঝগড়া নয়! 😂❤️
+    </h1>
+
+    <div class="type">
+        এখন শুধু ভালোবাসা,
+        হাসি আর আদর। 🫶
+    </div>
+
+    <button
+    class="btn"
+    onclick="birthdayReveal()">
+
+        🎉 এবার আসল surprise
+
+    </button>
+
+</section>
+
+
+<!-- ================= BIG REVEAL ================= -->
+
+<section class="screen" id="screen9">
+
+    <div class="eyebrow">
+        This moment is yours
+    </div>
+
+    <div class="big-birthday">
+
+        HAPPY BIRTHDAY TO YOU DEAR MINE
+
+        <span>
+            FATIMA ISLAM RIYA
+        </span>
+
+    </div>
+
+    <div
+    class="type"
+    style="margin-top:25px">
+
+        🥳🎂✨
+
+    </div>
+
+    <button
+    class="btn"
+    onclick="goTo(10)">
+
+        💌 তোমার জন্য একটা কথা আছে
+
+    </button>
+
+</section>
+
+
+<!-- ================= MESSAGE ================= -->
+
+<section class="screen" id="screen10">
+
+    <div class="card">
+
+        <div class="eyebrow">
+            From the heart ❤️
+        </div>
+
+        <h1 class="reveal-name">
+            𝗙𝗔𝗧𝗜𝗠𝗔 𝗜𝗦𝗟𝗔𝗠 𝗥𝗜𝗬𝗔
+        </h1>
+
+        <div class="message">
+
+            <strong>
+                শুভ জন্মদিন! প্রিয় ঢেঁড়স 🎂🌸
+            </strong>
+
+            <br><br>
+
+            অনেকদিন আমাদের কথা হয় না।
+            মাঝখানে অনেক কিছু বদলে গেছে,
+            কিছু মনোমালিন্য হয়েছে,
+            আর আমাদের সম্পর্কের মধ্যেও হয়তো
+            একটা দূরত্ব তৈরি হয়েছে।
+
+            <br><br>
+
+            তবুও সত্যি বলতে,
+            কিছু মানুষ জীবনে এমন একটা জায়গা নিয়ে থাকে,
+            যেখানে অভিমান বা দূরত্ব তৈরি হলেও
+            তাদের জন্য ভালো চাওয়াটা কখনো কমে যায় না।
+
+            <br><br>
+
+            আজ তোমার জন্মদিন,
+            তাই পুরোনো কোনো কথা বা অভিমান টেনে
+            তোমার দিনটা ভারী করতে চাই না।
+
+            <br><br>
+
+            শুধু মন থেকে চাই,
+            তুমি সবসময় ভালো থাকো,
+            হাসিখুশি থাকো এবং তোমার জীবনের
+            প্রতিটা ভালো জিনিস তুমি পাও। 💐
+
+            <br><br>
+
+            আমাদের মধ্যে এখন যতই দূরত্ব থাকুক,
+            একসময়কার সুন্দর স্মৃতিগুলোর জন্য
+            তোমার প্রতি আমার সম্মান আর শুভকামনা
+            সবসময় থাকবে।
+
+            <br><br>
+
+            <strong>
+                (এই website টি শুধু মাত্র তোমার জন্য তৈরি করেছি। 🫰✨)
+            </strong>
+
+            <br><br>
+
+            আবারও জন্মদিনের শুভেচ্ছা রইল।
+            সবসময় হাসি খুশি থেকো। ❤️🎂
+
+        </div>
+
+        <button
+        class="btn"
+        onclick="goTo(11)">
+
+            🌍 আরও একটি surprise
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LANGUAGES ================= -->
+
+<section class="screen" id="screen11">
+
+    <div class="card">
+
+        <div class="eyebrow">
+            A birthday wish around the world
+        </div>
+
+        <h1 class="title">
+            🎉 Happy Birthday in 100 Languages 🌍✨
+        </h1>
+
+        <div class="languages">
+
+🇬🇧 English — 🎉 Happy Birthday Fatima Islam Riya! ✨🫰<br>
+🇵🇰 Urdu — 🎉 سالگرہ مبارک فاطمہ اسلام ریا! ✨🫰<br>
+🇵🇰 Punjabi — 🎉 ਜਨਮ ਦਿਨ ਮੁਬਾਰਕ ਫਾਤਿਮਾ ਇਸਲਾਮ ਰਿਆ! ✨🫰<br>
+🇵🇰 Saraiki — 🎉 جنم ڈین مبارک فاطمہ اسلام ریا! ✨🫰<br>
+🇵🇰 Sindhi — 🎉 جنم ڏينهن مبارڪ فاطمه اسلام ريا! ✨🫰<br>
+🇮🇳 Hindi — 🎉 फातिमा इस्लाम रिया, जन्मदिन मुबारक! ✨🫰<br>
+🇧🇩 Bengali — 🎉 ফাতিমা ইসলাম রিয়া, শুভ জন্মদিন! ✨🫰<br>
+🇮🇳 Gujarati — 🎉 ફાતિમા ઇસલામ રિયા, જન્મદિવસની શુભેચ્છાઓ! ✨🫰<br>
+🇮🇳 Marathi — 🎉 फातिमा इस्लाम रिया, वाढदिवसाच्या शुभेच्छा! ✨🫰<br>
+🇮🇳 Tamil — 🎉 ஃபாத்திமா இஸ்லாம் ரியா, இனிய பிறந்தநாள் வாழ்த்துகள்! ✨🫰<br>
+🇮🇳 Telugu — 🎉 ఫాతిమా ఇస్లాం రియా, పుట్టినరోజు శుభాకాంక్షలు! ✨🫰<br>
+🇮🇳 Kannada — 🎉 ಫಾತಿಮಾ ಇಸ್ಲಾಂ ರಿಯಾ, ಹುಟ್ಟುಹಬ್ಬದ ಶುಭಾಶಯಗಳು! ✨🫰<br>
+🇮🇳 Malayalam — 🎉 ഫാത്തിമ ഇസ്ലാം റിയ, ജന്മദിനാശംസകൾ! ✨🫰<br>
+🇮🇳 Odia — 🎉 ଫାତିମା ଇସଲାମ ରିୟା, ଜନ୍ମଦିନର ଶୁଭେଚ୍ଛା! ✨🫰<br>
+🇳🇵 Nepali — 🎉 फातिमा इस्लाम रिया, जन्मदिनको शुभकामना! ✨🫰<br>
+🇱🇰 Sinhala — 🎉 ෆාතිමා ඉස්ලාම් රියා, සුභ උපන්දිනයක්! ✨🫰<br>
+🇮🇷 Persian — 🎉 فاطمه اسلام ریا، تولدت مبارک! ✨🫰<br>
+🇸🇦 Arabic — 🎉 فاطمة إسلام ريا، عيد ميلاد سعيد! ✨🫰<br>
+🇫🇷 French — 🎉 Joyeux anniversaire, Fatima Islam Riya! ✨🫰<br>
+🇪🇸 Spanish — 🎉 ¡Feliz cumpleaños, Fatima Islam Riya! ✨🫰<br>
+🇵🇹 Portuguese — 🎉 Feliz aniversário, Fatima Islam Riya! ✨🫰<br>
+🇮🇹 Italian — 🎉 Buon compleanno, Fatima Islam Riya! ✨🫰<br>
+🇩🇪 German — 🎉 Alles Gute zum Geburtstag, Fatima Islam Riya! ✨🫰<br>
+🇳🇱 Dutch — 🎉 Gefeliciteerd met je verjaardag, Fatima Islam Riya! ✨🫰<br>
+🇹🇷 Turkish — 🎉 Fatima Islam Riya, doğum günün kutlu olsun! ✨🫰<br>
+🇨🇳 Chinese — 🎉 法蒂玛·伊斯兰·里娅，生日快乐！✨🫰<br>
+🇯🇵 Japanese — 🎉 ファティマ・イスラム・リヤ、お誕生日おめでとう！✨🫰<br>
+🇰🇷 Korean — 🎉 파티마 이슬람 리야, 생일 축하합니다! ✨🫰<br>
+🇹🇭 Thai — 🎉 ฟาติมา อิสลาม ริยา สุขสันต์วันเกิด! ✨🫰<br>
+🇻🇳 Vietnamese — 🎉 Chúc mừng sinh nhật Fatima Islam Riya! ✨🫰<br>
+🇮🇩 Indonesian — 🎉 Selamat ulang tahun Fatima Islam Riya! ✨🫰<br>
+🇲🇾 Malay — 🎉 Selamat hari jadi Fatima Islam Riya! ✨🫰<br>
+🇵🇭 Filipino — 🎉 Maligayang kaarawan, Fatima Islam Riya! ✨🫰<br>
+🇷🇺 Russian — 🎉 С днём рождения, Фатима Ислам Рия! ✨🫰<br>
+🇺🇦 Ukrainian — 🎉 З днем народження, Фатіма Іслам Рія! ✨🫰<br>
+🇬🇷 Greek — 🎉 Χρόνια πολλά, Fatima Islam Riya! ✨🫰<br>
+🇵🇱 Polish — 🎉 Wszystkiego najlepszego, Fatima Islam Riya! ✨🫰<br>
+🇨🇿 Czech — 🎉 Všechno nejlepší, Fatima Islam Riya! ✨🫰<br>
+🇭🇺 Hungarian — 🎉 Boldog születésnapot, Fatima Islam Riya! ✨🫰<br>
+🇷🇴 Romanian — 🎉 La mulți ani, Fatima Islam Riya! ✨🫰<br>
+🇧🇬 Bulgarian — 🎉 Честит рожден ден, Фатима Ислам Рия! ✨🫰<br>
+🇷🇸 Serbian — 🎉 Срећан рођендан, Фатима Ислам Рија! ✨🫰<br>
+🇭🇷 Croatian — 🎉 Sretan rođendan, Fatima Islam Riya! ✨🫰<br>
+🇧🇦 Bosnian — 🎉 Sretan rođendan, Fatima Islam Riya! ✨🫰<br>
+🇦🇱 Albanian — 🎉 Gëzuar ditëlindjen, Fatima Islam Riya! ✨🫰<br>
+🇨🇦 Basque — 🎉 Zorionak, Fatima Islam Riya! ✨🫰<br>
+🇮🇱 Hebrew — 🎉 פאטימה אסלאם ריה, יום הולדת שמח! ✨🫰<br>
+🇸🇪 Swedish — 🎉 Grattis på födelsedagen, Fatima Islam Riya! ✨🫰<br>
+🇳🇴 Norwegian — 🎉 Gratulerer med dagen, Fatima Islam Riya! ✨🫰<br>
+🇩🇰 Danish — 🎉 Tillykke med fødselsdagen, Fatima Islam Riya! ✨🫰<br>
+🇫🇮 Finnish — 🎉 Hyvää syntymäpäivää, Fatima Islam Riya! ✨🫰<br>
+🇮🇸 Icelandic — 🎉 Til hamingju með afmælið, Fatima Islam Riya! ✨🫰<br>
+🇮🇪 Irish — 🎉 Lá breithe sona duit, Fatima Islam Riya! ✨🫰<br>
+🏴 Welsh — 🎉 Penblwydd hapus, Fatima Islam Riya! ✨🫰<br>
+🇱🇺 Luxembourgish — 🎉 Alles Guddes fir de Gebuertsdag, Fatima Islam Riya! ✨🫰<br>
+🇻🇦 Latin — 🎉 Felix natalis, Fatima Islam Riya! ✨🫰<br>
+🇪🇸 Catalan — 🎉 Per molts anys, Fatima Islam Riya! ✨🫰<br>
+🇪🇸 Galician — 🎉 Feliz aniversario, Fatima Islam Riya! ✨🫰<br>
+🇲🇬 Malagasy — 🎉 Tratry ny tsingerintaona nahaterahana, Fatima Islam Riya! ✨🫰<br>
+🇷🇼 Kinyarwanda — 🎉 Isabukuru nziza, Fatima Islam Riya! ✨🫰<br>
+🇿🇦 Sesotho — 🎉 Letsatsi la tsoalo le monate, Fatima Islam Riya! ✨🫰<br>
+
+<br>
+
+🎂🌍 <b>100 LANGUAGES — HAPPY BIRTHDAY FATIMA ISLAM RIYA! ✨🫰🎉</b>
+
+        </div>
+
+        <button
+        class="btn"
+        onclick="goTo(12);confetti()">
+
+            ❤️ শেষ কথাটা শুনবে?
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FINAL ================= -->
+
+<section class="screen" id="screen12">
+
+    <div class="card">
+
+        <div class="heart">
+            ❤️
+        </div>
+
+        <h1 class="reveal-name">
+            𝗠𝗜𝗡𝗘
+        </h1>
+
+        <div class="message">
+
+            পৃথিবীর সব ভাষায়
+            তোমাকে জন্মদিনের শুভেচ্ছা জানালাম...
+
+            <br><br>
+
+            কিন্তু শেষ পর্যন্ত
+            আমার নিজের ভাষায় শুধু একটাই কথা—
+
+            <br><br>
+
+            <strong>
+                ভালো থেকো।<br>
+                হাসিখুশি থেকো।<br>
+                আর তোমার সব সুন্দর স্বপ্ন পূরণ হোক। 🌸
+            </strong>
+
+            <br><br>
+
+            🎂 Happy Birthday<br>
+            ❤️ Dear Mine<br>
+            𝗙𝗔𝗧𝗜𝗠𝗔 𝗜𝗦𝗟𝗔𝗠 𝗥𝗜𝗬𝗔
+
+        </div>
+
+        <button
+        class="btn"
+        onclick="restart()">
+
+            🔄 আবার শুরু থেকে
+
+        </button>
+
+    </div>
+
 </section>
 
 </div>
 
-<div class="grand" id="grand">
-  <div>
-    <span>𝗛𝗔𝗣𝗣𝗬 𝗕𝗜𝗥𝗧𝗛𝗗𝗔𝗬 𝗧𝗢 𝗬𝗢𝗨 𝗗𝗘𝗔𝗥 𝗠𝗜𝗡𝗘</span>
-    <strong>𝗙𝗔𝗧𝗜𝗠𝗔 𝗜𝗦𝗟𝗔𝗠 𝗥𝗜𝗬𝗔</strong>
-  </div>
-</div>
 
 <script>
+
+/* ==========================================
+   PASSWORD
+========================================== */
+
+function checkPassword(){
+
+    const value=
+        document.getElementById("password")
+        .value
+        .trim()
+        .toLowerCase();
+
+    /*
+       Password:
+       15 August
+
+       নিচের কয়েকটি format-ই গ্রহণ করবে।
+    */
+
+    const valid=[
+        "15 august",
+        "15august",
+        "15 august 2000",
+        "15-08",
+        "15/08",
+        "1508",
+        "15"
+    ];
+
+    if(valid.includes(value)){
+
+        startMusic();
+
+        goTo(2);
+
+    }else{
+
+        document.getElementById("passwordError")
+        .innerHTML=
+        "❌ পাসওয়ার্ডটি তোমার জন্মদিনের তারিখ দিয়ে চেষ্টা করো।";
+
+    }
+
+}
+
+document
+.getElementById("password")
+.addEventListener("keydown",function(e){
+
+    if(e.key==="Enter"){
+        checkPassword();
+    }
+
+});
+
+
+/* ==========================================
+   TYPEWRITER
+========================================== */
+
 const texts={
-t2:"আজকের দিনটা সেই মানুষটার… যার জন্য এই ছোট্ট website-টা বানানো হয়েছে। কিন্তু নামটা এখনই বলছি না। 🤫"
+
+    type2:
+    "কিছু surprise সবাইকে দেখানো যায় না... কিছু surprise শুধু একজন বিশেষ মানুষের জন্য রাখা হয়। ❤️",
+
+    type3:
+    "আজকের দিনটা ক্যালেন্ডারের আর দশটা দিনের মতো নয়। কারণ আজ এমন একজনের জন্মদিন, যার জন্য এই ছোট্ট আয়োজন। ✨"
+
 };
 
-function type(id,text){
- const e=document.getElementById(id); if(!e)return;
- e.textContent=""; let i=0;
- const timer=setInterval(()=>{e.textContent+=text[i++];if(i>=text.length)clearInterval(timer)},30);
-}
-function show(n){
- document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));
- document.getElementById("s"+n).classList.add("active");
-}
-function unlock(){
- const v=document.getElementById("pass").value.trim().toLowerCase().replace(/\s+/g,"");
- if(["15august","15aug","1508","15-08","15/08"].includes(v)){show(1);startMusic();}
- else{document.getElementById("err").textContent="ইঙ্গিতটা মনে করো—তোমার জন্মদিনই পাসওয়ার্ড। ❤️";}
-}
-document.getElementById("pass").addEventListener("keydown",e=>{if(e.key==="Enter")unlock()});
-function next(n){
- show(n);
- if(n===2)setTimeout(()=>type("t2",texts.t2),500);
- if(n===4)makeBalloons();
-}
-function makeBalloons(){
- const box=document.getElementById("balloons"); box.innerHTML="";
- const colors=["#ff4f91","#ffd54f","#55b9ff","#b967ff","#43e0c1","#ff7043"];
- const msgs=["একটা হাসি 😊","একটা সুন্দর স্মৃতি 🌸","একটা শুভকামনা ✨","একটা surprise 🎁","ভালো থেকো ❤️","Keep shining ⭐"];
- let count=0;
- msgs.forEach((m,i)=>{
-  const b=document.createElement("div"); b.className="pop-balloon";b.style.background=colors[i];b.title=m;
-  b.onclick=()=>{if(b.classList.contains("popped"))return;b.classList.add("popped");pop();count++;setTimeout(()=>b.remove(),280);if(count===msgs.length){const btn=document.getElementById("balloonNext");btn.style.opacity=1;btn.style.pointerEvents="auto"}};
-  box.appendChild(b);
- });
-}
-function pop(){
- try{
-  const A=new (window.AudioContext||window.webkitAudioContext)(),o=A.createOscillator(),g=A.createGain();
-  o.type="sine";o.frequency.setValueAtTime(520,A.currentTime);o.frequency.exponentialRampToValueAtTime(90,A.currentTime+.18);
-  g.gain.setValueAtTime(.2,A.currentTime);g.gain.exponentialRampToValueAtTime(.001,A.currentTime+.2);
-  o.connect(g).connect(A.destination);o.start();o.stop(A.currentTime+.2);
- }catch(e){}
-}
-function blow(){
- document.getElementById("flame").classList.add("off");
- setTimeout(()=>{show(7);},900);
-}
-function grandReveal(){
- const g=document.getElementById("grand");g.classList.add("show");
- burst();voice();
- setTimeout(()=>{g.classList.remove("show");show(8)},5000);
-}
-function burst(){
- for(const side of ["left","right"]){
-  for(let i=0;i<22;i++){
-   const p=document.createElement("div");p.className="party";p.textContent=i%2?"🎉":"🎊";
-   p.style[side]="-20px";p.style.top=(25+Math.random()*50)+"vh";
-   p.style.setProperty("--x",side==="left"?(80+Math.random()*60)+"vw":(-80-Math.random()*60)+"vw");
-   p.style.setProperty("--y",(Math.random()*60-30)+"vh");
-   document.body.appendChild(p);setTimeout(()=>p.remove(),3100);
-  }
- }
-}
-function voice(){
- if(!("speechSynthesis" in window))return;
- speechSynthesis.cancel();
- const u=new SpeechSynthesisUtterance("Happy Birthday to you dear mine, Fatima Islam Riya");
- u.lang="en-US";u.rate=.8;u.pitch=1.08;u.volume=1;speechSynthesis.speak(u);
-}
-const languages=[
-"🇬🇧 English — 🎉 Happy Birthday Fatima Islam Riya! ✨🫰",
-"🇵🇰 Urdu — 🎉 سالگرہ مبارک فاطمہ اسلام ریا! ✨🫰",
-"🇮🇳 Hindi — 🎉 फातिमा इस्लाम रिया, जन्मदिन मुबारक! ✨🫰",
-"🇧🇩 Bengali — 🎉 ফাতিমা ইসলাম রিয়া, শুভ জন্মদিন! ✨🫰",
-"🇫🇷 French — 🎉 Joyeux anniversaire, Fatima Islam Riya! ✨🫰",
-"🇪🇸 Spanish — 🎉 ¡Feliz cumpleaños, Fatima Islam Riya! ✨🫰",
-"🇮🇹 Italian — 🎉 Buon compleanno, Fatima Islam Riya! ✨🫰",
-"🇩🇪 German — 🎉 Alles Gute zum Geburtstag, Fatima Islam Riya! ✨🫰",
-"🇸🇦 Arabic — 🎉 فاطمة إسلام ريا، عيد ميلاد سعيد! ✨🫰",
-"🇨🇳 Chinese — 🎉 法蒂玛·伊斯兰·里娅，生日快乐！✨🫰",
-"🇯🇵 Japanese — 🎉 ファティマ・イスラム・リヤ、お誕生日おめでとう！✨🫰",
-"🇰🇷 Korean — 🎉 파티마 이슬람 리야, 생일 축하합니다! ✨🫰",
-"🇹🇷 Turkish — 🎉 Fatima Islam Riya, doğum günün kutlu olsun! ✨🫰",
-"🇷🇺 Russian — 🎉 С днём рождения, Фатима Ислам Рия! ✨🫰",
-"🇵🇹 Portuguese — 🎉 Feliz aniversário, Fatima Islam Riya! ✨🫰",
-"🇳🇱 Dutch — 🎉 Gefeliciteerd met je verjaardag, Fatima Islam Riya! ✨🫰",
-"🇬🇷 Greek — 🎉 Χρόνια πολλά, Fatima Islam Riya! ✨🫰",
-"🇹🇭 Thai — 🎉 ฟาติมา อิสลาม ริยา สุขสันต์วันเกิด! ✨🫰",
-"🇻🇳 Vietnamese — 🎉 Chúc mừng sinh nhật Fatima Islam Riya! ✨🫰",
-"🇮🇩 Indonesian — 🎉 Selamat ulang tahun Fatima Islam Riya! ✨🫰",
-"🇲🇾 Malay — 🎉 Selamat hari jadi Fatima Islam Riya! ✨🫰",
-"🇵🇭 Filipino — 🎉 Maligayang kaarawan, Fatima Islam Riya! ✨🫰",
-"🌍 100 LANGUAGES — HAPPY BIRTHDAY FATIMA ISLAM RIYA! 🎂✨"
-];
-document.getElementById("langs").innerHTML=languages.map(x=>"<p>"+x+"</p>").join("");
 
-const c=document.getElementById("stars"),ctx=c.getContext("2d");let stars=[];
-function resize(){c.width=innerWidth;c.height=innerHeight}
-resize();addEventListener("resize",resize);
-for(let i=0;i<100;i++)stars.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.7+.3,s:Math.random()*.35+.1});
-function animate(){ctx.clearRect(0,0,c.width,c.height);stars.forEach(s=>{s.y-=s.s;if(s.y<0)s.y=c.height;ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);ctx.fillStyle="rgba(255,220,240,.65)";ctx.fill()});requestAnimationFrame(animate)}animate();
+function typeWriter(id,text){
+
+    const el=
+        document.getElementById(id);
+
+    if(!el)return;
+
+    el.innerHTML="";
+
+    const cursor=
+        document.createElement("span");
+
+    cursor.className="cursor";
+
+    el.appendChild(cursor);
+
+    let i=0;
+
+    function write(){
+
+        if(i<text.length){
+
+            cursor.before(
+                document.createTextNode(
+                    text.charAt(i)
+                )
+            );
+
+            i++;
+
+            setTimeout(write,35);
+
+        }
+
+    }
+
+    write();
+
+}
+
+
+/* ==========================================
+   SCREEN
+========================================== */
+
+function goTo(n){
+
+    document
+    .querySelectorAll(".screen")
+    .forEach(s=>{
+        s.classList.remove("active");
+    });
+
+    const target=
+        document.getElementById("screen"+n);
+
+    if(!target)return;
+
+    target.classList.add("active");
+
+    if(n===2){
+
+        setTimeout(()=>{
+            typeWriter(
+                "type2",
+                texts.type2
+            );
+        },700);
+
+    }
+
+    if(n===3){
+
+        setTimeout(()=>{
+            typeWriter(
+                "type3",
+                texts.type3
+            );
+        },700);
+
+    }
+
+}
+
+
+/* ==========================================
+   BALLOON POP
+========================================== */
+
+function popBalloon(){
+
+    const balloon=
+        document.getElementById("popBalloon");
+
+    balloon.innerHTML="💥";
+
+    createBurst();
+
+    setTimeout(()=>{
+        goTo(6);
+    },1200);
+
+}
+
+
+/* ==========================================
+   CANDLE
+========================================== */
+
+function blowCandle(){
+
+    document
+    .getElementById("flame")
+    .classList.add("off");
+
+    createBurst();
+
+    setTimeout(()=>{
+        goTo(7);
+    },1300);
+
+}
+
+
+/* ==========================================
+   BIRTHDAY REVEAL
+========================================== */
+
+function birthdayReveal(){
+
+    createBurst();
+
+    playBirthdaySound();
+
+    goTo(9);
+
+}
+
+
+/* ==========================================
+   CONFETTI SIDE BURST
+========================================== */
+
+function createBurst(){
+
+    const symbols=[
+        "🎉",
+        "🎊",
+        "✨",
+        "🎈",
+        "💖"
+    ];
+
+    for(let side of ["left","right"]){
+
+        for(let i=0;i<25;i++){
+
+            const el=
+                document.createElement("div");
+
+            el.className=
+                "burst "+side+" fly";
+
+            el.innerHTML=
+                symbols[
+                    Math.floor(
+                        Math.random()*symbols.length
+                    )
+                ];
+
+            const x=
+                side==="left"
+                ?
+                (30+Math.random()*45)+"vw"
+                :
+                (-30-Math.random()*45)+"vw";
+
+            const y=
+                (-35+Math.random()*70)+"vh";
+
+            el.style.setProperty("--x",x);
+            el.style.setProperty("--y",y);
+
+            document.body.appendChild(el);
+
+            setTimeout(()=>{
+                el.remove();
+            },2500);
+
+        }
+
+    }
+
+}
+
+
+/* ==========================================
+   CONFETTI
+========================================== */
+
+function confetti(){
+
+    const symbols=[
+        "🎉",
+        "🎊",
+        "✨",
+        "💖",
+        "🎂",
+        "⭐"
+    ];
+
+    for(let i=0;i<100;i++){
+
+        const p=
+            document.createElement("div");
+
+        p.className="confetti";
+
+        p.innerHTML=
+            symbols[
+                Math.floor(
+                    Math.random()*symbols.length
+                )
+            ];
+
+        p.style.left=
+            Math.random()*100+"vw";
+
+        p.style.fontSize=
+            12+Math.random()*20+"px";
+
+        p.style.animationDuration=
+            2.5+Math.random()*3+"s";
+
+        document.body.appendChild(p);
+
+        setTimeout(()=>{
+            p.remove();
+        },6500);
+
+    }
+
+}
+
+
+/* ==========================================
+   MUSIC
+========================================== */
 
 function startMusic(){
- /* Browser autoplay rules prevent guaranteed sound before a user gesture.
-    A YouTube player can be added here if desired. The user's supplied video:
-    https://youtu.be/gcnhKVZ_YE8
- */
+
+    const iframe=
+        document.getElementById("youtubeAudio");
+
+    iframe.src=
+    "https://www.youtube.com/embed/gcnhKVZ_YE8?enablejsapi=1&autoplay=1&loop=1&playlist=gcnhKVZ_YE8";
+
 }
+
+
+/* ==========================================
+   BIRTHDAY SOUND / SPEECH
+========================================== */
+
+function playBirthdaySound(){
+
+    /*
+       Browser-এর built-in speech ব্যবহার করা হয়েছে।
+       তাই আলাদা mp3 দরকার নেই।
+    */
+
+    if("speechSynthesis" in window){
+
+        speechSynthesis.cancel();
+
+        const text=
+        "Happy Birthday to you dear mine, Fatima Islam Riya";
+
+        const voice=
+            new SpeechSynthesisUtterance(text);
+
+        voice.lang="en-US";
+        voice.rate=.78;
+        voice.pitch=1.15;
+        voice.volume=1;
+
+        speechSynthesis.speak(voice);
+
+        /*
+          ৫ সেকেন্ড ধরে birthday screen
+          visible থাকবে।
+        */
+
+        setTimeout(()=>{
+            speechSynthesis.cancel();
+        },5000);
+
+    }
+
+}
+
+
+/* ==========================================
+   RESTART
+========================================== */
+
+function restart(){
+
+    document
+    .querySelectorAll(".screen")
+    .forEach(s=>{
+        s.classList.remove("active");
+    });
+
+    document
+    .getElementById("screen1")
+    .classList.add("active");
+
+    document
+    .getElementById("password")
+    .value="";
+
+    document
+    .getElementById("passwordError")
+    .innerHTML="";
+
+}
+
+
+/* ==========================================
+   PARTICLES
+========================================== */
+
+const canvas=
+    document.getElementById("particles");
+
+const ctx=
+    canvas.getContext("2d");
+
+let particles=[];
+
+function resize(){
+
+    canvas.width=
+        window.innerWidth;
+
+    canvas.height=
+        window.innerHeight;
+
+}
+
+resize();
+
+window.addEventListener(
+    "resize",
+    resize
+);
+
+for(let i=0;i<90;i++){
+
+    particles.push({
+
+        x:Math.random()*innerWidth,
+
+        y:Math.random()*innerHeight,
+
+        r:Math.random()*2+.5,
+
+        speed:Math.random()*.5+.1,
+
+        opacity:Math.random()*.7+.2
+
+    });
+
+}
+
+function animate(){
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    particles.forEach(p=>{
+
+        p.y-=p.speed;
+
+        if(p.y<0){
+
+            p.y=canvas.height;
+
+            p.x=Math.random()*canvas.width;
+
+        }
+
+        ctx.beginPath();
+
+        ctx.arc(
+            p.x,
+            p.y,
+            p.r,
+            0,
+            Math.PI*2
+        );
+
+        ctx.fillStyle=
+            `rgba(255,190,220,${p.opacity})`;
+
+        ctx.fill();
+
+    });
+
+    requestAnimationFrame(animate);
+
+}
+
+animate();
+
 </script>
+
 </body>
 </html>
