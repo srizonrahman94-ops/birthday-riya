@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
 <title>A Little Birthday Surprise — Fatima Islam Riya</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -158,7 +160,8 @@ input,textarea{
 textarea{
   border-radius:20px;
   text-align:left;
-  min-height:140px
+  min-height:140px;
+  resize:none
 }
 
 .btn{
@@ -326,9 +329,25 @@ textarea{
   font-size:14px
 }
 
+
+/* =====================================================
+   YOUTUBE MUSIC
+===================================================== */
+
+#youtubeMusic{
+  position:fixed;
+  width:1px;
+  height:1px;
+  opacity:.01;
+  left:-10px;
+  bottom:-10px;
+  pointer-events:none;
+}
+
+
 /* =====================================================
    2D CAT STAGE
-   ===================================================== */
+===================================================== */
 
 .cat-stage{
   position:relative;
@@ -403,6 +422,7 @@ textarea{
 
 }
 
+
 /* CONFETTI */
 
 @keyframes fall{
@@ -411,15 +431,32 @@ textarea{
     opacity:0
   }
 }
+
 </style>
 </head>
+
 
 <body>
 
 <div class="bg"></div>
+
 <canvas id="stars"></canvas>
 
+
+<!-- =====================================================
+     YOUTUBE MUSIC
+===================================================== -->
+
+<iframe
+  id="youtubeMusic"
+  src="https://www.youtube.com/embed/gcnhKVZ_YE8?enablejsapi=1&loop=1&playlist=gcnhKVZ_YE8"
+  allow="autoplay; encrypted-media"
+  frameborder="0">
+</iframe>
+
+
 <div class="wrap">
+
 
 <!-- =====================================================
      SCREEN 1
@@ -440,11 +477,15 @@ A private little surprise
 </h1>
 
 <p class="password-sub">
+
 এই দরজাটি খোলার চাবি কিন্তু তোমার কাছেই আছে। ❤️
+
 <br><br>
+
 <b>
 তোমার জন্মদিনই এই জায়গায় প্রবেশের পাসওয়ার্ড।
 </b>
+
 </p>
 
 <input
@@ -461,6 +502,7 @@ autocomplete="off"
 </button>
 
 </div>
+
 </section>
 
 
@@ -500,9 +542,11 @@ But wait...
 </div>
 
 <h1 class="title">
+
 আজকের দিনটা
 <br>
 কেন যেন একটু বেশি special...
+
 </h1>
 
 <div class="type" id="t3"></div>
@@ -533,9 +577,11 @@ Ready?
 </h1>
 
 <div class="type">
+
 এবার একটু মন দিয়ে দেখো...
 <br>
 সামনে যা আসছে, সেটা শুধু তোমার জন্য। ✨
+
 </div>
 
 <button class="btn" onclick="go(5)">
@@ -560,9 +606,11 @@ One little game
 </h1>
 
 <div class="type">
+
 নিচের balloon-টা click করো...
 <br>
 এরপর দেখো কি হয়। 👀
+
 </div>
 
 <div
@@ -575,7 +623,9 @@ display:inline-block;
 transition:.4s;
 "
 onclick="pop()">
+
 🎈
+
 </div>
 
 </section>
@@ -600,9 +650,11 @@ Make a wish
 </div>
 
 <div class="type">
+
 নিজেকে নিয়ে সুন্দর একটা wish করো...
 <br>
 তারপর candle-টা নিভিয়ে দাও। ✨
+
 </div>
 
 <button class="btn" onclick="go(7)">
@@ -631,8 +683,10 @@ Meanwhile...
 <canvas id="catCanvas"></canvas>
 
 <div class="cat-caption">
+
 🐱 White Cat × 🐱 Orange Cat —
 খুনসুটি থেকে ভালোবাসা ❤️
+
 </div>
 
 </div>
@@ -641,24 +695,14 @@ Meanwhile...
 🐱 দুইটি বিড়াল আসছে...
 </div>
 
-<div class="type">
-
-প্রথমে একে অপরকে দেখা...
-<br>
-তারপর খুনসুটি ও ছোট্ট ঝগড়া...
-<br>
-তারপর হাত/পা ধরা, কাছে আসা, nose kiss,
-<br>
-hug আর শেষে happy bounce। 🥹❤️
-
-</div>
-
 <button
 class="btn"
 id="catContinue"
 onclick="go(8)"
 disabled>
+
 🥰 তাদের শেষ কাণ্ডটা দেখো
+
 </button>
 
 </section>
@@ -692,7 +736,9 @@ top:25px;
 transform:translateX(-50%);
 font-size:45px;
 ">
+
 ❤️
+
 </div>
 
 </div>
@@ -943,6 +989,7 @@ A birthday wish around the world
 <br><br>
 
 🎂🌍
+
 <b>
 HAPPY BIRTHDAY FATIMA ISLAM RIYA! ✨🫰🎉
 </b>
@@ -985,11 +1032,13 @@ HAPPY BIRTHDAY FATIMA ISLAM RIYA! ✨🫰🎉
 <br><br>
 
 <strong>
+
 ভালো থেকো।
 <br>
 হাসিখুশি থেকো।
 <br>
 আর তোমার সব সুন্দর স্বপ্ন পূরণ হোক। 🌸
+
 </strong>
 
 <br><br>
@@ -1007,7 +1056,12 @@ HAPPY BIRTHDAY FATIMA ISLAM RIYA! ✨🫰🎉
 
 <div class="options">
 
-<div class="option" onclick="restart()">
+
+<!-- OPTION 1 -->
+
+<div
+class="option"
+onclick="restart()">
 
 <div class="num">
 1
@@ -1018,37 +1072,50 @@ HAPPY BIRTHDAY FATIMA ISLAM RIYA! ✨🫰🎉
 </div>
 
 
-<div class="option" onclick="openM('comment')">
+<!-- OPTION 2 -->
+
+<div
+class="option"
+onclick="openM('comment')">
 
 <div class="num">
 2
 </div>
 
-WhatsApp-এ reply দিতে ফিরে যাও
+💌 তোমার যা ইচ্ছে আমাকে লিখে দাও
 
 </div>
 
 
-<div class="option" onclick="openM('gift')">
+<!-- OPTION 3 -->
+
+<div
+class="option"
+onclick="openM('gift')">
 
 <div class="num">
 3
 </div>
 
-জন্মদিনের উপহার হিসেবে কী চাও?
+🎁 জন্মদিনের উপহার হিসেবে কী চাও?
 
 </div>
 
 
-<div class="option" onclick="whatsapp()">
+<!-- OPTION 4 -->
+
+<div
+class="option"
+onclick="whatsapp()">
 
 <div class="num">
 4
 </div>
 
-WhatsApp-এ ফিরে যাই
+💚 WhatsApp-এ ফিরে যাই
 
 </div>
+
 
 </div>
 
@@ -1068,30 +1135,40 @@ WhatsApp-এ ফিরে যাই
 <div class="modalbox">
 
 <h2>
-💌 তোমার reply
+💌 তোমার যা ইচ্ছে
 </h2>
 
 <p style="color:#ffffffaa;margin:12px 0">
-যা বলতে ইচ্ছে করছে লিখে দাও। ❤️
+
+এখানে যা ইচ্ছে লিখে দাও।
+লেখাটা সরাসরি WhatsApp-এ পাঠানোর জন্য তৈরি হবে। ❤️
+
 </p>
 
 <form id="cf">
 
 <textarea
+id="customMessage"
 name="message"
 required
 placeholder="এখানে তোমার কথা লিখো..."
 ></textarea>
 
-<button class="btn">
-💌 Reply পাঠিয়ে দাও
+<button
+class="btn"
+type="submit">
+
+💚 WhatsApp-এ পাঠিয়ে দাও
+
 </button>
 
 <button
 type="button"
 class="btn"
 onclick="closeM('comment')">
+
 ← ফিরে যাই
+
 </button>
 
 <div class="status" id="cs"></div>
@@ -1099,6 +1176,7 @@ onclick="closeM('comment')">
 </form>
 
 </div>
+
 </div>
 
 
@@ -1115,7 +1193,9 @@ onclick="closeM('comment')">
 </h2>
 
 <p style="color:#ffffffaa;margin:12px 0">
+
 কোনটা চাইবে? 🥰
+
 </p>
 
 <form id="gf">
@@ -1154,15 +1234,21 @@ value="ঘুরতে নিয়ে যাওয়া">
 
 <br>
 
-<button class="btn">
-🎁 পছন্দ পাঠাও
+<button
+class="btn"
+type="submit">
+
+🎁 WhatsApp-এ পছন্দ পাঠাও
+
 </button>
 
 <button
 type="button"
 class="btn"
 onclick="closeM('gift')">
+
 ← ফিরে যাই
+
 </button>
 
 <div class="status" id="gs"></div>
@@ -1170,6 +1256,7 @@ onclick="closeM('gift')">
 </form>
 
 </div>
+
 </div>
 
 
@@ -1181,6 +1268,39 @@ onclick="closeM('gift')">
 
 const WNUM="8801863385785";
 
+const WAPP="https://wa.me/"+WNUM;
+
+
+/* =====================================================
+   YOUTUBE
+===================================================== */
+
+let youtubeReady=false;
+
+function playMusic(){
+
+  const frame=
+    document.getElementById("youtubeMusic");
+
+  try{
+
+    frame.contentWindow.postMessage(
+      JSON.stringify({
+        event:"command",
+        func:"playVideo",
+        args:[]
+      }),
+      "*"
+    );
+
+  }catch(e){}
+
+}
+
+
+/* =====================================================
+   GENERAL GO
+===================================================== */
 
 function go(n){
 
@@ -1190,11 +1310,20 @@ function go(n){
     x.classList.remove("active");
   });
 
-  const target=document.getElementById("s"+n);
+
+  const target=
+    document.getElementById("s"+n);
+
 
   if(!target)return;
 
+
   target.classList.add("active");
+
+
+  /* music */
+
+  playMusic();
 
 
   if(n===2){
@@ -1228,9 +1357,14 @@ function go(n){
 }
 
 
+/* =====================================================
+   TYPEWRITER
+===================================================== */
+
 function type(id,text){
 
-  const e=document.getElementById(id);
+  const e=
+    document.getElementById(id);
 
   if(!e)return;
 
@@ -1244,7 +1378,10 @@ function type(id,text){
 
       e.textContent+=text[i++];
 
-      setTimeout(writer,30);
+      setTimeout(
+        writer,
+        30
+      );
 
     }
 
@@ -1261,13 +1398,19 @@ function type(id,text){
 
 function check(){
 
-  const v=document
-  .getElementById("pw")
-  .value
-  .trim()
-  .toLowerCase();
+  playMusic();
+
+
+  const v=
+    document
+    .getElementById("pw")
+    .value
+    .trim()
+    .toLowerCase();
+
 
   const passwords=[
+
     "15",
     "1508",
     "15/08",
@@ -1275,17 +1418,23 @@ function check(){
     "15 august",
     "15august",
     "15 august 2000"
+
   ];
+
 
   if(passwords.includes(v)){
 
-    document.getElementById("err").textContent="";
+    document
+    .getElementById("err")
+    .textContent="";
 
     go(2);
 
   }else{
 
-    document.getElementById("err").textContent=
+    document
+    .getElementById("err")
+    .textContent=
       "❌ জন্মদিনের তারিখ দিয়ে চেষ্টা করো।";
 
   }
@@ -1298,7 +1447,10 @@ document
 .addEventListener(
   "keydown",
   e=>{
-    if(e.key==="Enter")check();
+
+    if(e.key==="Enter")
+      check();
+
   }
 );
 
@@ -1309,11 +1461,18 @@ document
 
 function pop(){
 
-  const balloon=document.getElementById("balloon");
+  playMusic();
+
+
+  const balloon=
+    document.getElementById("balloon");
+
 
   balloon.textContent="💥";
 
-  balloon.style.transform="scale(1.5) rotate(15deg)";
+  balloon.style.transform=
+    "scale(1.5) rotate(15deg)";
+
 
   setTimeout(()=>{
     go(6);
@@ -1323,7 +1482,7 @@ function pop(){
 
 
 /* =====================================================
-   BIRTHDAY
+   BIRTHDAY VOICE
 ===================================================== */
 
 function birthday(){
@@ -1332,14 +1491,75 @@ function birthday(){
 
   confetti();
 
+  setTimeout(
+    speakBirthday,
+    500
+  );
+
 }
 
+
+function speakBirthday(){
+
+  if(!("speechSynthesis" in window))
+    return;
+
+
+  window.speechSynthesis.cancel();
+
+
+  const text=
+    "HAPPY BIRTHDAY TO YOU DEAR MINE FATIMA ISLAM RIYA";
+
+
+  const utter=
+    new SpeechSynthesisUtterance(text);
+
+
+  utter.lang="en-US";
+
+  utter.rate=.78;
+
+  utter.pitch=1.05;
+
+  utter.volume=1;
+
+
+  const voices=
+    window.speechSynthesis.getVoices();
+
+
+  const englishVoice=
+    voices.find(
+      v=>
+        v.lang &&
+        v.lang.toLowerCase()
+        .startsWith("en")
+    );
+
+
+  if(englishVoice)
+    utter.voice=englishVoice;
+
+
+  window.speechSynthesis.speak(
+    utter
+  );
+
+}
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
 
 function confetti(){
 
   for(let i=0;i<100;i++){
 
-    const x=document.createElement("div");
+    const x=
+      document.createElement("div");
+
 
     x.textContent=[
       "🎉",
@@ -1348,19 +1568,34 @@ function confetti(){
       "🎊",
       "🌸",
       "🎂"
-    ][Math.random()*6|0];
+    ][
+      Math.random()*6|0
+    ];
+
 
     x.style.cssText=`
+
       position:fixed;
+
       z-index:50;
+
       left:${Math.random()*100}vw;
+
       top:-30px;
+
       font-size:${12+Math.random()*20}px;
-      animation:fall ${2+Math.random()*3}s linear forwards;
+
+      animation:
+        fall ${2+Math.random()*3}s
+        linear forwards;
+
       pointer-events:none;
+
     `;
 
+
     document.body.appendChild(x);
+
 
     setTimeout(()=>{
       x.remove();
@@ -1377,22 +1612,27 @@ function confetti(){
 
 function openM(id){
 
-  const modal=document.getElementById(id);
+  const modal=
+    document.getElementById(id);
 
-  if(modal){
+
+  if(modal)
     modal.classList.add("show");
-  }
+
+
+  playMusic();
 
 }
 
 
 function closeM(id){
 
-  const modal=document.getElementById(id);
+  const modal=
+    document.getElementById(id);
 
-  if(modal){
+
+  if(modal)
     modal.classList.remove("show");
-  }
 
 }
 
@@ -1403,14 +1643,157 @@ function closeM(id){
 
 function whatsapp(){
 
-  location.href=
-    "https://wa.me/"+WNUM+
+  const message=
+    "🎂 Happy Birthday surprise দেখলাম ❤️\n\n"+
+    "Fatima Islam Riya-কে জন্মদিনের অনেক শুভেচ্ছা! 🎉❤️";
+
+
+  window.location.href=
+    WAPP+
     "?text="+
-    encodeURIComponent(
-      "🎂 Happy Birthday surprise দেখলাম ❤️"
-    );
+    encodeURIComponent(message);
 
 }
+
+
+/* =====================================================
+   CUSTOM MESSAGE → WHATSAPP
+===================================================== */
+
+document
+.getElementById("cf")
+.addEventListener(
+  "submit",
+  function(e){
+
+    e.preventDefault();
+
+
+    const message=
+      document
+      .getElementById("customMessage")
+      .value
+      .trim();
+
+
+    const status=
+      document
+      .getElementById("cs");
+
+
+    if(!message){
+
+      status.textContent=
+        "❌ আগে কিছু লিখে দাও।";
+
+      return;
+
+    }
+
+
+    status.textContent=
+      "💚 WhatsApp খোলা হচ্ছে...";
+
+
+    const finalMessage=
+      "💌 Birthday Surprise থেকে message:\n\n"+
+      message+
+      "\n\n🎂 — Fatima Islam Riya-এর জন্য";
+
+
+    setTimeout(()=>{
+
+      window.location.href=
+        WAPP+
+        "?text="+
+        encodeURIComponent(
+          finalMessage
+        );
+
+    },400);
+
+  }
+);
+
+
+/* =====================================================
+   GIFT → WHATSAPP
+===================================================== */
+
+document
+.getElementById("gf")
+.addEventListener(
+  "submit",
+  function(e){
+
+    e.preventDefault();
+
+
+    const selected=
+      document.querySelector(
+        'input[name="gift"]:checked'
+      );
+
+
+    const status=
+      document.getElementById("gs");
+
+
+    if(!selected){
+
+      status.textContent=
+        "❌ একটা gift নির্বাচন করো।";
+
+      return;
+
+    }
+
+
+    const message=
+      "🎁 Birthday Gift Choice\n\n"+
+      "আমি চাই: "+
+      selected.value+
+      " 🥰❤️";
+
+
+    status.textContent=
+      "💚 WhatsApp খোলা হচ্ছে...";
+
+
+    setTimeout(()=>{
+
+      window.location.href=
+        WAPP+
+        "?text="+
+        encodeURIComponent(
+          message
+        );
+
+    },400);
+
+  }
+);
+
+
+/* =====================================================
+   MODAL BACKDROP
+===================================================== */
+
+document
+.querySelectorAll(".modal")
+.forEach(m=>{
+
+  m.onclick=e=>{
+
+    if(e.target===m){
+
+      m.classList.remove("show");
+
+    }
+
+  };
+
+});
 
 
 /* =====================================================
@@ -1425,13 +1808,26 @@ function restart(){
 
   go(1);
 
-  document.getElementById("pw").value="";
 
-  document.getElementById("err").textContent="";
+  document
+  .getElementById("pw")
+  .value="";
 
-  document.getElementById("balloon").textContent="🎈";
 
-  document.getElementById("balloon").style.transform="";
+  document
+  .getElementById("err")
+  .textContent="";
+
+
+  document
+  .getElementById("balloon")
+  .textContent="🎈";
+
+
+  document
+  .getElementById("balloon")
+  .style.transform="";
+
 
   resetCats();
 
@@ -1439,86 +1835,33 @@ function restart(){
 
 
 /* =====================================================
-   FORMS
-===================================================== */
-
-document
-.getElementById("cf")
-.onsubmit=e=>{
-
-  e.preventDefault();
-
-  document.getElementById("cs").textContent=
-    "💖 Reply প্রস্তুত হয়েছে। চাইলে WhatsApp-এ পাঠাতে পারো।";
-
-  setTimeout(()=>{
-    whatsapp();
-  },900);
-
-};
-
-
-document
-.getElementById("gf")
-.onsubmit=e=>{
-
-  e.preventDefault();
-
-  const selected=
-    document.querySelector(
-      'input[name="gift"]:checked'
-    );
-
-  if(selected){
-
-    document.getElementById("gs").textContent=
-      "🎁 তোমার পছন্দ \""+
-      selected.value+
-      "\" — সংরক্ষিত হয়েছে। ❤️";
-
-  }
-
-};
-
-
-/* modal backdrop */
-
-document
-.querySelectorAll(".modal")
-.forEach(m=>{
-
-  m.onclick=e=>{
-
-    if(e.target===m){
-      m.classList.remove("show");
-    }
-
-  };
-
-});
-
-
-/* =====================================================
    STARS
 ===================================================== */
 
-const sc=document.getElementById("stars");
+const sc=
+  document.getElementById("stars");
 
-const sx=sc.getContext("2d");
+
+const sx=
+  sc.getContext("2d");
+
 
 let P=[];
 
 
 function resizeStars(){
 
-  sc.width=innerWidth;
+  sc.width=
+    innerWidth;
 
-  sc.height=innerHeight;
+  sc.height=
+    innerHeight;
 
 }
 
 
 resizeStars();
+
 
 window.addEventListener(
   "resize",
@@ -1552,13 +1895,18 @@ for(let i=0;i<120;i++){
     sc.height
   );
 
+
   P.forEach(p=>{
 
     p.y-=p.s;
 
-    if(p.y<0)p.y=1;
+
+    if(p.y<0)
+      p.y=1;
+
 
     sx.beginPath();
+
 
     sx.arc(
       p.x*sc.width,
@@ -1568,12 +1916,15 @@ for(let i=0;i<120;i++){
       7
     );
 
+
     sx.fillStyle=
       "rgba(255,190,220,.5)";
+
 
     sx.fill();
 
   });
+
 
   requestAnimationFrame(star);
 
@@ -1581,45 +1932,49 @@ for(let i=0;i<120;i++){
 
 
 /* =====================================================
-   =====================================================
    2D CAT ANIMATION
-   =====================================================
-   ===================================================== */
-
-
-/* ---------- CANVAS ---------- */
+===================================================== */
 
 const catCanvas=
   document.getElementById("catCanvas");
 
+
 const ctx=
   catCanvas.getContext("2d");
+
 
 const catStage=
   document.querySelector(".cat-stage");
 
+
 const catStatus=
   document.getElementById("catStatus");
+
 
 const catContinue=
   document.getElementById("catContinue");
 
 
 let catW=800;
+
 let catH=520;
 
 let catRunning=false;
+
 let catFinished=false;
 
 let catStart=0;
 
 
-/* ---------- RESIZE ---------- */
+/* =====================================================
+   RESIZE CAT CANVAS
+===================================================== */
 
 function resizeCatCanvas(){
 
   const rect=
     catStage.getBoundingClientRect();
+
 
   const dpr=
     Math.min(
@@ -1627,20 +1982,31 @@ function resizeCatCanvas(){
       2
     );
 
+
   catW=rect.width;
+
   catH=rect.height;
 
+
   catCanvas.width=
-    Math.floor(catW*dpr);
+    Math.floor(
+      catW*dpr
+    );
+
 
   catCanvas.height=
-    Math.floor(catH*dpr);
+    Math.floor(
+      catH*dpr
+    );
+
 
   catCanvas.style.width=
     catW+"px";
 
+
   catCanvas.style.height=
     catH+"px";
+
 
   ctx.setTransform(
     dpr,
@@ -1659,11 +2025,12 @@ window.addEventListener(
   resizeCatCanvas
 );
 
+
 resizeCatCanvas();
 
 
 /* =====================================================
-   CAT DRAWING HELPERS
+   DRAW HELPERS
 ===================================================== */
 
 function ellipse(
@@ -1789,11 +2156,13 @@ function createCatHeart(
   catHearts.push({
 
     x,
+
     y,
 
     life:0,
 
-    size:10+Math.random()*12
+    size:10+
+      Math.random()*12
 
   });
 
@@ -1808,11 +2177,14 @@ function drawCatHearts(){
     i--
   ){
 
-    const h=catHearts[i];
+    const h=
+      catHearts[i];
+
 
     h.life+=.018;
 
     h.y-=.7;
+
 
     const alpha=
       Math.max(
@@ -1820,14 +2192,20 @@ function drawCatHearts(){
         1-h.life
       );
 
+
     ctx.save();
 
-    ctx.globalAlpha=alpha;
+    ctx.globalAlpha=
+      alpha;
+
 
     ctx.font=
       `${h.size}px Arial`;
 
-    ctx.textAlign="center";
+
+    ctx.textAlign=
+      "center";
+
 
     ctx.fillText(
       "❤️",
@@ -1835,7 +2213,9 @@ function drawCatHearts(){
       h.y
     );
 
+
     ctx.restore();
+
 
     if(h.life>=1){
 
@@ -1865,7 +2245,12 @@ function drawCat(
 
   ctx.save();
 
-  ctx.translate(x,groundY);
+
+  ctx.translate(
+    x,
+    groundY
+  );
+
 
   ctx.scale(
     facing*scale,
@@ -1877,6 +2262,7 @@ function drawCat(
 
   ctx.globalAlpha=.28;
 
+
   ellipse(
     0,
     5,
@@ -1885,6 +2271,7 @@ function drawCat(
     "#000"
   );
 
+
   ctx.globalAlpha=1;
 
 
@@ -1892,21 +2279,26 @@ function drawCat(
 
   ctx.save();
 
+
   ctx.translate(
     48,
     -88
   );
 
+
   ctx.rotate(
     pose.tail
   );
 
+
   ctx.beginPath();
+
 
   ctx.moveTo(
     0,
     0
   );
+
 
   ctx.bezierCurveTo(
     40,
@@ -1917,6 +2309,7 @@ function drawCat(
     -65
   );
 
+
   ctx.bezierCurveTo(
     48,
     -95,
@@ -1926,13 +2319,16 @@ function drawCat(
     -48
   );
 
+
   ctx.lineWidth=15;
 
   ctx.lineCap="round";
 
-  ctx.strokeStyle=fur;
+  ctx.strokeStyle=
+    fur;
 
   ctx.stroke();
+
 
   ctx.restore();
 
@@ -1962,7 +2358,7 @@ function drawCat(
   );
 
 
-  /* back legs */
+  /* legs */
 
   ellipse(
     -38,
@@ -1972,6 +2368,7 @@ function drawCat(
     fur,
     pose.legTilt
   );
+
 
   ellipse(
     38,
@@ -1983,8 +2380,6 @@ function drawCat(
   );
 
 
-  /* feet */
-
   ellipse(
     -40,
     15,
@@ -1992,6 +2387,7 @@ function drawCat(
     12,
     fur
   );
+
 
   ellipse(
     40,
@@ -2017,16 +2413,21 @@ function drawCat(
 
   ctx.save();
 
+
   ctx.translate(
     0,
     -122
   );
 
+
   ctx.rotate(
     pose.headTilt
   );
 
-  ctx.fillStyle=collar;
+
+  ctx.fillStyle=
+    collar;
+
 
   ctx.fillRect(
     -44,
@@ -2035,7 +2436,6 @@ function drawCat(
     12
   );
 
-  /* collar bell */
 
   circle(
     0,
@@ -2044,6 +2444,7 @@ function drawCat(
     "#ffd34e"
   );
 
+
   ctx.restore();
 
 
@@ -2051,10 +2452,12 @@ function drawCat(
 
   ctx.save();
 
+
   ctx.translate(
     0,
     -174
   );
+
 
   ctx.rotate(
     pose.headTilt
@@ -2078,6 +2481,7 @@ function drawCat(
     fur
   );
 
+
   triangle(
     48,-36,
     42,-90,
@@ -2086,14 +2490,13 @@ function drawCat(
   );
 
 
-  /* inner ears */
-
   triangle(
     -41,-49,
     -39,-76,
     -22,-55,
     innerEar
   );
+
 
   triangle(
     41,-49,
@@ -2112,6 +2515,7 @@ function drawCat(
     fur
   );
 
+
   circle(
     28,
     14,
@@ -2122,22 +2526,18 @@ function drawCat(
 
   /* eyes */
 
-  const eyeY=-3;
-
-  const eyeX=22;
-
-
   ellipse(
-    -eyeX,
-    eyeY,
+    -22,
+    -3,
     10,
     15,
     "#18131b"
   );
 
+
   ellipse(
-    eyeX,
-    eyeY,
+    22,
+    -3,
     10,
     15,
     "#18131b"
@@ -2152,6 +2552,7 @@ function drawCat(
     4,
     "#fff"
   );
+
 
   circle(
     19,
@@ -2171,6 +2572,7 @@ function drawCat(
     "#5a4050",
     3
   );
+
 
   line(
     13,
@@ -2192,6 +2594,7 @@ function drawCat(
     "#fff9f3"
   );
 
+
   ellipse(
     14,
     22,
@@ -2201,11 +2604,10 @@ function drawCat(
   );
 
 
-  /* orange muzzle correction */
-
   if(fur!=="#f5f1ea"){
 
     ctx.globalAlpha=.55;
+
 
     ellipse(
       -14,
@@ -2215,6 +2617,7 @@ function drawCat(
       "#ffd0a8"
     );
 
+
     ellipse(
       14,
       22,
@@ -2222,6 +2625,7 @@ function drawCat(
       13,
       "#ffd0a8"
     );
+
 
     ctx.globalAlpha=1;
 
@@ -2249,6 +2653,7 @@ function drawCat(
     2
   );
 
+
   line(
     0,
     28,
@@ -2270,6 +2675,7 @@ function drawCat(
     2
   );
 
+
   line(
     -17,
     31,
@@ -2279,6 +2685,7 @@ function drawCat(
     2
   );
 
+
   line(
     17,
     25,
@@ -2287,6 +2694,7 @@ function drawCat(
     "#fff",
     2
   );
+
 
   line(
     17,
@@ -2311,12 +2719,15 @@ function drawCat(
 
     ctx.save();
 
+
     ctx.translate(
       side*43,
       -102
     );
 
+
     ctx.rotate(angle);
+
 
     ellipse(
       0,
@@ -2326,12 +2737,14 @@ function drawCat(
       fur
     );
 
+
     circle(
       0,
       48+length,
       15,
       fur
     );
+
 
     ctx.restore();
 
@@ -2343,6 +2756,7 @@ function drawCat(
     pose.armL,
     34
   );
+
 
   arm(
     1,
@@ -2357,7 +2771,7 @@ function drawCat(
 
 
 /* =====================================================
-   CAT POSES
+   BASE POSE
 ===================================================== */
 
 function basePose(){
@@ -2382,7 +2796,7 @@ function basePose(){
 
 
 /* =====================================================
-   MAIN CAT ANIMATION
+   CAT RENDER LOOP
 ===================================================== */
 
 function renderCats(){
@@ -2391,7 +2805,9 @@ function renderCats(){
 
     drawScene(0);
 
-    requestAnimationFrame(renderCats);
+    requestAnimationFrame(
+      renderCats
+    );
 
     return;
 
@@ -2399,7 +2815,8 @@ function renderCats(){
 
 
   const elapsed=
-    (performance.now()-catStart)/1000;
+    (performance.now()-
+      catStart)/1000;
 
 
   const t=
@@ -2416,15 +2833,20 @@ function renderCats(){
 
     catFinished=true;
 
+
     catStatus.textContent=
       "❤️ 2D গল্প শেষ — এখন পরের surprise-এর পালা।";
 
-    catContinue.disabled=false;
+
+    catContinue.disabled=
+      false;
 
   }
 
 
-  requestAnimationFrame(renderCats);
+  requestAnimationFrame(
+    renderCats
+  );
 
 }
 
@@ -2453,22 +2875,28 @@ function drawScene(t){
       catH
     );
 
+
   gradient.addColorStop(
     0,
     "#3b173d"
   );
+
 
   gradient.addColorStop(
     .55,
     "#170a20"
   );
 
+
   gradient.addColorStop(
     1,
     "#08040d"
   );
 
-  ctx.fillStyle=gradient;
+
+  ctx.fillStyle=
+    gradient;
+
 
   ctx.fillRect(
     0,
@@ -2490,17 +2918,22 @@ function drawScene(t){
       170
     );
 
+
   glow.addColorStop(
     0,
     "#ff9fc733"
   );
+
 
   glow.addColorStop(
     1,
     "transparent"
   );
 
-  ctx.fillStyle=glow;
+
+  ctx.fillStyle=
+    glow;
+
 
   ctx.fillRect(
     0,
@@ -2517,8 +2950,10 @@ function drawScene(t){
     const sx=
       (i*97)%catW;
 
+
     const sy=
       25+(i*53)%180;
+
 
     const tw=
       .35+
@@ -2526,7 +2961,10 @@ function drawScene(t){
         t*2+i
       );
 
-    ctx.globalAlpha=tw;
+
+    ctx.globalAlpha=
+      tw;
+
 
     circle(
       sx,
@@ -2537,14 +2975,18 @@ function drawScene(t){
 
   }
 
+
   ctx.globalAlpha=1;
 
 
   /* floor */
 
-  ctx.fillStyle="#100817";
+  ctx.fillStyle=
+    "#100817";
+
 
   ctx.beginPath();
+
 
   ctx.ellipse(
     catW/2,
@@ -2556,19 +2998,23 @@ function drawScene(t){
     Math.PI*2
   );
 
+
   ctx.fill();
 
 
-  /* base */
+  /* positions */
 
   let whiteX=
     catW*.32;
 
+
   let orangeX=
     catW*.68;
 
+
   let whiteY=
     catH-100;
+
 
   let orangeY=
     catH-100;
@@ -2577,13 +3023,12 @@ function drawScene(t){
   let white=
     basePose();
 
+
   let orange=
     basePose();
 
 
-  /* =================================================
-     0 - 2.2 LOOK AT EACH OTHER
-  ================================================= */
+  /* LOOK */
 
   if(t<2.2){
 
@@ -2592,12 +3037,14 @@ function drawScene(t){
         t/2.2
       );
 
+
     whiteX=
       lerp(
         catW*.25,
         catW*.35,
         p
       );
+
 
     orangeX=
       lerp(
@@ -2606,58 +3053,58 @@ function drawScene(t){
         p
       );
 
-    white.headTilt=
-      -.10;
 
-    orange.headTilt=
-      .10;
+    white.headTilt=-.10;
+
+    orange.headTilt=.10;
 
   }
 
 
-  /* =================================================
-     2.2 - 4 PLAYFUL PAW
-  ================================================= */
+  /* PLAY */
 
   else if(t<4){
 
     const p=
       (t-2.2)/1.8;
 
+
     whiteX=
       catW*.35;
 
+
     orangeX=
       catW*.65;
+
 
     const swing=
       Math.sin(
         p*Math.PI*4
       )*.75;
 
+
     white.armR=
       -.35+swing;
+
 
     orange.armL=
       .35-swing;
 
-    white.headTilt=
-      -.08;
 
-    orange.headTilt=
-      .08;
+    white.headTilt=-.08;
+
+    orange.headTilt=.08;
 
   }
 
 
-  /* =================================================
-     4 - 6 LITTLE FIGHT
-  ================================================= */
+  /* FIGHT */
 
   else if(t<6){
 
     const p=
       (t-4)/2;
+
 
     whiteX=
       lerp(
@@ -2666,6 +3113,7 @@ function drawScene(t){
         p
       );
 
+
     orangeX=
       lerp(
         catW*.65,
@@ -2673,34 +3121,32 @@ function drawScene(t){
         p
       );
 
+
     white.bodyTilt=
       Math.sin(
         p*Math.PI*6
       )*.08;
+
 
     orange.bodyTilt=
       -Math.sin(
         p*Math.PI*6
       )*.08;
 
-    white.armR=
-      -.8;
 
-    orange.armL=
-      .8;
+    white.armR=-.8;
 
-    white.headTilt=
-      -.16;
+    orange.armL=.8;
 
-    orange.headTilt=
-      .16;
+
+    white.headTilt=-.16;
+
+    orange.headTilt=.16;
 
   }
 
 
-  /* =================================================
-     6 - 7.3 PAW HOLD
-  ================================================= */
+  /* PAW HOLD */
 
   else if(t<7.3){
 
@@ -2709,12 +3155,14 @@ function drawScene(t){
         (t-6)/1.3
       );
 
+
     whiteX=
       lerp(
         catW*.43,
         catW*.46,
         p
       );
+
 
     orangeX=
       lerp(
@@ -2723,24 +3171,20 @@ function drawScene(t){
         p
       );
 
-    white.armR=
-      -.95;
 
-    orange.armL=
-      .95;
+    white.armR=-.95;
 
-    white.headTilt=
-      -.08;
+    orange.armL=.95;
 
-    orange.headTilt=
-      .08;
+
+    white.headTilt=-.08;
+
+    orange.headTilt=.08;
 
   }
 
 
-  /* =================================================
-     7.3 - 8.6 COME CLOSE
-  ================================================= */
+  /* COME CLOSE */
 
   else if(t<8.6){
 
@@ -2749,12 +3193,14 @@ function drawScene(t){
         (t-7.3)/1.3
       );
 
+
     whiteX=
       lerp(
         catW*.46,
         catW*.49,
         p
       );
+
 
     orangeX=
       lerp(
@@ -2763,24 +3209,20 @@ function drawScene(t){
         p
       );
 
-    white.armR=
-      -.55;
 
-    orange.armL=
-      .55;
+    white.armR=-.55;
 
-    white.headTilt=
-      -.12;
+    orange.armL=.55;
 
-    orange.headTilt=
-      .12;
+
+    white.headTilt=-.12;
+
+    orange.headTilt=.12;
 
   }
 
 
-  /* =================================================
-     8.6 - 9.5 NOSE KISS
-  ================================================= */
+  /* NOSE KISS */
 
   else if(t<9.5){
 
@@ -2789,12 +3231,14 @@ function drawScene(t){
         (t-8.6)/.9
       );
 
+
     whiteX=
       lerp(
         catW*.49,
         catW*.495,
         p
       );
+
 
     orangeX=
       lerp(
@@ -2803,12 +3247,14 @@ function drawScene(t){
         p
       );
 
+
     white.headTilt=
       lerp(
         -.12,
         -.02,
         p
       );
+
 
     orange.headTilt=
       lerp(
@@ -2817,16 +3263,13 @@ function drawScene(t){
         p
       );
 
-    white.armR=
-      -.45;
 
-    orange.armL=
-      .45;
+    white.armR=-.45;
+
+    orange.armL=.45;
 
 
-    if(
-      Math.random()<.08
-    ){
+    if(Math.random()<.08){
 
       createCatHeart(
         catW/2+
@@ -2839,9 +3282,7 @@ function drawScene(t){
   }
 
 
-  /* =================================================
-     9.5 - 11.3 HUG
-  ================================================= */
+  /* HUG */
 
   else if(t<11.3){
 
@@ -2850,12 +3291,14 @@ function drawScene(t){
         (t-9.5)/1.8
       );
 
+
     whiteX=
       lerp(
         catW*.495,
         catW*.46,
         p
       );
+
 
     orangeX=
       lerp(
@@ -2864,13 +3307,16 @@ function drawScene(t){
         p
       );
 
+
     whiteY=
       catH-100-
       Math.sin(p*Math.PI)*20;
 
+
     orangeY=
       catH-100-
       Math.sin(p*Math.PI)*20;
+
 
     white.armR=
       lerp(
@@ -2879,12 +3325,14 @@ function drawScene(t){
         p
       );
 
+
     white.armL=
       lerp(
         -.1,
         .8,
         p
       );
+
 
     orange.armL=
       lerp(
@@ -2893,6 +3341,7 @@ function drawScene(t){
         p
       );
 
+
     orange.armR=
       lerp(
         .1,
@@ -2900,16 +3349,13 @@ function drawScene(t){
         p
       );
 
-    white.headTilt=
-      -.06;
 
-    orange.headTilt=
-      .06;
+    white.headTilt=-.06;
+
+    orange.headTilt=.06;
 
 
-    if(
-      Math.random()<.12
-    ){
+    if(Math.random()<.12){
 
       createCatHeart(
         catW/2+
@@ -2922,14 +3368,13 @@ function drawScene(t){
   }
 
 
-  /* =================================================
-     11.3 - 13.99 HAPPY BOUNCE
-  ================================================= */
+  /* HAPPY */
 
   else{
 
     const p=
       t-11.3;
+
 
     const jump=
       Math.abs(
@@ -2938,27 +3383,34 @@ function drawScene(t){
         )
       )*22;
 
+
     whiteX=
       catW*.38;
+
 
     orangeX=
       catW*.62;
 
+
     whiteY=
       catH-100-jump;
 
+
     orangeY=
       catH-100-jump;
+
 
     white.bodyTilt=
       Math.sin(
         p*Math.PI*4
       )*.07;
 
+
     orange.bodyTilt=
       -Math.sin(
         p*Math.PI*4
       )*.07;
+
 
     white.armL=
       -.7+
@@ -2966,17 +3418,20 @@ function drawScene(t){
         p*Math.PI*4
       )*.25;
 
+
     white.armR=
       .7+
       Math.sin(
         p*Math.PI*4
       )*.25;
 
+
     orange.armL=
       -.7-
       Math.sin(
         p*Math.PI*4
       )*.25;
+
 
     orange.armR=
       .7-
@@ -2993,12 +3448,13 @@ function drawScene(t){
     .3+
     Math.sin(t*3)*.25;
 
+
   orange.tail=
     -.3+
     Math.sin(t*3+Math.PI)*.25;
 
 
-  /* draw white cat */
+  /* WHITE CAT */
 
   drawCat(
     whiteX,
@@ -3015,7 +3471,7 @@ function drawScene(t){
   );
 
 
-  /* draw orange cat */
+  /* ORANGE CAT */
 
   drawCat(
     orangeX,
@@ -3032,12 +3488,10 @@ function drawScene(t){
   );
 
 
-  /* floating hearts */
-
   drawCatHearts();
 
 
-  /* status */
+  /* STATUS */
 
   if(t<2.2){
 
@@ -3045,42 +3499,49 @@ function drawScene(t){
       "🐱 দুজন দুজনকে দেখছে...";
 
   }
+
   else if(t<4){
 
     catStatus.textContent=
-      "😹 একটু খুনসুটি শুরু হয়েছে...";
+      "😹 দুজনের ছোট্ট খুনসুটি...";
 
   }
+
   else if(t<6){
 
     catStatus.textContent=
       "😾 আরে! ছোট্ট ঝগড়া লেগে গেছে!";
 
   }
+
   else if(t<7.3){
 
     catStatus.textContent=
-      "🐾 এবার একজন আরেকজনের হাত ধরেছে...";
+      "🐾 একজন আরেকজনের হাত ধরেছে...";
 
   }
+
   else if(t<8.6){
 
     catStatus.textContent=
       "🥹 দুজন ধীরে ধীরে কাছে আসছে...";
 
   }
+
   else if(t<9.5){
 
     catStatus.textContent=
-      "💋 lip kiss! ❤️";
+      "💋 ছোট্ট nose kiss! ❤️";
 
   }
+
   else if(t<11.3){
 
     catStatus.textContent=
       "🫂 দুজন এখন একে অপরকে জড়িয়ে ধরেছে...";
 
   }
+
   else{
 
     catStatus.textContent=
@@ -3118,6 +3579,7 @@ function smooth(t){
       )
     );
 
+
   return t*t*
     (3-2*t);
 
@@ -3130,18 +3592,24 @@ function smooth(t){
 
 function startCats(){
 
-  if(catRunning)return;
+  if(catRunning)
+    return;
+
 
   resizeCatCanvas();
+
 
   catRunning=true;
 
   catFinished=false;
 
+
   catContinue.disabled=true;
+
 
   catStart=
     performance.now();
+
 
   catStatus.textContent=
     "🐱 দুইটি মিষ্টি বিড়াল এসেছে...";
@@ -3163,10 +3631,13 @@ function resetCats(){
 
   catHearts=[];
 
+
   catStart=
     performance.now();
 
+
   resizeCatCanvas();
+
 
   drawScene(0);
 
@@ -3174,7 +3645,7 @@ function resetCats(){
 
 
 /* =====================================================
-   START RENDER LOOP
+   START
 ===================================================== */
 
 resetCats();
